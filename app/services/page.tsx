@@ -1,3 +1,7 @@
+import ServicesPage from "@/modules/services/ServicesPage";
+
 export default function Page() {
-  return <h1>Services Page</h1>;
+  return (
+    <ServicesPage />
+  );
 }
