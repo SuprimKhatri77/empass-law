@@ -1,3 +1,5 @@
+import OurWorkPage from "@/modules/our-work/our-work-list";
+
 export default function Page() {
-  return <h1>Our work Page</h1>;
+  return <OurWorkPage />;
 }

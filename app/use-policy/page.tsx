@@ -1,3 +1,5 @@
+import AcceptableUsePolicy from "@/modules/use-policy/use-policy";
+
 export default function Page() {
-  return <h1>Use policy page</h1>;
+  return <AcceptableUsePolicy />;
 }
