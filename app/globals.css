@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "lenis/dist/lenis.css";
+
 ::-webkit-scrollbar {
   width: 10px;
 }
