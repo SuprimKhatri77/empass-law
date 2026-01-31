@@ -81,7 +81,7 @@ export default function Hero() {
               <span className="block bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
                 Elite Legal
               </span>
-              <span className="block bg-gradient-to-r from-[#00D9FF] via-[#7B2FFF] to-[#FF6B9D] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#1A3263] via-[#249E94] to-[#09637E] bg-clip-text text-transparent">
                 Solutions
               </span>
             </motion.h1>
@@ -106,22 +106,25 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] text-white font-bold overflow-hidden"
+                className="
+                        group relative w-full sm:w-auto
+                        px-8 sm:px-10 py-4 sm:py-5
+                        bg-[#0f172a]
+                        text-[#d4af37]
+                        border-2 border-[#d4af37]
+                        hover:bg-[#d4af37] hover:text-[#0f172a]
+                        font-semibold
+                        transition-all duration-300
+      "
               >
                 <motion.span
-                  className="relative z-10 flex items-center justify-center gap-3 text-base sm:text-lg whitespace-nowrap"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-3"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   Book Consultation
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </motion.span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#7B2FFF] to-[#00D9FF]"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
               </Link>
 
               <Link

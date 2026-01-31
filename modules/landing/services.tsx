@@ -36,7 +36,7 @@ const services: Service[] = [
     description:
       "Strategic legal counsel for mergers, acquisitions, restructuring, and complex corporate transactions.",
     href: "/services/corporate",
-    gradient: "from-[#00D9FF] to-[#0099CC]",
+    gradient: "[#4988C4]",
     features: [
       "M&A Advisory",
       "Corporate Governance",
@@ -50,7 +50,7 @@ const services: Service[] = [
     description:
       "Expert representation in commercial disputes, arbitration, mediation, and alternative dispute resolution.",
     href: "/services/litigation",
-    gradient: "from-[#7B2FFF] to-[#5B1FCC]",
+    gradient: "[#4988C4]",
     features: [
       "Commercial Litigation",
       "Arbitration",
@@ -64,7 +64,7 @@ const services: Service[] = [
     description:
       "Comprehensive employment solutions covering contracts, disputes, tribunals, and workplace regulations.",
     href: "/services/employment",
-    gradient: "from-[#FF6B9D] to-[#C94277]",
+    gradient: "[#4988C4]",
     features: [
       "Employment Contracts",
       "Tribunal Claims",
@@ -78,7 +78,7 @@ const services: Service[] = [
     description:
       "Sophisticated financial law expertise for lending, structured finance, regulatory compliance, and transactions.",
     href: "/services/banking",
-    gradient: "from-[#00FF9D] to-[#00CC7A]",
+    gradient: "[#4988C4]",
     features: [
       "Corporate Finance",
       "Asset Finance",
@@ -92,7 +92,7 @@ const services: Service[] = [
     description:
       "Comprehensive commercial legal services including contracts, partnerships, and business transactions.",
     href: "/services/commercial",
-    gradient: "from-[#FFA500] to-[#FF6B00]",
+    gradient: "[#4988C4]",
     features: [
       "Contract Law",
       "Partnership Agreements",
@@ -106,7 +106,7 @@ const services: Service[] = [
     description:
       "Full-service property law covering residential, commercial transactions, development, and disputes.",
     href: "/services/property",
-    gradient: "from-[#00D9FF] to-[#7B2FFF]",
+    gradient: "[#4988C4]",
     features: [
       "Commercial Property",
       "Residential",
@@ -186,7 +186,7 @@ export default function Services() {
                   {/* Icon with Morphing Background */}
                   <div className="relative mb-6">
                     <motion.div
-                      className={`w-16 h-16 bg-gradient-to-br ${service.gradient} flex items-center justify-center relative`}
+                      className={`w-16 h-16 bg-${service.gradient} flex items-center justify-center relative`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -194,7 +194,7 @@ export default function Services() {
                     </motion.div>
                     {activeService === index && (
                       <motion.div
-                        className={`absolute -inset-2 bg-gradient-to-br ${service.gradient} blur-xl`}
+                        className={`absolute -inset-2 bg-${service.gradient} blur-xl`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.5 }}
                         exit={{ opacity: 0 }}
@@ -203,7 +203,7 @@ export default function Services() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-[#00D9FF] group-hover:to-[#7B2FFF] transition-all">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">
                     {service.title}
                   </h3>
                   <p className="text-white/50 mb-6 leading-relaxed text-sm sm:text-base">

@@ -80,10 +80,10 @@ export default function Process() {
               >
                 {/* Number Badge */}
                 <motion.div
-                  className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-[#00D9FF] to-[#00FF9D] flex items-center justify-center relative"
+                  className="w-20 h-20 mx-auto mb-8 bg-[#0C7779] flex items-center justify-center relative"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <span className="text-2xl font-black text-white">
+                  <span className="text-2xl font-black text-black">
                     {item.step}
                   </span>
 
@@ -126,7 +126,7 @@ export default function Process() {
               {/* Number Badge */}
               <div className="flex-shrink-0">
                 <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-[#00D9FF] to-[#00FF9D] flex items-center justify-center"
+                  className="w-16 h-16 bg-[#0C7779] flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                 >
                   <span className="text-xl font-black text-white">

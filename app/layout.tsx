@@ -5,6 +5,7 @@ import { ReactQueryProvider } from "@/components/providers/react-query-provider"
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/modules/landing/navbar";
 import Footer from "@/modules/landing/footer";
+import LenisProvider from "@/modules/providers/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A0F1C]/98`}
       >
-        <ReactQueryProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
-        </ReactQueryProvider>
+        <LenisProvider>
+          <ReactQueryProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+          </ReactQueryProvider>
+        </LenisProvider>
       </body>
     </html>
   );

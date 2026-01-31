@@ -103,7 +103,7 @@ export default function Testimonials() {
                 onClick={() => setCurrentTestimonial(index)}
                 className={`transition-all ${
                   index === currentTestimonial
-                    ? "w-12 h-3 bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF]"
+                    ? "w-12 h-3 bg-[#00D9FF]"
                     : "w-3 h-3 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

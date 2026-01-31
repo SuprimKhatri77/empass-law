@@ -158,7 +158,7 @@ export default function Footer() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="px-8 py-4 bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] text-white font-semibold flex items-center gap-2"
+                  className="px-8 py-4 bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-semibold flex items-center gap-2"
                 >
                   Subscribe
                   <Send className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function Footer() {
               >
                 <h4 className="text-sm font-bold tracking-widest uppercase text-white/90 mb-6 relative inline-block">
                   {section.title}
-                  <div className="absolute -bottom-2 left-0 w-8 h-[2px] bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF]" />
+                  <div className="absolute -bottom-2 left-0 w-8 h-[2px] bg-[#4988C4] hover:bg-[#1C4D8D]" />
                 </h4>
                 <ul className="space-y-3">
                   {section.links.map((link) => (

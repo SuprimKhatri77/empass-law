@@ -30,10 +30,10 @@ export default function About() {
             <div className="relative">
               {/* Main Card */}
               <div className="relative p-8 sm:p-12 bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10">
-                <Landmark className="w-16 sm:w-20 h-16 sm:h-20 text-[#00D9FF] mb-6" />
+                <Landmark className="w-16 sm:w-20 h-16 sm:h-20 text-gray-50 mb-6" />
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-4">
-                    <div className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] bg-clip-text text-transparent">
+                    <div className="text-4xl sm:text-5xl font-black text-gray-50">
                       130+
                     </div>
                     <div className="text-sm text-white/50 uppercase tracking-wider">
@@ -44,7 +44,7 @@ export default function About() {
                   </div>
                   <div className="h-px w-full bg-gradient-to-r from-[#00D9FF]/50 to-transparent" />
                   <div className="flex items-center gap-4">
-                    <div className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-[#7B2FFF] to-[#FF6B9D] bg-clip-text text-transparent">
+                    <div className="text-4xl sm:text-5xl font-black text-gray-50">
                       50+
                     </div>
                     <div className="text-sm text-white/50 uppercase tracking-wider">

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function CTA() {
@@ -27,7 +27,14 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4">
             <Link
               href="/contact"
-              className="group relative w-full sm:w-auto px-10 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] text-white font-bold text-base sm:text-lg overflow-hidden"
+              className="group relative w-full sm:w-auto
+                        px-8 sm:px-10 py-4 sm:py-5
+                        bg-[#0f172a]
+                        text-[#d4af37]
+                        border-2 border-[#d4af37]
+                        hover:bg-[#d4af37] hover:text-[#0f172a]
+                        font-semibold
+                        transition-all duration-300"
             >
               <motion.span
                 className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap"
@@ -37,19 +44,13 @@ export default function CTA() {
                 Book Free Consultation
                 <ArrowRight className="w-5 sm:w-6 h-5 sm:h-6 group-hover:translate-x-2 transition-transform" />
               </motion.span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#7B2FFF] to-[#00D9FF]"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
             </Link>
 
             <Link
               href="tel:+442071234567"
-              className="group w-full sm:w-auto px-10 sm:px-12 py-5 sm:py-6 border-2 border-white/20 text-white font-bold hover:bg-white/5 transition-all text-base sm:text-lg flex items-center justify-center gap-3 whitespace-nowrap"
+              className="group w-full sm:w-auto px-10 sm:px-12 py-5 sm:py-5 border-2 border-white/20 text-white font-bold hover:bg-white/5 transition-all text-base sm:text-lg flex items-center justify-center gap-3 whitespace-nowrap"
             >
-              <Play className="w-5 h-5" />
+              <Phone className="w-5 h-5" />
               +44 20 7123 4567
             </Link>
           </div>

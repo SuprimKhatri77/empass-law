@@ -14,8 +14,8 @@ export default function Insights() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#FFA500]/10 to-[#FF6B00]/10 border border-[#FFA500]/20">
-            <span className="text-xs font-bold tracking-widest text-[#FFA500] uppercase">
+          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#d4af37]/10 to-[#FF6B00]/10 border border-[#d4af37]/20">
+            <span className="text-xs font-bold tracking-widest text-[#d4af37] uppercase">
               Resources
             </span>
           </div>
@@ -59,16 +59,16 @@ export default function Insights() {
             >
               <Link
                 href={item.link}
-                className="block h-full p-6 sm:p-8 bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 hover:border-[#FFA500]/30 transition-all"
+                className="block h-full p-6 sm:p-8 bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 hover:border-[#d4af37]/30 transition-all"
               >
-                <item.icon className="w-12 h-12 text-[#FFA500] mb-6" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white group-hover:text-[#FFA500] transition-colors">
+                <item.icon className="w-12 h-12 text-[#d4af37] mb-6" />
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white group-hover:text-[#d4af37] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-white/60 mb-6 text-sm sm:text-base">
                   {item.description}
                 </p>
-                <div className="flex items-center gap-2 text-[#FFA500]">
+                <div className="flex items-center gap-2 text-[#d4af37]">
                   <span className="text-sm font-bold uppercase tracking-wider">
                     Explore
                   </span>

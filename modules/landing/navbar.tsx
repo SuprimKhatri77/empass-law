@@ -106,7 +106,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 href="/contact"
-                className="group relative px-8 py-3.5 bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] text-white font-semibold overflow-hidden"
+                className="group relative px-8 py-3.5 bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-semibold overflow-hidden"
               >
                 <motion.span
                   className="relative z-10 flex items-center gap-2"
@@ -201,7 +201,7 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full py-4 text-center bg-gradient-to-r from-[#00D9FF] to-[#7B2FFF] text-white font-semibold"
+                    className="block w-full py-4 text-center bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-semibold"
                   >
                     Get Started
                   </Link>
