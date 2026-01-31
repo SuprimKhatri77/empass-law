@@ -1,3 +1,5 @@
+import CookiePolicyPage from "@/modules/cookies/cookies";
+
 export default function Page() {
-  return <h1>Cookies page.</h1>;
+  return <CookiePolicyPage />;
 }
