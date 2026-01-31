@@ -3,6 +3,7 @@ import * as schema from "@/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
+import { admin } from "better-auth/plugins";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -12,6 +13,7 @@ export const auth = betterAuth({
   baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL || "http://localhost:3000",
   emailAndPassword: {
     enabled: true,
+    autoSignIn: true,
   },
-  plugins: [nextCookies()],
+  plugins: [admin(), nextCookies()],
 });
