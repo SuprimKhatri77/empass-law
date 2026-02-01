@@ -6,6 +6,7 @@ import Navbar from "@/modules/landing/navbar";
 import Footer from "@/modules/landing/footer";
 import LenisProvider from "@/modules/providers/LenisProvider";
 import { inter, raleway, roboto } from "@/utils/font/font";
+import { NavbarFooterProviderWrapper } from "@/components/providers/nav-footer-wrapper";
 
 export const metadata: Metadata = {
   title: "Empass Law",
@@ -23,9 +24,9 @@ export default function RootLayout({
       <body className={` ${roboto.className} antialiased bg-[#0A0F1C]/98`}>
         <LenisProvider>
           <ReactQueryProvider>
-            <Navbar />
-            {children}
-            <Footer />
+            <NavbarFooterProviderWrapper>
+              {children}
+            </NavbarFooterProviderWrapper>
             <Toaster />
           </ReactQueryProvider>
         </LenisProvider>

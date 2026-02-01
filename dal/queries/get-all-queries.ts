@@ -14,7 +14,7 @@ export async function getAllQueries(): Promise<ContactUsSelectType[] | []> {
     await auth.api.signOut({ headers: await headers() });
     return [];
   }
-  const queries = await db.query.contactUs.findMany();
+  const queries = await db.query.queries.findMany();
 
   if (!queries || queries.length === 0) {
     return [];

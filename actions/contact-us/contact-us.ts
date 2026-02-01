@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/db";
-import { contactUs } from "@/db/schema";
+import { queries } from "@/db/schema";
 import { nanoid } from "nanoid";
 import {
   ContactUsInput,
@@ -29,7 +29,7 @@ export async function contactUsAction(
   }
   try {
     const id = nanoid(7);
-    await db.insert(contactUs).values({ ...data, id });
+    await db.insert(queries).values({ ...data, id });
     return { success: true, message: "Message sent successfully." };
   } catch (error) {
     console.error("error: ", error);

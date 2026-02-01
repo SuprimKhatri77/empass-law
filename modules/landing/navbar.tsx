@@ -75,10 +75,10 @@ export default function Navbar() {
     <>
       <motion.nav
         style={{ opacity: navOpacity }}
-        className={`fixed top-0 left-0 right-0 z-70 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
           isScrolled
             ? "bg-[#0A0F1C]/98 backdrop-blur-xl border-b border-white/10"
-            : "bg-transparent"
+            : "bg-[#0A0F1C]/98"
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">

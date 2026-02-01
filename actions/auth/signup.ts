@@ -16,6 +16,7 @@ import z from "zod";
 const adminEmails = process.env.ADMIN_EMAILS?.split(",") ?? [];
 
 export async function signup(data: Signup): Promise<SignupResponse> {
+  console.log("admin emails: ", adminEmails);
   if (!adminEmails.includes(data.email)) {
     return { success: false, message: "User is not an admin." };
   }

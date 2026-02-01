@@ -100,7 +100,7 @@ export const blogs = pgTable("blogs", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const contactUs = pgTable("contact_us", {
+export const queries = pgTable("queries", {
   id: text("id").primaryKey().notNull(),
   name: text("name").notNull(),
   subject: text("subject").notNull(),
@@ -138,4 +138,4 @@ export const accountRelations = relations(account, ({ one }) => ({
 
 export type UserSelectType = InferSelectModel<typeof user>;
 export type BlogsSelectType = InferSelectModel<typeof blogs>;
-export type ContactUsSelectType = InferSelectModel<typeof contactUs>;
+export type ContactUsSelectType = InferSelectModel<typeof queries>;

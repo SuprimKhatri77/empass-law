@@ -1,3 +1,5 @@
+import PricingPage from "@/modules/pricing/pricing";
+
 export default function Page() {
-  return <h1>Pricing Page</h1>;
+  return <PricingPage />;
 }
