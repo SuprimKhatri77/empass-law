@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ImageUploadButton } from "@/components/image-upload-btn";
 import { createBlog } from "@/actions/blogs/create-blog";
 import { toast } from "sonner";
 import { CreateBlogResponse } from "@/utils/validators/blog.validator";
 import { FieldError } from "@/components/ui/field";
+import { ImageUploadButton } from "@/components/ImageUploader";
 
 type BlogFormData = {
   title: string;
@@ -64,7 +64,7 @@ export default function CreateBlogPage() {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({

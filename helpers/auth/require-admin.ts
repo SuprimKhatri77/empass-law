@@ -1,6 +1,6 @@
 "use server";
 
-import { auth } from "@/utils/auth";
+import { auth } from "@/utils/auth/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 

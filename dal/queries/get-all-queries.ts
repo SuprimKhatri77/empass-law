@@ -2,7 +2,7 @@
 
 import { db } from "@/db";
 import { ContactUsSelectType } from "@/db/schema";
-import { auth } from "@/utils/auth";
+import { auth } from "@/utils/auth/auth";
 import { headers } from "next/headers";
 
 export async function getAllQueries(): Promise<ContactUsSelectType[] | []> {
@@ -11,7 +11,7 @@ export async function getAllQueries(): Promise<ContactUsSelectType[] | []> {
     return [];
   }
   if (session.user.role !== "admin") {
-    await auth.api.signOut();
+    await auth.api.signOut({ headers: await headers() });
     return [];
   }
   const queries = await db.query.contactUs.findMany();

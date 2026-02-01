@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ImageUploadButton } from "@/components/image-upload-btn";
+import { ImageUploadButton } from "@/components/ImageUploader";
 import { toast } from "sonner";
 import { FieldError } from "@/components/ui/field";
 import { BlogsSelectType } from "@/db/schema";
@@ -77,7 +77,7 @@ export function EditBlogPage({ blog }: Props) {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
