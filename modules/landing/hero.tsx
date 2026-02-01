@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
 
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#00D9FF]/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#4988C4]/20 rounded-full blur-[120px] animate-pulse" />
         <div
           className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#7B2FFF]/20 rounded-full blur-[120px] animate-pulse"
           style={{ animationDelay: "1s" }}
@@ -60,13 +60,13 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-block mb-8"
             >
-              <div className="px-6 py-2.5 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/30 backdrop-blur-sm">
+              <div className="px-6 py-2.5 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/30 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <Scale className="w-4 h-4 text-[#00D9FF]" />
+                  <Scale className="w-4 h-4 text-[#4988C4]" />
                   <span className="text-sm font-bold tracking-widest text-white/90 uppercase">
                     Excellence Since 1892
                   </span>
-                  <div className="w-2 h-2 bg-[#00D9FF] rounded-full animate-pulse" />
+                  <div className="w-2 h-2 bg-[#4988C4] rounded-full animate-pulse" />
                 </div>
               </div>
             </motion.div>
@@ -152,7 +152,7 @@ export default function Hero() {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-8 h-12 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
           >
-            <motion.div className="w-1.5 h-3 bg-gradient-to-b from-[#00D9FF] to-transparent rounded-full" />
+            <motion.div className="w-1.5 h-3 bg-gradient-to-b from-[#4988C4] to-transparent rounded-full" />
           </motion.div>
         </motion.div>
       </section>

@@ -120,7 +120,7 @@ export default function WorkDetailPage() {
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-[100]">
         <motion.div
-          className="h-full bg-gradient-to-r from-[#00D9FF] via-[#00B8DD] to-[#00D9FF]"
+          className="h-full bg-gradient-to-r from-[#4988C4] via-[#00B8DD] to-[#4988C4]"
           style={{ width: `${readingProgress}%` }}
           initial={{ width: 0 }}
         />
@@ -135,7 +135,7 @@ export default function WorkDetailPage() {
               href="/our-work"
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-200 group flex-shrink-0"
             >
-              <div className="p-2 bg-white/[0.02] border border-white/10 group-hover:border-[#00D9FF]/30 transition-all duration-200">
+              <div className="p-2 bg-white/[0.02] border border-white/10 group-hover:border-[#4988C4]/30 transition-all duration-200">
                 <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform duration-200" />
               </div>
               <span className="font-bold text-sm sm:text-base hidden sm:inline">
@@ -158,7 +158,7 @@ export default function WorkDetailPage() {
             <div className="relative flex-shrink-0">
               <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/[0.02] border border-white/10 hover:border-[#00D9FF]/30 text-white/70 hover:text-white transition-all duration-200 group"
+                className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/[0.02] border border-white/10 hover:border-[#4988C4]/30 text-white/70 hover:text-white transition-all duration-200 group"
               >
                 <Share2 className="w-4 h-4 group-hover:rotate-12 transition-transform duration-200" />
                 <span className="font-bold text-sm hidden sm:inline">
@@ -210,7 +210,7 @@ export default function WorkDetailPage() {
                             icon: copied ? Check : LinkIcon,
                             label: copied ? "Copied!" : "Copy Link",
                             value: "copy",
-                            color: "hover:bg-[#00D9FF]/10 hover:text-[#00D9FF]",
+                            color: "hover:bg-[#4988C4]/10 hover:text-[#4988C4]",
                           },
                         ].map((item) => (
                           <button
@@ -237,7 +237,7 @@ export default function WorkDetailPage() {
       {/* Hero Section */}
       <div className="relative border-b border-white/5 overflow-hidden">
         {/* Animated background gradient */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D9FF] opacity-[0.03] blur-[150px] animate-pulse" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4988C4] opacity-[0.03] blur-[150px] animate-pulse" />
 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-20 lg:py-32">
           <motion.div
@@ -269,7 +269,7 @@ export default function WorkDetailPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#00D9FF]/10 border border-[#00D9FF]/30 text-[#00D9FF] text-xs sm:text-sm font-bold mb-6 sm:mb-8"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#4988C4]/10 border border-[#4988C4]/30 text-[#4988C4] text-xs sm:text-sm font-bold mb-6 sm:mb-8"
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               Featured Case Study
@@ -286,7 +286,7 @@ export default function WorkDetailPage() {
             </p>
 
             {/* Decorative line */}
-            <div className="mt-8 sm:mt-12 h-px w-24 sm:w-32 bg-gradient-to-r from-[#00D9FF] to-transparent" />
+            <div className="mt-8 sm:mt-12 h-px w-24 sm:w-32 bg-gradient-to-r from-[#4988C4] to-transparent" />
           </motion.div>
         </div>
       </div>
@@ -309,8 +309,8 @@ export default function WorkDetailPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-l-2 border-[#00D9FF]/0 group-hover:border-[#00D9FF]/50 transition-all duration-300" />
-          <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-b-2 border-r-2 border-[#00D9FF]/0 group-hover:border-[#00D9FF]/50 transition-all duration-300" />
+          <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-l-2 border-[#4988C4]/0 group-hover:border-[#4988C4]/50 transition-all duration-300" />
+          <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-b-2 border-r-2 border-[#4988C4]/0 group-hover:border-[#4988C4]/50 transition-all duration-300" />
 
           {/* Image navigation if multiple images */}
           {work.images.length > 1 && (
@@ -321,7 +321,7 @@ export default function WorkDetailPage() {
                   onClick={() => setActiveImage(idx)}
                   className={`
                     h-1.5 sm:h-2 transition-all duration-300
-                    ${activeImage === idx ? "bg-[#00D9FF] w-6 sm:w-8" : "bg-white/30 hover:bg-white/50 w-1.5 sm:w-2"}
+                    ${activeImage === idx ? "bg-[#4988C4] w-6 sm:w-8" : "bg-white/30 hover:bg-white/50 w-1.5 sm:w-2"}
                   `}
                 />
               ))}
@@ -343,7 +343,7 @@ export default function WorkDetailPage() {
                 onClick={() => setActiveImage(idx)}
                 className={`
                   aspect-video overflow-hidden border-2 transition-all duration-200 group
-                  ${activeImage === idx ? "border-[#00D9FF] scale-[1.02]" : "border-white/10 hover:border-white/30"}
+                  ${activeImage === idx ? "border-[#4988C4] scale-[1.02]" : "border-white/10 hover:border-white/30"}
                 `}
               >
                 <img
@@ -413,7 +413,7 @@ export default function WorkDetailPage() {
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
                     className="flex gap-3 sm:gap-4 text-base sm:text-lg text-white/70 leading-relaxed group"
                   >
-                    <div className="w-2 h-2 bg-[#00D9FF] mt-2 sm:mt-2.5 shrink-0 group-hover:scale-150 transition-transform duration-200" />
+                    <div className="w-2 h-2 bg-[#4988C4] mt-2 sm:mt-2.5 shrink-0 group-hover:scale-150 transition-transform duration-200" />
                     <span>{item}</span>
                   </motion.li>
                 ))}
@@ -426,14 +426,14 @@ export default function WorkDetailPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-[#00D9FF]/10 via-[#00D9FF]/5 to-transparent border border-[#00D9FF]/20 overflow-hidden group"
+              className="relative p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-[#4988C4]/10 via-[#4988C4]/5 to-transparent border border-[#4988C4]/20 overflow-hidden group"
             >
               {/* Animated background accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D9FF] opacity-[0.05] blur-[80px] group-hover:opacity-[0.1] transition-opacity duration-500" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#4988C4] opacity-[0.05] blur-[80px] group-hover:opacity-[0.1] transition-opacity duration-500" />
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                  <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-[#00D9FF] to-transparent" />
+                  <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-[#4988C4] to-transparent" />
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white">
                     Results & Impact
                   </h3>
@@ -467,12 +467,12 @@ export default function WorkDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-white/[0.02] border border-white/10 p-4 sm:p-6 hover:border-[#00D9FF]/30 transition-all duration-200 group"
+                className="bg-white/[0.02] border border-white/10 p-4 sm:p-6 hover:border-[#4988C4]/30 transition-all duration-200 group"
               >
                 <div className="text-[10px] sm:text-xs text-white/40 uppercase tracking-wider mb-2">
                   {item.label}
                 </div>
-                <div className="text-sm sm:text-base text-white font-bold truncate group-hover:text-[#00D9FF] transition-colors duration-200">
+                <div className="text-sm sm:text-base text-white font-bold truncate group-hover:text-[#4988C4] transition-colors duration-200">
                   {item.value}
                 </div>
               </motion.div>
@@ -642,7 +642,7 @@ function ErrorState({ error }: { error: string }) {
 
         <Link
           href="/our-work"
-          className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#00D9FF] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold text-sm sm:text-base transition-all duration-200 group"
+          className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#4988C4] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold text-sm sm:text-base transition-all duration-200 group"
         >
           <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform duration-200" />
           Back to All Cases

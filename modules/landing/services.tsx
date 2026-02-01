@@ -133,8 +133,8 @@ export default function Services() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(to right, #00D9FF 1px, transparent 1px),
-              linear-gradient(to bottom, #00D9FF 1px, transparent 1px)
+              linear-gradient(to right, #4988C4 1px, transparent 1px),
+              linear-gradient(to bottom, #4988C4 1px, transparent 1px)
             `,
             backgroundSize: "80px 80px",
           }}
@@ -149,8 +149,8 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/20">
-            <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/20">
+            <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
               Our Services
             </span>
           </div>
@@ -221,14 +221,14 @@ export default function Services() {
                         transition={{ delay: index * 0.1 + i * 0.05 }}
                         className="flex items-center gap-2 text-sm text-white/40"
                       >
-                        <CircleDot className="w-3 h-3 text-[#00D9FF]" />
+                        <CircleDot className="w-3 h-3 text-[#4988C4]" />
                         <span>{feature}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Arrow with Trail Effect */}
-                  <div className="flex items-center gap-2 text-white/70 group-hover:text-[#00D9FF] transition-colors">
+                  <div className="flex items-center gap-2 text-white/70 group-hover:text-[#4988C4] transition-colors">
                     <span className="text-sm font-bold uppercase tracking-wider">
                       Learn More
                     </span>

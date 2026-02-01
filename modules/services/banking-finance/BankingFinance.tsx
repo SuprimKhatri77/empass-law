@@ -156,7 +156,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
               transition={{ duration: 0.3 }}
             >
               <div className="inline-block mb-6">
-                <span className="px-6 py-2 border border-[#00D9FF]/20 bg-[#00D9FF]/5 text-[#00D9FF] text-xs font-bold tracking-widest uppercase">
+                <span className="px-6 py-2 border border-[#4988C4]/20 bg-[#4988C4]/5 text-[#4988C4] text-xs font-bold tracking-widest uppercase">
                   Services/
                 </span>
               </div>
@@ -166,7 +166,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
               <p className="text-xl sm:text-2xl text-white/70 font-bold mb-6">
                 Expertise in all aspects of Banking and Finance
               </p>
-              <div className="h-px bg-gradient-to-r from-[#00D9FF] via-[#00D9FF]/50 to-transparent w-48 mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#4988C4] via-[#4988C4]/50 to-transparent w-48 mb-8" />
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/contact"
@@ -201,7 +201,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0A0F1C]/20 via-transparent to-[#0A0F1C]/40" />
               </div>
               {/* Decorative corner */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#00D9FF]/30" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#4988C4]/30" />
             </motion.div>
           </div>
         </div>
@@ -252,7 +252,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
             <p className="text-white/60 max-w-2xl">
               We offer a range of services for lenders and borrowers, including but not limited to:
             </p>
-            <div className="h-px bg-gradient-to-r from-[#00D9FF] via-[#00D9FF]/50 to-transparent w-64 mt-6" />
+            <div className="h-px bg-gradient-to-r from-[#4988C4] via-[#4988C4]/50 to-transparent w-64 mt-6" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -269,8 +269,8 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
                   <div className="bg-white/[0.02] border border-white/10 p-6 sm:p-8 h-full hover:border-white/20 transition-all duration-200">
                     {/* Icon */}
                     <div className="mb-6">
-                      <div className="w-14 h-14 border border-white/10 flex items-center justify-center group-hover:border-[#00D9FF]/30 transition-colors duration-200">
-                        <Icon className="w-7 h-7 text-white/70 group-hover:text-[#00D9FF] transition-colors duration-200" />
+                      <div className="w-14 h-14 border border-white/10 flex items-center justify-center group-hover:border-[#4988C4]/30 transition-colors duration-200">
+                        <Icon className="w-7 h-7 text-white/70 group-hover:text-[#4988C4] transition-colors duration-200" />
                       </div>
                     </div>
 
@@ -285,7 +285,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
                     </p>
 
                     {/* Hover indicator */}
-                    {/* <div className="mt-6 flex items-center gap-2 text-sm font-bold text-white/40 group-hover:text-[#00D9FF] transition-colors duration-200">
+                    {/* <div className="mt-6 flex items-center gap-2 text-sm font-bold text-white/40 group-hover:text-[#4988C4] transition-colors duration-200">
                       <span>Learn More</span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                     </div> */}
@@ -322,10 +322,10 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={clientsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
-                className="bg-white/[0.02] border border-white/10 p-6 hover:border-[#00D9FF]/30 transition-colors duration-200"
+                className="bg-white/[0.02] border border-white/10 p-6 hover:border-[#4988C4]/30 transition-colors duration-200"
               >
                 <div className="mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-[#00D9FF]" />
+                  <CheckCircle2 className="w-8 h-8 text-[#4988C4]" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{client.title}</h3>
                 <p className="text-sm text-white/50">{client.description}</p>
@@ -346,7 +346,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
           >
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
               <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">01</div>
+                <div className="text-4xl font-black text-[#4988C4] mb-4">01</div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Extensive Experience
                 </h3>
@@ -357,7 +357,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
               </div>
 
               <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">02</div>
+                <div className="text-4xl font-black text-[#4988C4] mb-4">02</div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Specialized Expertise
                 </h3>
@@ -368,7 +368,7 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
               </div>
 
               <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">03</div>
+                <div className="text-4xl font-black text-[#4988C4] mb-4">03</div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Dual Representation
                 </h3>
@@ -417,9 +417,9 @@ const BankingFinance: React.FC<BankingFinanceProps> = ({ className = "" }) => {
 
             {/* Decorative elements */}
             <div className="mt-12 flex justify-center gap-2">
-              <div className="w-2 h-2 bg-[#00D9FF]/30" />
-              <div className="w-2 h-2 bg-[#00D9FF]/60" />
-              <div className="w-2 h-2 bg-[#00D9FF]" />
+              <div className="w-2 h-2 bg-[#4988C4]/30" />
+              <div className="w-2 h-2 bg-[#4988C4]/60" />
+              <div className="w-2 h-2 bg-[#4988C4]" />
             </div>
           </motion.div>
         </div>

@@ -81,8 +81,8 @@ export default function WhyChooseUs() {
           className="text-center mb-16 sm:mb-20"
         >
           {/* Section label */}
-          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#00D9FF]/10 to-[#00FF9D]/10 border border-[#00D9FF]/20">
-            <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#4988C4]/10 to-[#00FF9D]/10 border border-[#4988C4]/20">
+            <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
               Why choose us
             </span>
           </div>

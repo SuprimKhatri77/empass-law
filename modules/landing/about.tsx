@@ -15,7 +15,7 @@ export default function About() {
     >
       {/* Decorative Elements */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-[#7B2FFF]/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#00D9FF]/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#4988C4]/10 rounded-full blur-[120px]" />
 
       <div className="relative max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -42,7 +42,7 @@ export default function About() {
                       Excellence
                     </div>
                   </div>
-                  <div className="h-px w-full bg-gradient-to-r from-[#00D9FF]/50 to-transparent" />
+                  <div className="h-px w-full bg-gradient-to-r from-[#4988C4]/50 to-transparent" />
                   <div className="flex items-center gap-4">
                     <div className="text-4xl sm:text-5xl font-black text-gray-50">
                       50+
@@ -62,10 +62,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-8 -right-8 p-6 bg-gradient-to-br from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/30 backdrop-blur-sm hidden sm:block"
+                className="absolute -bottom-8 -right-8 p-6 bg-gradient-to-br from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/30 backdrop-blur-sm hidden sm:block"
               >
                 <div className="flex items-center gap-3">
-                  <Award className="w-8 h-8 text-[#00D9FF]" />
+                  <Award className="w-8 h-8 text-[#4988C4]" />
                   <div>
                     <div className="text-xs text-white/50 uppercase tracking-wider">
                       Award Winning
@@ -88,8 +88,8 @@ export default function About() {
             className="space-y-8"
           >
             <div>
-              <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/20">
-                <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+              <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/20">
+                <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
                   About Us
                 </span>
               </div>
@@ -126,7 +126,7 @@ export default function About() {
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="p-6 bg-white/[0.02] border border-white/5"
                 >
-                  <stat.icon className="w-8 h-8 text-[#00D9FF] mb-3" />
+                  <stat.icon className="w-8 h-8 text-[#4988C4] mb-3" />
                   <div className="text-2xl sm:text-3xl font-black text-white mb-1">
                     {stat.value}
                   </div>
@@ -139,7 +139,7 @@ export default function About() {
 
             <Link
               href="/about"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/30 text-white font-bold hover:bg-[#00D9FF]/20 transition-all"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/30 text-white font-bold hover:bg-[#4988C4]/20 transition-all"
             >
               <span>Know More</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />

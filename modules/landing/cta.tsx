@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function CTA() {
   return (
     <section className="relative py-20 sm:py-32 bg-[#0A0F1C] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00D9FF]/5 to-[#7B2FFF]/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#4988C4]/5 to-[#7B2FFF]/5" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#7B2FFF]/20 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D9FF]/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4988C4]/20 rounded-full blur-[120px]" />
 
       <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <motion.div

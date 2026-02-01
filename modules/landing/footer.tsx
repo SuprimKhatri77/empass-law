@@ -99,8 +99,8 @@ export default function Footer() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-            linear-gradient(to right, #00D9FF 1px, transparent 1px),
-            linear-gradient(to bottom, #00D9FF 1px, transparent 1px)
+            linear-gradient(to right, #4988C4 1px, transparent 1px),
+            linear-gradient(to bottom, #4988C4 1px, transparent 1px)
           `,
             backgroundSize: "80px 80px",
           }}
@@ -108,7 +108,7 @@ export default function Footer() {
       </div>
 
       {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#4988C4] to-transparent" />
 
       {/* Newsletter Section */}
       <div className="relative border-b border-white/5">
@@ -120,8 +120,8 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-block px-4 py-1.5 mb-4 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/20">
-                <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+              <div className="inline-block px-4 py-1.5 mb-4 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/20">
+                <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
                   Newsletter
                 </span>
               </div>
@@ -149,10 +149,10 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-[#00D9FF] transition-all"
+                    className="w-full px-6 py-4 bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-[#4988C4] transition-all"
                     required
                   />
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00D9FF]/20 to-[#7B2FFF]/20 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#4988C4]/20 to-[#7B2FFF]/20 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -198,18 +198,18 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="tel:+442071234567"
-                className="group flex items-center gap-3 text-white/60 hover:text-[#00D9FF] transition-colors"
+                className="group flex items-center gap-3 text-white/60 hover:text-[#4988C4] transition-colors"
               >
-                <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#00D9FF]/50 transition-all">
+                <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#4988C4]/50 transition-all">
                   <Phone className="w-4 h-4" />
                 </div>
                 <span className="text-sm font-medium">+44 20 7123 4567</span>
               </a>
               <a
                 href="mailto:info@chambers.law"
-                className="group flex items-center gap-3 text-white/60 hover:text-[#00D9FF] transition-colors"
+                className="group flex items-center gap-3 text-white/60 hover:text-[#4988C4] transition-colors"
               >
-                <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#00D9FF]/50 transition-all">
+                <div className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#4988C4]/50 transition-all">
                   <Mail className="w-4 h-4" />
                 </div>
                 <span className="text-sm font-medium">info@chambers.law</span>
@@ -242,7 +242,7 @@ export default function Footer() {
                 >
                   <social.icon className="w-5 h-5 text-white/70 group-hover:text-white relative z-10 transition-colors" />
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#00D9FF]/20 to-[#7B2FFF]/20"
+                    className="absolute inset-0 bg-gradient-to-br from-[#4988C4]/20 to-[#7B2FFF]/20"
                     initial={{ y: "100%" }}
                     animate={{ y: hoveredSocial === index ? 0 : "100%" }}
                     transition={{ duration: 0.2 }}
@@ -273,7 +273,7 @@ export default function Footer() {
                         href={link.href}
                         className="group flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm"
                       >
-                        <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#00D9FF]" />
+                        <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#4988C4]" />
                         <span>{link.label}</span>
                       </Link>
                     </li>
@@ -297,21 +297,21 @@ export default function Footer() {
             <div className="flex items-center gap-8">
               <Link
                 href="/privacy"
-                className="text-white/40 hover:text-[#00D9FF] transition-colors"
+                className="text-white/40 hover:text-[#4988C4] transition-colors"
               >
                 Privacy Policy
               </Link>
               <div className="w-px h-4 bg-white/10" />
               <Link
                 href="/terms"
-                className="text-white/40 hover:text-[#00D9FF] transition-colors"
+                className="text-white/40 hover:text-[#4988C4] transition-colors"
               >
                 Terms of Service
               </Link>
               <div className="w-px h-4 bg-white/10" />
               <Link
                 href="/cookies"
-                className="text-white/40 hover:text-[#00D9FF] transition-colors"
+                className="text-white/40 hover:text-[#4988C4] transition-colors"
               >
                 Cookies
               </Link>

@@ -14,6 +14,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Type definitions
 interface Service {
@@ -35,7 +36,7 @@ const SERVICES: Service[] = [
   {
     id: "corporate-law",
     title: "Corporate Law",
-    slug: "./services/corporate-law",
+    slug: "corporate-law",
     icon: Building2,
     description:
       "Comprehensive corporate legal services including mergers and acquisitions, private equity, corporate finance, and company formation. Our dual-qualified team provides strategic guidance on complex corporate matters.",
@@ -52,7 +53,7 @@ const SERVICES: Service[] = [
   {
     id: "commercial-law",
     title: "Commercial Law",
-    slug: "./services/commercial-law",
+    slug: "commercial-law",
     icon: FileText,
     description:
       "Expert advice on commercial contracts, agreements, and business transactions. We help businesses navigate complex commercial relationships and protect their interests.",
@@ -69,7 +70,7 @@ const SERVICES: Service[] = [
   {
     id: "banking-finance",
     title: "Banking & Finance",
-    slug: "./services/banking-finance",
+    slug: "banking-finance",
     icon: Banknote,
     description:
       "Specialized banking and finance legal services covering lending, secured transactions, and financial regulations. We advise lenders, borrowers, and financial institutions.",
@@ -86,7 +87,7 @@ const SERVICES: Service[] = [
   {
     id: "litigation-adr",
     title: "Litigation & ADR",
-    slug: "./services/litigation-and-adr",
+    slug: "litigation-and-adr",
     icon: Scale,
     description:
       "Experienced commercial litigation and alternative dispute resolution services. Our team handles complex disputes in County and High Courts with strategic, solution-driven approach.",
@@ -103,7 +104,7 @@ const SERVICES: Service[] = [
   {
     id: "employment-law",
     title: "Employment Law",
-    slug: "./services/employment-law",
+    slug: "employment-law",
     icon: Briefcase,
     description:
       "Comprehensive employment law services for employers and employees. From contracts to tribunal representation, we provide practical advice on all employment matters.",
@@ -186,7 +187,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-block mb-6">
-              <span className="px-6 py-2 border border-[#00D9FF]/20 bg-[#00D9FF]/5 text-[#00D9FF] text-xs font-bold tracking-widest uppercase">
+              <span className="px-6 py-2 border border-[#4988C4]/20 bg-[#4988C4]/5 text-[#4988C4] text-xs font-bold tracking-widest uppercase">
                 Our Services
               </span>
             </div>
@@ -201,7 +202,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
 
             {/* Accent Line */}
             <div className="mt-8 flex justify-center">
-              <div className="h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent w-64" />
+              <div className="h-px bg-gradient-to-r from-transparent via-[#4988C4] to-transparent w-64" />
             </div>
           </motion.div>
         </div>
@@ -244,7 +245,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
                       </div>
 
                       {/* Decorative Corner */}
-                      <div className="absolute -top-3 -right-3 w-12 h-12 border-t-2 border-r-2 border-[#00D9FF]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      <div className="absolute -top-3 -right-3 w-12 h-12 border-t-2 border-r-2 border-[#4988C4]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     </div>
 
                     {/* Content */}
@@ -252,8 +253,8 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
                       <div className="bg-white/[0.02] border border-white/10 p-8 sm:p-10 transition-colors duration-200 group-hover:border-white/20">
                         {/* Icon */}
                         <div className="mb-6">
-                          <div className="w-16 h-16 border border-white/10 flex items-center justify-center transition-colors duration-200 group-hover:border-[#00D9FF]/30">
-                            <Icon className="w-8 h-8 text-white/70 group-hover:text-[#00D9FF] transition-colors duration-200" />
+                          <div className="w-16 h-16 border border-white/10 flex items-center justify-center transition-colors duration-200 group-hover:border-[#4988C4]/30">
+                            <Icon className="w-8 h-8 text-white/70 group-hover:text-[#4988C4] transition-colors duration-200" />
                           </div>
                         </div>
 
@@ -267,13 +268,13 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
 
                         {/* Features */}
                         <div className="mb-8">
-                          <h3 className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] mb-4">
+                          <h3 className="text-xs font-bold tracking-widest uppercase text-[#4988C4] mb-4">
                             Key Services
                           </h3>
                           <ul className="grid sm:grid-cols-2 gap-3">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start gap-2 text-sm text-white/50">
-                                <CheckCircle2 className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-4 h-4 text-[#4988C4] flex-shrink-0 mt-0.5" />
                                 <span>{feature}</span>
                               </li>
                             ))}
@@ -281,14 +282,14 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
                         </div>
 
                         {/* CTA */}
-                        <a
-                          href={`/${service.slug}`}
-                          className="inline-flex items-center gap-2 text-sm font-bold text-white/70 hover:text-[#00D9FF] transition-colors duration-200"
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="inline-flex items-center gap-2 text-sm font-bold text-white/70 hover:text-[#4988C4] transition-colors duration-200"
                           aria-label={`Learn more about ${service.title}`}
                         >
                           <span>Learn More</span>
                           <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -315,7 +316,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
             className="grid lg:grid-cols-3 gap-6 sm:gap-8"
           >
             <div className="bg-white/[0.02] border border-white/10 p-8 hover:border-white/20 transition-colors duration-200">
-              <div className="text-4xl font-black text-[#00D9FF] mb-4">01</div>
+              <div className="text-4xl font-black text-[#4988C4] mb-4">01</div>
               <h3 className="text-xl font-bold text-white mb-3">
                 Unwavering Dedication
               </h3>
@@ -326,7 +327,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
             </div>
 
             <div className="bg-white/[0.02] border border-white/10 p-8 hover:border-white/20 transition-colors duration-200">
-              <div className="text-4xl font-black text-[#00D9FF] mb-4">02</div>
+              <div className="text-4xl font-black text-[#4988C4] mb-4">02</div>
               <h3 className="text-xl font-bold text-white mb-3">
                 Trusted Partnership
               </h3>
@@ -337,7 +338,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
             </div>
 
             <div className="bg-white/[0.02] border border-white/10 p-8 hover:border-white/20 transition-colors duration-200">
-              <div className="text-4xl font-black text-[#00D9FF] mb-4">03</div>
+              <div className="text-4xl font-black text-[#4988C4] mb-4">03</div>
               <h3 className="text-xl font-bold text-white mb-3">
                 Desired Outcomes
               </h3>
@@ -370,7 +371,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#00D9FF] hover:bg-[#00D9FF]/90 text-[#0A0F1C] font-bold px-8 py-4 transition-colors duration-200 group"
+                className="inline-flex items-center justify-center gap-2 bg-[#4988C4] hover:bg-[#4988C4]/90 text-[#0A0F1C] font-bold px-8 py-4 transition-colors duration-200 group"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-200" />
@@ -385,9 +386,9 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
 
             {/* Decorative elements */}
             <div className="mt-12 flex justify-center gap-2">
-              <div className="w-2 h-2 bg-[#00D9FF]/30" />
-              <div className="w-2 h-2 bg-[#00D9FF]/60" />
-              <div className="w-2 h-2 bg-[#00D9FF]" />
+              <div className="w-2 h-2 bg-[#4988C4]/30" />
+              <div className="w-2 h-2 bg-[#4988C4]/60" />
+              <div className="w-2 h-2 bg-[#4988C4]" />
             </div>
           </motion.div>
         </div>

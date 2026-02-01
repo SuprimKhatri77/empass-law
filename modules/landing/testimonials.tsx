@@ -76,7 +76,7 @@ export default function Testimonials() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 sm:w-6 sm:h-6 fill-[#00D9FF] text-[#00D9FF]"
+                    className="w-5 h-5 sm:w-6 sm:h-6 fill-[#4988C4] text-[#4988C4]"
                   />
                 ))}
               </div>
@@ -103,7 +103,7 @@ export default function Testimonials() {
                 onClick={() => setCurrentTestimonial(index)}
                 className={`transition-all ${
                   index === currentTestimonial
-                    ? "w-12 h-3 bg-[#00D9FF]"
+                    ? "w-12 h-3 bg-[#4988C4]"
                     : "w-3 h-3 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

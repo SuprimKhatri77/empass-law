@@ -53,8 +53,8 @@ export default function Process() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#00D9FF]/10 to-[#00FF9D]/10 border border-[#00D9FF]/20">
-            <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+          <div className="inline-block px-6 py-2 mb-6 bg-gradient-to-r from-[#4988C4]/10 to-[#00FF9D]/10 border border-[#4988C4]/20">
+            <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
               Our Process
             </span>
           </div>
@@ -66,7 +66,7 @@ export default function Process() {
         {/* Desktop Timeline */}
         <div className="hidden lg:block relative">
           {/* Connecting Line */}
-          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent" />
+          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4988C4] to-transparent" />
 
           <div className="grid grid-cols-4 gap-8">
             {process.map((item, index) => (
@@ -89,7 +89,7 @@ export default function Process() {
 
                   {/* Pulse Ring */}
                   <motion.div
-                    className="absolute inset-0 border-2 border-[#00D9FF]"
+                    className="absolute inset-0 border-2 border-[#4988C4]"
                     animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{
                       duration: 2,

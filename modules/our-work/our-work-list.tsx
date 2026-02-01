@@ -51,7 +51,7 @@ export default function OurWorkPage() {
           />
         </div>
 
-        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#00D9FF] opacity-[0.05] blur-[150px]" />
+        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#4988C4] opacity-[0.05] blur-[150px]" />
 
         <div className="relative max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-20 lg:py-32">
           <motion.div
@@ -61,8 +61,8 @@ export default function OurWorkPage() {
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <Briefcase className="w-7 h-7 sm:w-10 sm:h-10 text-[#00D9FF]" />
-              <div className="h-px flex-1 max-w-[60px] sm:max-w-[100px] bg-gradient-to-r from-[#00D9FF] to-transparent" />
+              <Briefcase className="w-7 h-7 sm:w-10 sm:h-10 text-[#4988C4]" />
+              <div className="h-px flex-1 max-w-[60px] sm:max-w-[100px] bg-gradient-to-r from-[#4988C4] to-transparent" />
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-4 sm:mb-6 tracking-tight">
@@ -182,7 +182,7 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               </div>
 
               {/* Title */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight group-hover:text-[#00D9FF] transition-colors duration-300">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight group-hover:text-[#4988C4] transition-colors duration-300">
                 {work.title}
               </h2>
 
@@ -192,13 +192,13 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               </p>
 
               {/* CTA */}
-              <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-[#00D9FF] font-bold group-hover:gap-3 sm:group-hover:gap-4 transition-all duration-300">
+              <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-[#4988C4] font-bold group-hover:gap-3 sm:group-hover:gap-4 transition-all duration-300">
                 <span>Read Full Case Study</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
 
               {/* Decorative line */}
-              <div className="mt-6 sm:mt-8 h-px w-16 sm:w-24 bg-gradient-to-r from-[#00D9FF] to-transparent" />
+              <div className="mt-6 sm:mt-8 h-px w-16 sm:w-24 bg-gradient-to-r from-[#4988C4] to-transparent" />
             </motion.div>
           </div>
 
@@ -215,7 +215,7 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               whileInView={isFirst ? undefined : { opacity: 1, x: 0 }}
               viewport={isFirst ? undefined : { once: true }}
               transition={{ duration: 0.6, delay: isFirst ? 0.3 : 0.2 }}
-              className="relative aspect-[4/3] overflow-hidden bg-[#0D1425] border border-white/10 group-hover:border-[#00D9FF]/30 transition-colors duration-300"
+              className="relative aspect-[4/3] overflow-hidden bg-[#0D1425] border border-white/10 group-hover:border-[#4988C4]/30 transition-colors duration-300"
             >
               {/* Image */}
               <motion.img
@@ -238,8 +238,8 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-t border-r border-[#00D9FF]/0 group-hover:border-[#00D9FF]/30 transition-all duration-300" />
-              <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-b border-l border-[#00D9FF]/0 group-hover:border-[#00D9FF]/30 transition-all duration-300" />
+              <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-t border-r border-[#4988C4]/0 group-hover:border-[#4988C4]/30 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-b border-l border-[#4988C4]/0 group-hover:border-[#4988C4]/30 transition-all duration-300" />
             </motion.div>
           </div>
         </div>
@@ -308,7 +308,7 @@ function ErrorState({
 
         <button
           onClick={onRetry}
-          className="px-6 sm:px-8 py-3 sm:py-4 bg-[#00D9FF] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold text-sm sm:text-base transition-colors duration-200 flex items-center gap-2 mx-auto group"
+          className="px-6 sm:px-8 py-3 sm:py-4 bg-[#4988C4] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold text-sm sm:text-base transition-colors duration-200 flex items-center gap-2 mx-auto group"
         >
           <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
           Try Again

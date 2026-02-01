@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
           />
         </div>
 
-        <div className="absolute top-20 left-0 w-96 h-96 bg-[#00D9FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-0 w-96 h-96 bg-[#4988C4]/10 rounded-full blur-[120px]" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
@@ -182,9 +182,9 @@ export default function PrivacyPolicyPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-2 mb-6 bg-[#00D9FF]/10 border border-[#00D9FF]/20">
-              <Shield className="w-4 h-4 text-[#00D9FF]" />
-              <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+            <div className="inline-flex items-center gap-3 px-6 py-2 mb-6 bg-[#4988C4]/10 border border-[#4988C4]/20">
+              <Shield className="w-4 h-4 text-[#4988C4]" />
+              <span className="text-xs font-bold tracking-widest text-[#4988C4] uppercase">
                 Legal Document
               </span>
             </div>
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="flex items-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-white/50">
-                <CheckCircle2 className="w-4 h-4 text-[#00D9FF]" />
+                <CheckCircle2 className="w-4 h-4 text-[#4988C4]" />
                 <span>GDPR Compliant</span>
               </div>
               <div className="w-px h-4 bg-white/20" />
@@ -229,9 +229,9 @@ export default function PrivacyPolicyPage() {
                 <a
                   key={index}
                   href={`#${section.title.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="group flex items-center gap-3 p-4 bg-white/[0.02] border border-white/5 hover:border-[#00D9FF]/30 transition-all"
+                  className="group flex items-center gap-3 p-4 bg-white/[0.02] border border-white/5 hover:border-[#4988C4]/30 transition-all"
                 >
-                  <section.icon className="w-5 h-5 text-[#00D9FF] flex-shrink-0" />
+                  <section.icon className="w-5 h-5 text-[#4988C4] flex-shrink-0" />
                   <span className="text-sm text-white/70 group-hover:text-white transition-colors">
                     {section.title}
                   </span>
@@ -259,14 +259,14 @@ export default function PrivacyPolicyPage() {
               >
                 {/* Section Header */}
                 <div className="flex items-start gap-6 mb-8">
-                  <div className="w-14 h-14 bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center flex-shrink-0">
-                    <section.icon className="w-7 h-7 text-[#00D9FF]" />
+                  <div className="w-14 h-14 bg-[#4988C4]/10 border border-[#4988C4]/20 flex items-center justify-center flex-shrink-0">
+                    <section.icon className="w-7 h-7 text-[#4988C4]" />
                   </div>
                   <div className="flex-1">
                     <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
                       {section.title}
                     </h2>
-                    <div className="h-[2px] w-16 bg-[#00D9FF]" />
+                    <div className="h-[2px] w-16 bg-[#4988C4]" />
                   </div>
                 </div>
 
@@ -295,7 +295,7 @@ export default function PrivacyPolicyPage() {
                                 key={itemIndex}
                                 className="flex items-start gap-3 group"
                               >
-                                <div className="w-1.5 h-1.5 bg-[#00D9FF] flex-shrink-0 mt-2.5" />
+                                <div className="w-1.5 h-1.5 bg-[#4988C4] flex-shrink-0 mt-2.5" />
                                 <span className="text-white/60 leading-relaxed group-hover:text-white/70 transition-colors">
                                   {item}
                                 </span>
@@ -324,14 +324,14 @@ export default function PrivacyPolicyPage() {
               className="scroll-mt-32"
             >
               <div className="flex items-start gap-6 mb-8">
-                <div className="w-14 h-14 bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center flex-shrink-0">
-                  <Eye className="w-7 h-7 text-[#00D9FF]" />
+                <div className="w-14 h-14 bg-[#4988C4]/10 border border-[#4988C4]/20 flex items-center justify-center flex-shrink-0">
+                  <Eye className="w-7 h-7 text-[#4988C4]" />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
                     Cookies
                   </h2>
-                  <div className="h-[2px] w-16 bg-[#00D9FF]" />
+                  <div className="h-[2px] w-16 bg-[#4988C4]" />
                 </div>
               </div>
 
@@ -358,14 +358,14 @@ export default function PrivacyPolicyPage() {
               className="scroll-mt-32"
             >
               <div className="flex items-start gap-6 mb-8">
-                <div className="w-14 h-14 bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-7 h-7 text-[#00D9FF]" />
+                <div className="w-14 h-14 bg-[#4988C4]/10 border border-[#4988C4]/20 flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-7 h-7 text-[#4988C4]" />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
                     Changes to This Policy
                   </h2>
-                  <div className="h-[2px] w-16 bg-[#00D9FF]" />
+                  <div className="h-[2px] w-16 bg-[#4988C4]" />
                 </div>
               </div>
 
@@ -391,14 +391,14 @@ export default function PrivacyPolicyPage() {
               className="scroll-mt-32"
             >
               <div className="flex items-start gap-6 mb-8">
-                <div className="w-14 h-14 bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-7 h-7 text-[#00D9FF]" />
+                <div className="w-14 h-14 bg-[#4988C4]/10 border border-[#4988C4]/20 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-7 h-7 text-[#4988C4]" />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
                     Contact Us
                   </h2>
-                  <div className="h-[2px] w-16 bg-[#00D9FF]" />
+                  <div className="h-[2px] w-16 bg-[#4988C4]" />
                 </div>
               </div>
 
@@ -409,7 +409,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <a
                   href="mailto:info@empasslaw.com"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D9FF]/10 border border-[#00D9FF]/30 text-[#00D9FF] font-bold hover:bg-[#00D9FF]/20 transition-all"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#4988C4]/10 border border-[#4988C4]/30 text-[#4988C4] font-bold hover:bg-[#4988C4]/20 transition-all"
                 >
                   <Mail className="w-5 h-5" />
                   info@empasslaw.com
@@ -437,7 +437,7 @@ export default function PrivacyPolicyPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D9FF] text-white font-bold hover:bg-[#0088BB] transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#4988C4] text-white font-bold hover:bg-[#0088BB] transition-all"
               >
                 Contact Us
                 <ChevronRight className="w-5 h-5" />

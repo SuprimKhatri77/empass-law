@@ -115,7 +115,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
           className="max-w-3xl text-center mx-auto mb-16 sm:mb-24"
         >
           <div className="inline-block mb-6">
-            <span className="px-6 py-2 border border-[#00D9FF]/20 bg-[#00D9FF]/5 text-[#00D9FF] text-xs font-bold tracking-widest uppercase">
+            <span className="px-6 py-2 border border-[#4988C4]/20 bg-[#4988C4]/5 text-[#4988C4] text-xs font-bold tracking-widest uppercase">
               About Empass Law
             </span>
           </div>
@@ -152,7 +152,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
               </p>
             </div>
 
-            <div className="bg-white/[0.02] border border-white/10 p-8 sm:p-12 group hover:border-[#00D9FF]/30 transition-colors duration-200">
+            <div className="bg-white/[0.02] border border-white/10 p-8 sm:p-12 group hover:border-[#4988C4]/30 transition-colors duration-200">
               <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">
                 Our Commitment
               </h3>
@@ -162,7 +162,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
                 to deliver strategic, solution-driven advice.
               </p>
               <div className="pt-6 border-t border-white/10">
-                <p className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] mb-2">
+                <p className="text-xs font-bold tracking-widest uppercase text-[#4988C4] mb-2">
                   Location
                 </p>
                 <p className="text-white/70">
@@ -184,7 +184,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
             <h3 className="text-3xl sm:text-4xl font-black text-white mb-4">
               Our Values
             </h3>
-            <div className="h-px bg-gradient-to-r from-[#00D9FF] via-[#00D9FF]/50 to-transparent w-48" />
+            <div className="h-px bg-gradient-to-r from-[#4988C4] via-[#4988C4]/50 to-transparent w-48" />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -199,8 +199,8 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
                   className="bg-white/[0.02] border border-white/10 p-6 group hover:border-white/20 transition-all duration-200"
                 >
                   <div className="mb-6">
-                    <div className="w-12 h-12 border border-white/10 flex items-center justify-center group-hover:border-[#00D9FF]/30 transition-colors duration-200">
-                      <Icon className="w-6 h-6 text-white/70 group-hover:text-[#00D9FF] transition-colors duration-200" />
+                    <div className="w-12 h-12 border border-white/10 flex items-center justify-center group-hover:border-[#4988C4]/30 transition-colors duration-200">
+                      <Icon className="w-6 h-6 text-white/70 group-hover:text-[#4988C4] transition-colors duration-200" />
                     </div>
                   </div>
                   <h4 className="text-lg font-bold text-white mb-3">
@@ -225,7 +225,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
             <h3 className="text-3xl sm:text-4xl text-center font-black text-white mb-4">
               Our Team
             </h3>
-            <div className="h-px bg-gradient-to-r mx-auto from-[#00D9FF]/50 via-[#00D9FF] to-[#00D9FF]/50 w-48" />
+            <div className="h-px bg-gradient-to-r mx-auto from-[#4988C4]/50 via-[#4988C4] to-[#4988C4]/50 w-48" />
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -255,7 +255,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
                     {/* Content */}
                     <div className="p-6">
                       <h4 className="text-xl font-bold text-white mb-2">{member.name}</h4>
-                      <p className="text-sm text-[#00D9FF] font-bold tracking-wide uppercase mb-4">
+                      <p className="text-sm text-[#4988C4] font-bold tracking-wide uppercase mb-4">
                         {member.role}
                       </p>
 
@@ -292,7 +292,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
                         onClick={() =>
                           setExpandedMember(isExpanded ? null : member.id)
                         }
-                        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[#00D9FF] transition-colors duration-200 group/btn"
+                        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[#4988C4] transition-colors duration-200 group/btn"
                         aria-label={`Learn more about ${member.name}`}
                       >
                         <span>{isExpanded ? "Show Less" : "Know More"}</span>
@@ -325,7 +325,7 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({ className = "" }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#00D9FF] hover:bg-[#00D9FF]/90 text-[#0A0F1C] font-bold px-8 py-4 transition-colors duration-200 group"
+                className="inline-flex items-center justify-center gap-2 bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-bold px-8 py-4 transition-colors duration-200 group"
               >
                 <span>Get in Touch</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-200" />

@@ -115,7 +115,7 @@ export default function Navbar() {
                     <span
                       className={`relative z-10 text-xs 2xl:text-sm font-medium tracking-wide transition-colors whitespace-nowrap ${
                         isActive
-                          ? "text-[#00D9FF]"
+                          ? "text-[#4988C4]"
                           : "text-white/90 group-hover:text-white"
                       }`}
                     >
@@ -126,7 +126,7 @@ export default function Navbar() {
                     {/* {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/50"
+                        className="absolute inset-0 bg-gradient-to-r from-[#4988C4]/10 to-[#7B2FFF]/10 border border-[#4988C4]/50"
                         transition={{
                           type: "spring",
                           bounce: 0.2,
@@ -144,7 +144,7 @@ export default function Navbar() {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/20 to-[#7B2FFF]/20 border border-[#00D9FF]/30"
+                          className="absolute inset-0 bg-gradient-to-r from-[#4988C4]/20 to-[#7B2FFF]/20 border border-[#4988C4]/30"
                         />
                       )}
                     </AnimatePresence>
@@ -167,7 +167,7 @@ export default function Navbar() {
                   <ArrowUpRight className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </motion.span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#7B2FFF] to-[#00D9FF]"
+                  className="absolute inset-0 bg-gradient-to-r from-[#7B2FFF] to-[#4988C4]"
                   initial={{ x: "100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -193,7 +193,7 @@ export default function Navbar() {
 
         {/* Animated border line */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent"
+          className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#4988C4] to-transparent"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: isScrolled ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -239,14 +239,14 @@ export default function Navbar() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`group block relative p-3 sm:p-4 border transition-all ${
                             isActive
-                              ? "border-[#00D9FF]/50 bg-[#00D9FF]/5"
-                              : "border-white/5 hover:border-[#00D9FF]/30"
+                              ? "border-[#4988C4]/50 bg-[#4988C4]/5"
+                              : "border-white/5 hover:border-[#4988C4]/30"
                           }`}
                         >
                           <span
                             className={`text-base sm:text-lg md:text-xl transition-colors ${
                               isActive
-                                ? "text-[#00D9FF] font-semibold"
+                                ? "text-[#4988C4] font-semibold"
                                 : "text-white/90 group-hover:text-white"
                             }`}
                           >
@@ -255,8 +255,8 @@ export default function Navbar() {
                           <ArrowUpRight
                             className={`absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 transition-all ${
                               isActive
-                                ? "text-[#00D9FF]"
-                                : "text-white/30 group-hover:text-[#00D9FF] group-hover:translate-x-1 group-hover:-translate-y-3"
+                                ? "text-[#4988C4]"
+                                : "text-white/30 group-hover:text-[#4988C4] group-hover:translate-x-1 group-hover:-translate-y-3"
                             }`}
                           />
 
@@ -264,7 +264,7 @@ export default function Navbar() {
                           {isActive && (
                             <motion.div
                               layoutId="activeMobile"
-                              className="absolute left-0 top-0 bottom-0 w-1 bg-[#00D9FF]"
+                              className="absolute left-0 top-0 bottom-0 w-1 bg-[#4988C4]"
                               transition={{
                                 type: "spring",
                                 bounce: 0.2,
