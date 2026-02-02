@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Scale, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import HolographicScale from "./holographic";
 
 // Commented stats for future use
 // const stats: Stat[] = [
@@ -47,97 +48,101 @@ export default function Hero() {
         />
 
         <div className="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 py-32 lg:py-40">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-5xl mx-auto"
-          >
-            {/* Badge */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Side - Text Content */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block mb-8"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
             >
-              <div className="px-6 py-2.5 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/30 backdrop-blur-sm">
-                <div className="flex items-center gap-3">
-                  <Scale className="w-4 h-4 text-[#00D9FF]" />
-                  <span className="text-sm font-bold tracking-widest text-white/90 uppercase">
-                    Excellence Since 1892
-                  </span>
-                  <div className="w-2 h-2 bg-[#00D9FF] rounded-full animate-pulse" />
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block mb-8"
+              >
+                <div className="px-6 py-2.5 bg-gradient-to-r from-[#00D9FF]/10 to-[#7B2FFF]/10 border border-[#00D9FF]/30 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <Scale className="w-4 h-4 text-[#00D9FF]" />
+                    <span className="text-sm font-bold tracking-widest text-white/90 uppercase">
+                      Excellence Since 1892
+                    </span>
+                    <div className="w-2 h-2 bg-[#00D9FF] rounded-full animate-pulse" />
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tight"
-            >
-              <span className="block bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-                Elite Legal
-              </span>
-              <span className="block bg-gradient-to-r from-[#1A3263] via-[#249E94] to-[#09637E] bg-clip-text text-transparent">
-                Solutions
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-12 leading-relaxed px-4"
-            >
-              London's premier law firm delivering exceptional results in
-              high-stakes matters. Trusted by FTSE 100 companies and innovative
-              startups alike.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4"
-            >
-              <Link
-                href="/contact"
-                className="
-                        group relative w-full sm:w-auto
-                        px-8 sm:px-10 py-4 sm:py-5
-                        bg-[#0f172a]
-                        text-[#d4af37]
-                        border-2 border-[#d4af37]
-                        hover:bg-[#d4af37] hover:text-[#0f172a]
-                        font-semibold
-                        transition-all duration-300
-      "
+              {/* Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-[1.1] tracking-tight"
               >
-                <motion.span
-                  className="flex items-center gap-3"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Book Consultation
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </motion.span>
-              </Link>
-
-              <Link
-                href="/our-work"
-                className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white font-bold hover:bg-white/5 transition-all text-base sm:text-lg"
-              >
-                <span className="flex items-center justify-center gap-3 whitespace-nowrap">
-                  View Case Studies
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="block bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+                  Elite Legal
                 </span>
-              </Link>
+                <span className="block bg-gradient-to-r from-[#1A3263] via-[#249E94] to-[#09637E] bg-clip-text text-transparent">
+                  Solutions
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 max-w-2xl mb-12 leading-relaxed"
+              >
+                London&apos;s premier law firm delivering exceptional results in
+                high-stakes matters. Trusted by FTSE 100 companies and
+                innovative startups alike.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
+              >
+                <Link
+                  href="/contact"
+                  className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-[#0f172a] text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#0f172a] font-semibold transition-all duration-300"
+                >
+                  <motion.span
+                    className="flex items-center justify-center gap-3"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book Consultation
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </motion.span>
+                </Link>
+
+                <Link
+                  href="/our-work"
+                  className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-white/20 text-white font-bold hover:bg-white/5 transition-all text-base sm:text-lg"
+                >
+                  <span className="flex items-center justify-center gap-3 whitespace-nowrap">
+                    View Case Studies
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right Side - 3D Holographic Scale */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="hidden lg:flex items-center justify-center"
+            >
+              <HolographicScale />
+            </motion.div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
