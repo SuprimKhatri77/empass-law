@@ -21,14 +21,14 @@
   background: linear-gradient(180deg, #020617, #020617);
 }
 
-/* Selection */
+/* Selection - law firm gold accent */
 ::selection {
-  background: rgba(0, 217, 255, 0.3);
+  background: rgba(201, 162, 39, 0.35);
   color: white;
 }
 
 ::-moz-selection {
-  background: rgba(0, 217, 255, 0.3);
+  background: rgba(201, 162, 39, 0.35);
   color: white;
 }
 @custom-variant dark (&:is(.dark *));
@@ -142,11 +142,26 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Typography hierarchy – display (serif) vs body (sans) */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/modules/landing/navbar";
 import Footer from "@/modules/landing/footer";
 import LenisProvider from "@/modules/providers/LenisProvider";
-import { inter, raleway, roboto } from "@/utils/font/font";
+import { dmSans, instrumentSerif } from "@/utils/font/font";
 import { NavbarFooterProviderWrapper } from "@/components/providers/nav-footer-wrapper";
 
 export const metadata: Metadata = {
@@ -20,8 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${roboto.className} antialiased bg-[#0A0F1C]/98`}>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${dmSans.variable}`}
+    >
+      <body className={`${dmSans.className} antialiased bg-stone-50`}>
         <LenisProvider>
           <ReactQueryProvider>
             <NavbarFooterProviderWrapper>

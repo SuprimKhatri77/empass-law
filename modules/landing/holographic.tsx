@@ -51,13 +51,13 @@ export default function LegalHologram() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0x00d9ff, 1, 100);
+    const pointLight = new THREE.PointLight(0xc9a227, 1, 100);
     pointLight.position.set(5, 5, 5);
     scene.add(pointLight);
 
     // Material for dotted lines
     const dottedMaterial = new THREE.PointsMaterial({
-      color: 0xffffff,
+      color: 0xf5f0e6,
       size: 0.05,
       transparent: true,
       opacity: 0.9,
@@ -65,10 +65,10 @@ export default function LegalHologram() {
     });
 
     const glowMaterial = new THREE.PointsMaterial({
-      color: 0x00d9ff,
+      color: 0xc9a227,
       size: 0.08,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.35,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
     });
@@ -561,32 +561,32 @@ export default function LegalHologram() {
         transition={{ duration: 0.8 }}
       >
         {/* Minimal frame */}
-        <div className="absolute inset-0 border border-white/5">
+        {/* <div className="absolute inset-0 border border-white/5">
           <div className="absolute top-0 left-0 w-16 h-16 border-t border-l border-white/20" />
           <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-white/20" />
           <div className="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-white/20" />
           <div className="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-white/20" />
-        </div>
+        </div> */}
 
         {/* 3D Canvas */}
         <div ref={containerRef} className="w-full h-full" />
 
-        {/* Scanline effect */}
+        {/* Subtle scanline - law firm aesthetic */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <motion.div
-            className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"
+            className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#C9A227]/20 to-transparent"
             animate={{ y: [0, 600] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           />
         </div>
 
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{
             backgroundImage: `
-              linear-gradient(to right, white 1px, transparent 1px),
-              linear-gradient(to bottom, white 1px, transparent 1px)
+              linear-gradient(to right, rgba(201, 162, 39, 0.3) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(201, 162, 39, 0.3) 1px, transparent 1px)
             `,
             backgroundSize: "30px 30px",
           }}
@@ -594,7 +594,7 @@ export default function LegalHologram() {
       </motion.div>
 
       {/* Object label */}
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         <motion.div
           key={currentObject}
           initial={{ opacity: 0, y: 10 }}
@@ -607,10 +607,10 @@ export default function LegalHologram() {
             {objectName}
           </span>
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Corner labels */}
-      <motion.div
+      {/* <motion.div
         className="absolute top-6 left-6 px-3 py-1.5 bg-black/30 border border-white/10"
         animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 2, repeat: Infinity }}
@@ -624,7 +624,7 @@ export default function LegalHologram() {
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
       >
         <span className="text-xs font-mono text-white/70">LEGAL SYSTEM</span>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

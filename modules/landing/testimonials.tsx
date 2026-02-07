@@ -1,115 +1,83 @@
 "use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
-interface Testimonial {
-  quote: string;
-  author: string;
-  position: string;
-  rating: number;
-}
-
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
-    quote:
-      "Exceptional strategic insight and flawless execution. Their corporate team handled our £500M merger with surgical precision.",
+    quote: "Exceptional strategic insight and flawless execution. Their corporate team handled our £500M merger with precision.",
     author: "James Anderson",
     position: "CEO, TechVentures Group",
-    rating: 5,
   },
   {
-    quote:
-      "Best litigation team in London. They secured an outstanding result in our complex IP dispute. Simply outstanding.",
+    quote: "Best litigation team in London. They secured an outstanding result in our complex IP dispute.",
     author: "Sarah Mitchell",
     position: "General Counsel, InnovateCorp",
-    rating: 5,
   },
   {
-    quote:
-      "Professional, responsive, and incredibly knowledgeable. They've been our trusted legal partners for over 15 years.",
+    quote: "Professional, responsive and incredibly knowledgeable. Trusted legal partners for over 15 years.",
     author: "David Chen",
     position: "Managing Director, Sterling Properties",
-    rating: 5,
   },
 ];
 
 export default function Testimonials() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    const t = setInterval(() => setCurrent((c) => (c + 1) % testimonials.length), 5000);
+    return () => clearInterval(t);
   }, []);
-  return (
-    <section className="relative py-20 sm:py-32 bg-[#0A0F1C] overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B2FFF]/10 rounded-full blur-[150px]" />
-      </div>
 
-      <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+  return (
+    <section className="py-20 sm:py-28 bg-white">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <Quote className="w-16 sm:w-20 h-16 sm:h-20 text-[#7B2FFF]/20 mx-auto mb-8" />
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent px-4">
-            Client Testimonials
-          </h2>
+          <Quote className="w-12 h-12 text-amber-200 mx-auto mb-6" />
+          <h2 className="text-3xl sm:text-4xl font-bold text-stone-900">Client testimonials</h2>
         </motion.div>
 
-        <div className="relative min-h-[300px] sm:min-h-[350px]">
+        <div className="relative min-h-[220px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentTestimonial}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.5 }}
+              key={current}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35 }}
               className="text-center"
             >
-              <div className="flex justify-center gap-1 mb-8">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 sm:w-6 sm:h-6 fill-[#00D9FF] text-[#00D9FF]"
-                  />
+              <div className="flex justify-center gap-1 mb-6">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-
-              <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium text-white/90 mb-8 leading-relaxed px-4">
-                "{testimonials[currentTestimonial].quote}"
+              <blockquote className="text-xl sm:text-2xl text-stone-700 mb-8 leading-relaxed">
+                &ldquo;{testimonials[current].quote}&rdquo;
               </blockquote>
-
-              <div className="space-y-2">
-                <div className="text-lg sm:text-xl font-bold text-white">
-                  {testimonials[currentTestimonial].author}
-                </div>
-                <div className="text-sm sm:text-base text-white/50">
-                  {testimonials[currentTestimonial].position}
-                </div>
-              </div>
+              <p className="font-semibold text-stone-900">{testimonials[current].author}</p>
+              <p className="text-sm text-stone-500">{testimonials[current].position}</p>
             </motion.div>
           </AnimatePresence>
+        </div>
 
-          <div className="flex justify-center gap-3 mt-12">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentTestimonial(index)}
-                className={`transition-all ${
-                  index === currentTestimonial
-                    ? "w-12 h-3 bg-[#00D9FF]"
-                    : "w-3 h-3 bg-white/20 hover:bg-white/40"
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
+        <div className="flex justify-center gap-2 mt-8">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Testimonial ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all ${
+                i === current ? "w-8 bg-amber-600" : "w-1.5 bg-stone-300 hover:bg-stone-400"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

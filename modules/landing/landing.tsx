@@ -1,29 +1,16 @@
-import About from "./about";
-import CTA from "./cta";
 import Hero from "./hero";
-import Insights from "./insights";
-import Process from "./process";
-import Services from "./services";
-import Testimonials from "./testimonials";
-import WhyChooseUs from "./why-choose-use";
+import About from "./about";
+import Expertise from "./expertise";
+import Why from "./why";
+import CTA from "./cta";
 
 export default function Landing() {
   return (
-    <main className="bg-[#0A0F1C] text-white overflow-hidden">
+    <main className="bg-stone-50 text-stone-900 overflow-hidden">
       <Hero />
-
-      <Services />
-
       <About />
-
-      <WhyChooseUs />
-
-      <Process />
-
-      <Testimonials />
-
-      <Insights />
-
+      <Expertise />
+      <Why />
       <CTA />
     </main>
   );

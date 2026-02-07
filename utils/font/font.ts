@@ -1,11 +1,26 @@
 import {
+  DM_Sans,
+  Instrument_Serif,
   Geist,
   Geist_Mono,
   Inter,
-  Poppins,
   Raleway,
   Roboto,
 } from "next/font/google";
+
+/** Editorial display – headlines, pull quotes (AG/Khaitan style) */
+export const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+});
+
+/** Body & UI – clean, readable */
+export const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+});
 
 export const raleway = Raleway({
   subsets: ["latin"],
@@ -18,11 +33,6 @@ export const inter = Inter({
 });
 
 export const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
