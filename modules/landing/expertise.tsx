@@ -1,89 +1,199 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { useInView } from "framer-motion";
+import {
+  ArrowRight,
+  Scale,
+  Briefcase,
+  Users,
+  Building2,
+  FileText,
+  Home,
+} from "lucide-react";
+import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 import { useRef } from "react";
-import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 
 interface Practice {
   title: string;
   href: string;
   description: string;
+  icon: LucideIcon;
+  color: string;
 }
 
 const PRACTICES: Practice[] = [
-  { title: "Corporate", href: "/services/corporate-law", description: "M&A, governance, restructuring." },
-  { title: "Litigation & ADR", href: "/services/litigation-and-adr", description: "Disputes, arbitration, mediation." },
-  { title: "Employment", href: "/services/employment", description: "Contracts, tribunals, compliance." },
-  { title: "Banking & Finance", href: "/services/banking-finance", description: "Finance, regulatory, transactions." },
-  { title: "Commercial", href: "/services/commercial-law", description: "Contracts, partnerships, IP." },
-  { title: "Real Estate", href: "/services/property", description: "Commercial and residential." },
+  {
+    title: "Corporate & M&A",
+    href: "/services/corporate-law",
+    description:
+      "Strategic advice on mergers, acquisitions, joint ventures, and corporate restructuring for domestic and cross-border transactions.",
+    icon: Building2,
+    color: "#f59e0b",
+  },
+  {
+    title: "Litigation & Dispute Resolution",
+    href: "/services/litigation-and-adr",
+    description:
+      "Robust representation in commercial litigation, arbitration, and mediation across all major forums and tribunals.",
+    icon: Scale,
+    color: "#57534e",
+  },
+  {
+    title: "Employment & HR",
+    href: "/services/employment",
+    description:
+      "Comprehensive employment law counsel covering contracts, disputes, restructures, and regulatory compliance.",
+    icon: Users,
+    color: "#2563eb",
+  },
+  {
+    title: "Banking & Finance",
+    href: "/services/banking-finance",
+    description:
+      "Expert guidance on corporate finance, lending, restructuring, and regulatory matters in financial services.",
+    icon: Briefcase,
+    color: "#059669",
+  },
+  {
+    title: "Commercial Contracts",
+    href: "/services/commercial-law",
+    description:
+      "Drafting and negotiating complex commercial agreements, partnerships, IP licensing, and technology contracts.",
+    icon: FileText,
+    color: "#7c3aed",
+  },
+  {
+    title: "Real Estate",
+    href: "/services/property",
+    description:
+      "Full-service property law expertise covering acquisitions, development, leasing, and real estate finance.",
+    icon: Home,
+    color: "#e11d48",
+  },
 ];
 
-export default function Expertise() {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const reduce = useReducedMotion();
+interface CardProps {
+  i: number;
+  practice: Practice;
+  progress: MotionValue<number>;
+  range: [number, number];
+  targetScale: number;
+}
+
+export const Card: React.FC<CardProps> = ({
+  i,
+  practice,
+  progress,
+  range,
+  targetScale,
+}) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "start start"],
+  });
+
+  const iconScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(progress, range, [1, targetScale]);
+
+  const Icon = practice.icon;
 
   return (
-    <section ref={ref} className="py-20 sm:py-28 lg:py-32 bg-stone-50">
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : reduce ? {} : undefined}
-          transition={{ duration: 0.5 }}
-          className="mb-14"
-        >
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-stone-500 mb-4">
-            Expertise
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-stone-900 leading-tight tracking-tight max-w-2xl">
-            Facilitating commercial legal solutions.
-          </h2>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PRACTICES.map((practice, i) => (
-            <motion.div
-              key={practice.href}
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : reduce ? {} : undefined}
-              transition={{ duration: 0.4, delay: reduce ? 0 : i * 0.06 }}
-            >
+    <div
+      ref={container}
+      className="h-screen flex items-center justify-center sticky top-0"
+    >
+      <motion.div
+        style={{
+          backgroundColor: practice.color,
+          scale,
+          top: `calc(-5vh + ${i * 25}px)`,
+        }}
+        className="flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md lg:p-10 sm:p-4 p-2 origin-top"
+      >
+        <h2 className="text-2xl text-center font-semibold text-white">
+          {practice.title}
+        </h2>
+        <div className="flex h-full mt-5 gap-10">
+          <div className="w-[40%] relative top-[10%]">
+            <p className="text-sm text-white/90">{practice.description}</p>
+            <span className="flex items-center gap-2 pt-2">
               <Link
                 href={practice.href}
-                className="group block p-6 sm:p-8 bg-white border border-stone-200 rounded-lg hover:border-stone-300 hover:shadow-sm transition-all"
+                className="underline cursor-pointer text-white"
               >
-                <h3 className="text-lg font-semibold text-stone-900 mb-2 group-hover:text-stone-700">
-                  {practice.title}
-                </h3>
-                <p className="text-stone-600 text-sm mb-4">{practice.description}</p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-700 group-hover:gap-2 transition-all">
-                  Explore
-                  <ArrowRight className="w-4 h-4" aria-hidden />
-                </span>
+                See more
               </Link>
-            </motion.div>
-          ))}
-        </div>
+              <svg
+                width="22"
+                height="12"
+                viewBox="0 0 22 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+          </div>
 
-        <motion.div
-          initial={reduce ? false : { opacity: 0 }}
-          animate={inView ? { opacity: 1 } : reduce ? {} : undefined}
-          transition={{ duration: 0.4, delay: reduce ? 0 : 0.35 }}
-          className="mt-10"
-        >
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-stone-900 font-semibold hover:underline underline-offset-4"
-          >
-            View all practice areas
-            <ArrowRight className="w-4 h-4" aria-hidden />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+          <div className="relative w-[60%] h-full rounded-lg overflow-hidden">
+            <motion.div className="w-full h-full" style={{ scale: iconScale }}>
+              <div className="w-full h-full flex items-center justify-center bg-white/10">
+                <Icon className="w-32 h-32 text-white/80" strokeWidth={1} />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default function Expertise() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  return (
+    <main className="bg-black" ref={container}>
+      <section className="text-white h-[70vh] w-full bg-slate-950 grid place-content-center">
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+
+        <h1 className="2xl:text-7xl text-5xl px-8 font-semibold text-center tracking-tight leading-[120%] relative z-10">
+          Our Practice Areas
+          <br />
+          Scroll down! 👇
+        </h1>
+      </section>
+
+      <section className="text-white w-full bg-slate-950">
+        {PRACTICES.map((practice, i) => {
+          const targetScale = 1 - (PRACTICES.length - i) * 0.05;
+          return (
+            <Card
+              key={`p_${i}`}
+              i={i}
+              practice={practice}
+              progress={scrollYProgress}
+              range={[i * 0.25, 1]}
+              targetScale={targetScale}
+            />
+          );
+        })}
+      </section>
+
+      <footer className="group bg-slate-950">
+        <h1 className="text-[16vw] translate-y-20 leading-[100%] uppercase font-semibold text-center bg-gradient-to-r from-neutral-400 to-neutral-800 bg-clip-text text-transparent transition-all ease-linear">
+          Legal Excellence
+        </h1>
+        <div className="bg-black h-40 relative z-10 grid place-content-center text-2xl rounded-tr-full rounded-tl-full"></div>
+      </footer>
+    </main>
   );
 }

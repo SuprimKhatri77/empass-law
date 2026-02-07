@@ -2,16 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ReactQueryProvider } from "@/components/providers/react-query-provider";
 import { Toaster } from "@/components/ui/sonner";
-import Navbar from "@/modules/landing/navbar";
-import Footer from "@/modules/landing/footer";
 import LenisProvider from "@/modules/providers/LenisProvider";
 import { dmSans, instrumentSerif } from "@/utils/font/font";
 import { NavbarFooterProviderWrapper } from "@/components/providers/nav-footer-wrapper";
+import LoadingProvider from "@/components/providers/loading-proivder";
 
 export const metadata: Metadata = {
-  title: "Empass Law",
+  title: "Empass Law - Premier London Legal Services",
   description:
-    "Services We are not just your legal advisors; we are your trusted partners. With Empass Law, you can expect unwavering dedication, integrity, and a strong",
+    "A London-headquartered law firm delivering exceptional legal outcomes for clients worldwide since 1892. Expert counsel in corporate, litigation, employment, and more.",
 };
 
 export default function RootLayout({
@@ -25,14 +24,16 @@ export default function RootLayout({
       className={`${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <body className={`${dmSans.className} antialiased bg-stone-50`}>
-        <LenisProvider>
-          <ReactQueryProvider>
-            <NavbarFooterProviderWrapper>
-              {children}
-            </NavbarFooterProviderWrapper>
-            <Toaster />
-          </ReactQueryProvider>
-        </LenisProvider>
+        <LoadingProvider>
+          <LenisProvider>
+            <ReactQueryProvider>
+              <NavbarFooterProviderWrapper>
+                {children}
+              </NavbarFooterProviderWrapper>
+              <Toaster />
+            </ReactQueryProvider>
+          </LenisProvider>
+        </LoadingProvider>
       </body>
     </html>
   );
