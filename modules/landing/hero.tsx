@@ -174,7 +174,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[1px] h-16 bg-gradient-to-b from-stone-700 to-transparent"
+            className="w-[1px] h-16 bg-linear-to-b from-stone-700 to-transparent"
           />
         </motion.div>
       )}
