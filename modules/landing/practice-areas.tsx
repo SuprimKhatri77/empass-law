@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -92,23 +92,58 @@ const PRACTICES: Practice[] = [
 function HorizontalCards() {
   const sectionRef = useRef<HTMLElement>(null);
   const ulRef = useRef<HTMLUListElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const items = document.querySelectorAll(".practice-item");
 
     if (ulRef.current && sectionRef.current && items.length > 0) {
+      // Use will-change and transform3d for hardware acceleration
+      if (ulRef.current) {
+        ulRef.current.style.willChange = "transform";
+      }
+
       const controls = animate(ulRef.current, {
         transform: ["none", `translateX(-${(items.length - 1) * 100}vw)`],
       });
 
-      scroll(controls, { target: sectionRef.current });
+      scroll(controls, {
+        target: sectionRef.current,
+      });
+
+      return () => {
+        if (ulRef.current) {
+          ulRef.current.style.willChange = "auto";
+        }
+      };
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <section ref={sectionRef} className="h-[600vh] relative">
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
-        <ul ref={ulRef} className="flex h-full bg-white">
+        <ul
+          ref={ulRef}
+          className="flex h-full bg-white"
+          style={{
+            // Force hardware acceleration
+            backfaceVisibility: "hidden",
+            perspective: 1000,
+            transform: "translate3d(0, 0, 0)",
+          }}
+        >
           {PRACTICES.map((practice, index) => {
             const Icon = practice.icon;
             const isLast = index === PRACTICES.length - 1;
@@ -119,6 +154,9 @@ function HorizontalCards() {
                 className="practice-item h-screen w-screen flex-shrink-0 flex flex-col justify-center items-center relative bg-white"
                 style={{
                   backgroundImage: `linear-gradient(135deg, ${practice.color}25 0%, ${practice.color}10 50%, white 100%)`,
+                  // Hardware acceleration for each card
+                  transform: "translate3d(0, 0, 0)",
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <div className="w-full h-full flex items-center justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
@@ -153,13 +191,22 @@ function HorizontalCards() {
 
                     {/* Image Side */}
                     <div className="relative">
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                      <div
+                        className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+                        style={{
+                          // Hardware acceleration for images
+                          transform: "translate3d(0, 0, 0)",
+                          backfaceVisibility: "hidden",
+                        }}
+                      >
                         <Image
                           src={practice.image}
                           alt={practice.title}
                           fill
                           className="object-cover"
                           sizes="(max-width: 1024px) 90vw, 45vw"
+                          loading={index === 0 ? "eager" : "lazy"}
+                          quality={isMobile ? 75 : 85}
                         />
 
                         {/* Gradient Overlay */}

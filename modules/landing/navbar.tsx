@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
   label: string;
@@ -21,6 +22,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
+
+const useDifferentNavBgRoutes = ["/about", "/services"];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -63,11 +66,16 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-stone-200 shadow-sm"
-            : "bg-transparent"
-        }`}
+        className={cn(
+          `fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
+            scrolled
+              ? "bg-white/95 backdrop-blur-xl border-b border-stone-200 shadow-sm"
+              : "bg-transparent"
+          }`,
+          useDifferentNavBgRoutes.includes(pathname) &&
+            !scrolled &&
+            "bg-stone-900",
+        )}
       >
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
