@@ -3,15 +3,17 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Building2,
-  FileText,
-  TrendingUp,
+  Heart,
   Users,
+  FileText,
+  Globe,
+  Scale,
+  Home,
+  Baby,
   Shield,
-  Briefcase,
   ArrowRight,
   CheckCircle2,
-  Scale,
+  Handshake,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -27,96 +29,89 @@ interface ClientType {
   description: string;
 }
 
-interface CorporateLawProps {
+interface FamilyLawProps {
   className?: string;
 }
 
 const SERVICE_OFFERINGS: ServiceOffering[] = [
   {
-    id: "shareholders-agreement",
-    title: "Shareholders Agreement",
-    icon: Users,
+    id: "divorce-civil-partnership",
+    title: "Divorce & Civil Partnership",
+    icon: Heart,
     description:
-      "Comprehensive shareholder agreements that protect interests and define rights, obligations, and dispute resolution mechanisms.",
+      "Expert guidance through divorce and civil partnership dissolution with a focus on achieving the best outcome for you and your family.",
   },
   {
-    id: "corporate-governance",
-    title: "Corporate Governance",
-    icon: Shield,
+    id: "financial-disputes",
+    title: "Financial Disputes",
+    icon: Scale,
     description:
-      "Expert guidance on corporate governance structures, compliance, and best practices to ensure effective management.",
+      "Resolution of financial matters arising from relationship breakdown, including asset division and spousal maintenance arrangements.",
   },
   {
-    id: "share-purchase",
-    title: "Sale and Purchase of Shares",
-    icon: TrendingUp,
+    id: "child-arrangements",
+    title: "Child Arrangement Orders",
+    icon: Baby,
     description:
-      "Strategic advice on share transactions, including valuations, negotiations, and documentation for seamless transfers.",
+      "Practical advice on child arrangements including residence, contact, and relocation matters both within the UK and abroad.",
   },
   {
-    id: "due-diligence",
-    title: "Due Diligence",
+    id: "pre-post-nuptials",
+    title: "Pre & Post Nuptial Agreements",
     icon: FileText,
     description:
-      "Thorough due diligence investigations covering legal, financial, and commercial aspects of corporate transactions.",
+      "Comprehensive prenuptial and postnuptial agreements with fixed fees and flexible pricing to protect your assets and interests.",
   },
   {
-    id: "investment-agreement",
-    title: "Investment Agreement",
-    icon: Briefcase,
+    id: "cohabitation-agreements",
+    title: "Cohabitation Agreements",
+    icon: Home,
     description:
-      "Drafting and negotiating investment agreements to secure funding while protecting stakeholder interests.",
+      "Tailored cohabitation agreements for unmarried couples living together, establishing clear rights and responsibilities.",
   },
   {
-    id: "asset-purchase",
-    title: "Sale and Purchase of Business Assets",
-    icon: Building2,
+    id: "separation-agreements",
+    title: "Separation Agreements",
+    icon: Handshake,
     description:
-      "Complete asset transaction services including structuring, documentation, and regulatory compliance.",
+      "Negotiation and drafting of separation agreements to formalize arrangements without court proceedings.",
   },
   {
-    id: "partnership-agreement",
-    title: "Partnership Agreement",
-    icon: Users,
+    id: "international-disputes",
+    title: "Complex International Disputes",
+    icon: Globe,
     description:
-      "Tailored partnership agreements that establish clear terms, profit sharing, and governance structures.",
+      "Specialist expertise in cross-border family disputes involving multiple jurisdictions and international asset portfolios.",
   },
   {
-    id: "capital-raising",
-    title: "Capital Raising",
-    icon: TrendingUp,
+    id: "change-name-deed",
+    title: "Change of Name Deed",
+    icon: FileText,
     description:
-      "Strategic support for capital raising initiatives, including equity and debt financing arrangements.",
-  },
-  {
-    id: "corporate-reorganisation",
-    title: "Corporate Reorganisation",
-    icon: Building2,
-    description:
-      "Expert advice on restructuring, mergers, demergers, and other corporate reorganization transactions.",
+      "Efficient preparation of change of name deeds for adults and children with proper legal documentation.",
   },
 ];
 
 const CLIENT_TYPES: ClientType[] = [
   {
-    title: "Multi-National Corporations",
-    description: "Large international companies requiring sophisticated corporate legal support",
+    title: "UK Families",
+    description: "Domestic families requiring expert family law guidance and representation",
   },
   {
-    title: "Publicly Listed Companies",
-    description: "Public companies with complex compliance and governance requirements",
+    title: "International Families",
+    description: "Cross-border families with connections to multiple jurisdictions worldwide",
   },
   {
-    title: "Small Family Businesses",
-    description: "Family-run enterprises seeking personalized corporate legal guidance",
+    title: "High Net Worth Individuals",
+    description: "Clients with complex asset portfolios requiring sophisticated financial dispute resolution",
   },
   {
-    title: "Start-ups",
-    description: "Emerging businesses needing strategic corporate formation and growth support",
+    title: "Cohabiting Couples",
+    description: "Unmarried partners seeking to establish legal protections and clear arrangements",
   },
 ];
 
-const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
+const FamilyLaw: React.FC<FamilyLawProps> = ({ className = "" }) => {
   const headerRef = React.useRef<HTMLElement>(null);
   const descriptionRef = React.useRef<HTMLDivElement>(null);
   const servicesRef = React.useRef<HTMLDivElement>(null);
@@ -150,34 +145,34 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="inline-flex items-center gap-2 mb-8">
-                <Scale className="w-4 h-4 text-amber-600" />
+                <Heart className="w-4 h-4 text-amber-600" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-stone-600">
                   Expert Legal Counsel
                 </span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-stone-900 mb-6 leading-[1.1]">
-                Corporate Law
+                Family Law
               </h1>
 
               <p className="text-xl sm:text-2xl text-stone-600 font-light mb-12 leading-relaxed">
-                Expertise in all aspects of Corporate Law
+                Expertise in all aspects of Family Law
               </p>
 
               <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mb-12" />
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
+                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+                >
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-
                 <a
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
+                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+                >
                   <span>All Services</span>
                 </a>
               </div>
@@ -196,7 +191,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             {/* Image */}
             <Image
-              src="/services/Corporate-Law-banner.webp"
+              src="/services/Family-Law-Banner.jpg"
               alt="Commercial Law"
               fill
               priority
@@ -238,18 +233,26 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             <div className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-20">
               <h2 className="text-3xl sm:text-4xl font-light text-stone-900 mb-8 leading-tight">
-                Dynamic and Pragmatic Legal Advice
+                Compassionate and Pragmatic Family Law Services
               </h2>
               <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
                 <p>
-                  The corporate department consists of experienced and commercially aware corporate
-                  solicitors and legal counsel who provide dynamic and pragmatic advice to assist you
-                  and your business.
+                  We have a team of dedicated solicitors and lawyers who understand that family law
+                  proceedings can be very stressful and costly. Our aim is to resolve your family
+                  matter as efficiently and sensitively as possible, always keeping your best
+                  interests at the forefront.
                 </p>
                 <p>
-                  Our clients range from large multi-national companies and publicly listed companies
-                  to small family-run businesses and start-ups, all of whom are given the same level
-                  of commitment, experience, and communication from the team.
+                  Our family department offers a wealth of experience in all aspects of family law,
+                  from divorce and financial disputes to child arrangements and international cases.
+                  We take great care in listening to your needs to ensure you have the right
+                  solicitor with the appropriate experience and approach to support you throughout
+                  the process.
+                </p>
+                <p>
+                  With strong links to professionals in jurisdictions worldwide—including the Middle
+                  East, Central Asia, Japan, Korea, North America, China, India, Pakistan, Hong Kong,
+                  and Europe—we are well-equipped to handle complex international family disputes.
                 </p>
               </div>
             </div>
@@ -266,12 +269,12 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="mb-16 text-center"
           >
             <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-6">
-              Our Corporate Law Services
+              Our Family Law Services
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              We provide advice on a range of corporate matters, including but not limited to:
+              Our family team provides comprehensive legal services including:
             </p>
-            <div className="h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
+            <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +299,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-[3.5rem] flex items-center">
+                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-14 flex items-center">
                       {service.title}
                     </h3>
 
@@ -323,8 +326,8 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               Who We Serve
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              From multinational corporations to start-ups, every client receives the same level of
-              commitment and expertise.
+              From domestic families to international clients, we provide expert family law services
+              tailored to your unique circumstances.
             </p>
           </motion.div>
 
@@ -364,33 +367,33 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">01</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Experienced Team
+                  International Expertise
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Our corporate solicitors bring years of experience and commercial awareness to
-                  every engagement.
+                  Strong links with professionals across multiple jurisdictions enable us to handle
+                  complex cross-border family disputes effectively.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">02</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Equal Commitment
+                  Conciliatory Approach
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Every client, regardless of size, receives the same dedication and quality of
-                  service from our team.
+                  While experienced in court proceedings, we prioritize pragmatic settlement
+                  solutions wherever possible to reduce stress and costs.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">03</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Pragmatic Solutions
+                  Flexible Pricing
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We deliver practical, business-focused advice tailored to your specific needs and
-                  objectives.
+                  We offer both fixed fees and flexible pricing options, particularly for
+                  prenuptial and postnuptial agreements.
                 </p>
               </div>
             </div>
@@ -407,27 +410,25 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-24 text-center"
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-stone-900 mb-8 leading-tight">
-              Need Corporate Legal Support?
+              Need Family Law Support?
             </h2>
             <p className="text-lg text-stone-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Contact us now to inquire about our corporate law services and discover how our
-              experienced team can support your business objectives.
+              Contact us now to discuss your family law matter with our experienced team. We're here
+              to provide the support and guidance you need during this important time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
-
+                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+              >
                 <span>Contact Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
-
               <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
-
+                href="/about-us"
+                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+              >
                 <span>Meet Our Team</span>
               </a>
             </div>
@@ -439,9 +440,9 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             </div>
           </motion.div>
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 };
 
-export default CorporateLaw;
+export default FamilyLaw;

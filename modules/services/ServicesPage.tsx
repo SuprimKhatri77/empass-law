@@ -120,7 +120,7 @@ const SERVICES: Service[] = [
   {
     id: "property-law",
     title: "Property Law",
-    slug: "property-law",
+    slug: "./services/property-law",
     icon: Home,
     description:
       "Expert property law services for residential and commercial transactions. Specializing in prime London properties, complex structures, and lending requirements for ultra-high net worth clients.",
@@ -137,7 +137,7 @@ const SERVICES: Service[] = [
   {
     id: "family-law",
     title: "Family Law",
-    slug: "family-law",
+    slug: "./services/family-law",
     icon: Heart,
     description:
       "Sensitive and strategic family law services covering divorce, separation, financial disputes, and children matters. Expertise in complex international cases with pragmatic approach.",
@@ -201,7 +201,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ className = "" }) => {
 
             {/* Accent Line */}
             <div className="mt-8 flex justify-center">
-              <div className="h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent w-64" />
+              <div className="h-px bg-linear-to-r from-transparent via-[#00D9FF] to-transparent w-64" />
             </div>
           </motion.div>
         </div>

@@ -3,15 +3,15 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Building2,
   FileText,
-  TrendingUp,
+  Scale,
   Users,
-  Shield,
-  Briefcase,
+  AlertTriangle,
+  FileCheck,
+  ShieldCheck,
   ArrowRight,
   CheckCircle2,
-  Scale,
+  Briefcase,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -27,96 +27,75 @@ interface ClientType {
   description: string;
 }
 
-interface CorporateLawProps {
+interface EmploymentLawProps {
   className?: string;
 }
 
 const SERVICE_OFFERINGS: ServiceOffering[] = [
   {
-    id: "shareholders-agreement",
-    title: "Shareholders Agreement",
-    icon: Users,
-    description:
-      "Comprehensive shareholder agreements that protect interests and define rights, obligations, and dispute resolution mechanisms.",
-  },
-  {
-    id: "corporate-governance",
-    title: "Corporate Governance",
-    icon: Shield,
-    description:
-      "Expert guidance on corporate governance structures, compliance, and best practices to ensure effective management.",
-  },
-  {
-    id: "share-purchase",
-    title: "Sale and Purchase of Shares",
-    icon: TrendingUp,
-    description:
-      "Strategic advice on share transactions, including valuations, negotiations, and documentation for seamless transfers.",
-  },
-  {
-    id: "due-diligence",
-    title: "Due Diligence",
+    id: "contracts-employment",
+    title: "Contracts of Employment",
     icon: FileText,
     description:
-      "Thorough due diligence investigations covering legal, financial, and commercial aspects of corporate transactions.",
+      "Comprehensive drafting and review of employment contracts, and expert advice on varying contractual terms to ensure legal compliance.",
   },
   {
-    id: "investment-agreement",
-    title: "Investment Agreement",
-    icon: Briefcase,
+    id: "wrongful-dismissal",
+    title: "Wrongful Dismissal & Unfair Dismissal Claims",
+    icon: AlertTriangle,
     description:
-      "Drafting and negotiating investment agreements to secure funding while protecting stakeholder interests.",
+      "Strategic representation in wrongful and unfair dismissal claims, protecting your rights and interests in employment disputes.",
   },
   {
-    id: "asset-purchase",
-    title: "Sale and Purchase of Business Assets",
-    icon: Building2,
+    id: "employment-tribunal",
+    title: "Employment Tribunal Representation",
+    icon: Scale,
     description:
-      "Complete asset transaction services including structuring, documentation, and regulatory compliance.",
+      "Expert representation and issuing of claims in employment tribunals with extensive litigation experience.",
   },
   {
-    id: "partnership-agreement",
-    title: "Partnership Agreement",
+    id: "disciplinary-grievance",
+    title: "Disciplinary & Grievance Procedures",
     icon: Users,
     description:
-      "Tailored partnership agreements that establish clear terms, profit sharing, and governance structures.",
+      "Guidance on implementing fair disciplinary and grievance procedures that comply with employment law requirements.",
   },
   {
-    id: "capital-raising",
-    title: "Capital Raising",
-    icon: TrendingUp,
+    id: "settlement-agreements",
+    title: "Settlement Agreements",
+    icon: FileCheck,
     description:
-      "Strategic support for capital raising initiatives, including equity and debt financing arrangements.",
+      "Negotiation and review of settlement agreements to ensure favorable terms and proper protection of your interests.",
   },
   {
-    id: "corporate-reorganisation",
-    title: "Corporate Reorganisation",
-    icon: Building2,
+    id: "restrictive-covenants",
+    title: "Restrictive Covenants",
+    icon: ShieldCheck,
     description:
-      "Expert advice on restructuring, mergers, demergers, and other corporate reorganization transactions.",
+      "Drafting and enforcing restrictive covenants including non-compete, non-solicitation, and confidentiality clauses.",
   },
 ];
 
 const CLIENT_TYPES: ClientType[] = [
   {
-    title: "Multi-National Corporations",
-    description: "Large international companies requiring sophisticated corporate legal support",
+    title: "Domestic Organizations",
+    description: "UK-based companies requiring employment law compliance and advisory services",
   },
   {
-    title: "Publicly Listed Companies",
-    description: "Public companies with complex compliance and governance requirements",
+    title: "National Businesses",
+    description: "Multi-location businesses needing consistent employment law guidance",
   },
   {
-    title: "Small Family Businesses",
-    description: "Family-run enterprises seeking personalized corporate legal guidance",
+    title: "International Organizations",
+    description: "Global companies navigating UK employment regulations and cross-border issues",
   },
   {
-    title: "Start-ups",
-    description: "Emerging businesses needing strategic corporate formation and growth support",
+    title: "Individual Employees",
+    description: "Employees seeking representation and advice on employment rights and disputes",
   },
 ];
 
-const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
+const EmploymentLaw: React.FC<EmploymentLawProps> = ({ className = "" }) => {
   const headerRef = React.useRef<HTMLElement>(null);
   const descriptionRef = React.useRef<HTMLDivElement>(null);
   const servicesRef = React.useRef<HTMLDivElement>(null);
@@ -150,34 +129,34 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="inline-flex items-center gap-2 mb-8">
-                <Scale className="w-4 h-4 text-amber-600" />
+                <Briefcase className="w-4 h-4 text-amber-600" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-stone-600">
                   Expert Legal Counsel
                 </span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-stone-900 mb-6 leading-[1.1]">
-                Corporate Law
+                Employment Law
               </h1>
 
               <p className="text-xl sm:text-2xl text-stone-600 font-light mb-12 leading-relaxed">
-                Expertise in all aspects of Corporate Law
+                Expertise in all aspects of Employment Law
               </p>
 
               <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mb-12" />
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
+                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+                >
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-
                 <a
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
+                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+                >
                   <span>All Services</span>
                 </a>
               </div>
@@ -196,7 +175,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             {/* Image */}
             <Image
-              src="/services/Corporate-Law-banner.webp"
+              src="/services/Employment-Law-banner.webp"
               alt="Commercial Law"
               fill
               priority
@@ -229,6 +208,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
         </div>
       </section>
 
+
       <section ref={descriptionRef} className="relative py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
@@ -238,18 +218,19 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             <div className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-20">
               <h2 className="text-3xl sm:text-4xl font-light text-stone-900 mb-8 leading-tight">
-                Dynamic and Pragmatic Legal Advice
+                Comprehensive Employment Law Services
               </h2>
               <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
                 <p>
-                  The corporate department consists of experienced and commercially aware corporate
-                  solicitors and legal counsel who provide dynamic and pragmatic advice to assist you
-                  and your business.
+                  We advise several domestic, national and international organizations on
+                  employment-related issues, both in litigation, consultancy, and advisory
+                  transactions. We ensure our clients are compliant with employment laws.
                 </p>
                 <p>
-                  Our clients range from large multi-national companies and publicly listed companies
-                  to small family-run businesses and start-ups, all of whom are given the same level
-                  of commitment, experience, and communication from the team.
+                  Our employment team provides expert guidance on all aspects of employment law,
+                  from drafting contracts and varying terms to representing clients in employment
+                  tribunals. We deliver practical solutions that protect both employers and
+                  employees while ensuring full compliance with current employment legislation.
                 </p>
               </div>
             </div>
@@ -266,12 +247,12 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="mb-16 text-center"
           >
             <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-6">
-              Our Corporate Law Services
+              Our Employment Law Services
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              We provide advice on a range of corporate matters, including but not limited to:
+              Our employment team regularly advises on:
             </p>
-            <div className="h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
+            <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +277,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-[3.5rem] flex items-center">
+                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-14 flex items-center">
                       {service.title}
                     </h3>
 
@@ -323,8 +304,8 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               Who We Serve
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              From multinational corporations to start-ups, every client receives the same level of
-              commitment and expertise.
+              From domestic organizations to international companies, we provide expert employment
+              law advice tailored to each client's needs.
             </p>
           </motion.div>
 
@@ -364,33 +345,33 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">01</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Experienced Team
+                  Compliance Focused
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Our corporate solicitors bring years of experience and commercial awareness to
-                  every engagement.
+                  We ensure our clients are fully compliant with current employment laws and
+                  regulations across all jurisdictions.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">02</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Equal Commitment
+                  Litigation Experience
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Every client, regardless of size, receives the same dedication and quality of
-                  service from our team.
+                  Extensive experience representing clients in employment tribunals with a strong
+                  track record of successful outcomes.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">03</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Pragmatic Solutions
+                  Strategic Advisory
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We deliver practical, business-focused advice tailored to your specific needs and
-                  objectives.
+                  Providing consultancy and advisory services that help organizations navigate
+                  complex employment issues proactively.
                 </p>
               </div>
             </div>
@@ -407,27 +388,25 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-24 text-center"
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-stone-900 mb-8 leading-tight">
-              Need Corporate Legal Support?
+              Need Employment Law Support?
             </h2>
             <p className="text-lg text-stone-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Contact us now to inquire about our corporate law services and discover how our
-              experienced team can support your business objectives.
+              Contact us now to inquire about our employment law services and discover how we can
+              help you navigate employment-related issues with confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
-
+                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+              >
                 <span>Contact Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
-
               <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
-
+                href="/about-us"
+                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+              >
                 <span>Meet Our Team</span>
               </a>
             </div>
@@ -439,9 +418,9 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             </div>
           </motion.div>
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 };
 
-export default CorporateLaw;
+export default EmploymentLaw;

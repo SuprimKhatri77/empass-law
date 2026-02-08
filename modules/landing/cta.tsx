@@ -27,10 +27,10 @@ export default function CTA() {
       </div>
 
       {/* Gradient accents */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-amber-500 to-transparent opacity-50" />
 
       {/* Cloud/Wave effect at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/80 via-stone-100/40 to-transparent backdrop-blur-sm" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-white/80 via-stone-100/40 to-transparent backdrop-blur-sm" />
       <svg
         className="absolute bottom-0 left-0 w-full"
         xmlns="http://www.w3.org/2000/svg"

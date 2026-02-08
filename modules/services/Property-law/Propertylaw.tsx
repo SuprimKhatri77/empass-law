@@ -3,12 +3,13 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Building2,
+  Home,
   FileText,
-  TrendingUp,
-  Users,
-  Shield,
-  Briefcase,
+  Search,
+  Building2,
+  FileCheck,
+  MapPin,
+  Hammer,
   ArrowRight,
   CheckCircle2,
   Scale,
@@ -27,96 +28,82 @@ interface ClientType {
   description: string;
 }
 
-interface CorporateLawProps {
+interface PropertyLawProps {
   className?: string;
 }
 
 const SERVICE_OFFERINGS: ServiceOffering[] = [
   {
-    id: "shareholders-agreement",
-    title: "Shareholders Agreement",
-    icon: Users,
+    id: "sale-agreement",
+    title: "Sale Agreement Drafting & Review",
+    icon: FileText,
     description:
-      "Comprehensive shareholder agreements that protect interests and define rights, obligations, and dispute resolution mechanisms.",
+      "Expert drafting and comprehensive review of sale agreements to protect your interests in property transactions.",
   },
   {
-    id: "corporate-governance",
-    title: "Corporate Governance",
-    icon: Shield,
+    id: "tenancy-agreement",
+    title: "Tenancy Agreement Drafting & Review",
+    icon: FileCheck,
     description:
-      "Expert guidance on corporate governance structures, compliance, and best practices to ensure effective management.",
-  },
-  {
-    id: "share-purchase",
-    title: "Sale and Purchase of Shares",
-    icon: TrendingUp,
-    description:
-      "Strategic advice on share transactions, including valuations, negotiations, and documentation for seamless transfers.",
+      "Professional drafting and review of tenancy agreements for both residential and commercial properties.",
   },
   {
     id: "due-diligence",
     title: "Due Diligence",
-    icon: FileText,
+    icon: Search,
     description:
-      "Thorough due diligence investigations covering legal, financial, and commercial aspects of corporate transactions.",
+      "Thorough due diligence covering title issues, environmental assessments, and comprehensive survey analysis.",
   },
   {
-    id: "investment-agreement",
-    title: "Investment Agreement",
-    icon: Briefcase,
-    description:
-      "Drafting and negotiating investment agreements to secure funding while protecting stakeholder interests.",
-  },
-  {
-    id: "asset-purchase",
-    title: "Sale and Purchase of Business Assets",
+    id: "business-entities",
+    title: "Business Entity Creation",
     icon: Building2,
     description:
-      "Complete asset transaction services including structuring, documentation, and regulatory compliance.",
+      "Creation of corporations, limited liability companies, partnerships, and joint ventures for property ownership and development.",
   },
   {
-    id: "partnership-agreement",
-    title: "Partnership Agreement",
-    icon: Users,
+    id: "transaction-structuring",
+    title: "Transaction Structuring & Financing",
+    icon: Scale,
     description:
-      "Tailored partnership agreements that establish clear terms, profit sharing, and governance structures.",
+      "Analysis and counsel on structuring property transactions, financing arrangements, and secured transactions including mortgages.",
   },
   {
-    id: "capital-raising",
-    title: "Capital Raising",
-    icon: TrendingUp,
+    id: "registration-compliance",
+    title: "Registration & Stamp Duty",
+    icon: MapPin,
     description:
-      "Strategic support for capital raising initiatives, including equity and debt financing arrangements.",
+      "Expert advice on property registration compliances and adjudication of stamp duties across jurisdictions.",
   },
   {
-    id: "corporate-reorganisation",
-    title: "Corporate Reorganisation",
-    icon: Building2,
+    id: "redevelopment-projects",
+    title: "Redevelopment & Construction",
+    icon: Hammer,
     description:
-      "Expert advice on restructuring, mergers, demergers, and other corporate reorganization transactions.",
+      "Comprehensive advice on redevelopment projects, conveyance matters, and construction project legal frameworks.",
   },
 ];
 
 const CLIENT_TYPES: ClientType[] = [
   {
-    title: "Multi-National Corporations",
-    description: "Large international companies requiring sophisticated corporate legal support",
+    title: "Residential Property Clients",
+    description: "Homebuyers, sellers, and landlords requiring residential property legal services",
   },
   {
-    title: "Publicly Listed Companies",
-    description: "Public companies with complex compliance and governance requirements",
+    title: "Commercial Property Clients",
+    description: "Businesses and investors involved in commercial property transactions",
   },
   {
-    title: "Small Family Businesses",
-    description: "Family-run enterprises seeking personalized corporate legal guidance",
+    title: "Property Developers",
+    description: "Development companies requiring comprehensive property law and construction advice",
   },
   {
-    title: "Start-ups",
-    description: "Emerging businesses needing strategic corporate formation and growth support",
+    title: "Property Investors",
+    description: "Individual and institutional investors seeking property acquisition and structuring support",
   },
 ];
 
-const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
+const PropertyLaw: React.FC<PropertyLawProps> = ({ className = "" }) => {
   const headerRef = React.useRef<HTMLElement>(null);
   const descriptionRef = React.useRef<HTMLDivElement>(null);
   const servicesRef = React.useRef<HTMLDivElement>(null);
@@ -150,34 +137,34 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="inline-flex items-center gap-2 mb-8">
-                <Scale className="w-4 h-4 text-amber-600" />
+                <Home className="w-4 h-4 text-amber-600" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-stone-600">
                   Expert Legal Counsel
                 </span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-stone-900 mb-6 leading-[1.1]">
-                Corporate Law
+                Property Law
               </h1>
 
               <p className="text-xl sm:text-2xl text-stone-600 font-light mb-12 leading-relaxed">
-                Expertise in all aspects of Corporate Law
+                Expertise in all aspects of Property Law
               </p>
 
               <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mb-12" />
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
+                  className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+                >
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-
                 <a
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
+                  className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+                >
                   <span>All Services</span>
                 </a>
               </div>
@@ -196,7 +183,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             {/* Image */}
             <Image
-              src="/services/Corporate-Law-banner.webp"
+              src="/services/Property-Law-Banner.webp"
               alt="Commercial Law"
               fill
               priority
@@ -238,18 +225,20 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
           >
             <div className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-20">
               <h2 className="text-3xl sm:text-4xl font-light text-stone-900 mb-8 leading-tight">
-                Dynamic and Pragmatic Legal Advice
+                Comprehensive Property Law Services
               </h2>
               <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
                 <p>
-                  The corporate department consists of experienced and commercially aware corporate
-                  solicitors and legal counsel who provide dynamic and pragmatic advice to assist you
-                  and your business.
+                  Our property team practice includes specialist lawyers who help clients understand
+                  the property laws (both residential and commercial) and assists in ensuring
+                  compliance with the various regulatory regimes.
                 </p>
                 <p>
-                  Our clients range from large multi-national companies and publicly listed companies
-                  to small family-run businesses and start-ups, all of whom are given the same level
-                  of commitment, experience, and communication from the team.
+                  We provide comprehensive property services covering all aspects of property
+                  transactions, from initial due diligence and agreement drafting to complex
+                  structuring of property ownership entities and development projects. Our team
+                  delivers practical, commercially-focused advice tailored to your specific property
+                  needs.
                 </p>
               </div>
             </div>
@@ -266,12 +255,12 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="mb-16 text-center"
           >
             <h2 className="text-4xl sm:text-5xl font-light text-stone-900 mb-6">
-              Our Corporate Law Services
+              Our Property Law Services
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              We provide advice on a range of corporate matters, including but not limited to:
+              Our property team provides all the property services including:
             </p>
-            <div className="h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
+            <div className="h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent w-full max-w-md mx-auto mt-8" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +285,7 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-[3.5rem] flex items-center">
+                    <h3 className="text-xl font-medium text-stone-900 mb-4 min-h-14 flex items-center">
                       {service.title}
                     </h3>
 
@@ -323,8 +312,8 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               Who We Serve
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              From multinational corporations to start-ups, every client receives the same level of
-              commitment and expertise.
+              From residential clients to commercial developers, we provide expert property law
+              services across all property sectors.
             </p>
           </motion.div>
 
@@ -364,33 +353,33 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">01</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Experienced Team
+                  Specialist Expertise
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Our corporate solicitors bring years of experience and commercial awareness to
-                  every engagement.
+                  Our property team includes specialist lawyers with deep knowledge of both
+                  residential and commercial property law.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">02</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Equal Commitment
+                  Regulatory Compliance
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Every client, regardless of size, receives the same dedication and quality of
-                  service from our team.
+                  We ensure full compliance with various property regulatory regimes and
+                  registration requirements.
                 </p>
               </div>
 
               <div>
                 <div className="text-5xl font-light text-amber-600 mb-6">03</div>
                 <h3 className="text-2xl font-medium text-stone-900 mb-4">
-                  Pragmatic Solutions
+                  End-to-End Service
                 </h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We deliver practical, business-focused advice tailored to your specific needs and
-                  objectives.
+                  Comprehensive property services from initial acquisition through to development
+                  and final transaction completion.
                 </p>
               </div>
             </div>
@@ -407,27 +396,25 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             className="bg-white/80 backdrop-blur-sm border border-stone-200 p-12 sm:p-16 lg:p-24 text-center"
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-stone-900 mb-8 leading-tight">
-              Need Corporate Legal Support?
+              Need Property Law Support?
             </h2>
             <p className="text-lg text-stone-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Contact us now to inquire about our corporate law services and discover how our
-              experienced team can support your business objectives.
+              Contact us now to inquire about our property law services and discover how we can
+              assist with your residential or commercial property matters.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group">
-
+                className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium px-10 py-4 transition-all duration-300 group"
+              >
                 <span>Contact Us</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
-
               <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300">
-
+                href="/about-us"
+                className="inline-flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 hover:bg-white/60 text-stone-900 font-medium px-10 py-4 transition-all duration-300"
+              >
                 <span>Meet Our Team</span>
               </a>
             </div>
@@ -439,9 +426,9 @@ const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
             </div>
           </motion.div>
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 };
 
-export default CorporateLaw;
+export default PropertyLaw;
