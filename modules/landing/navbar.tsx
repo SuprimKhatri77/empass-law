@@ -100,8 +100,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          mobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"
+        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          mobileMenuOpen ? "bg-white " : "bg-transparent"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
@@ -114,7 +114,7 @@ export default function Navbar() {
                 width={180}
                 height={45}
                 className={`h-11 w-auto transition-all duration-300 ${
-                  mobileMenuOpen ? "brightness-100" : "brightness-0 invert"
+                  mobileMenuOpen ? "brightness-100" : ""
                 }`}
                 priority
               />
