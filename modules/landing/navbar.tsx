@@ -1,270 +1,299 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-interface NavItem {
-  label: string;
-  href: string;
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Our Work", href: "/our-work" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Career", href: "/career" },
-  { label: "Contact", href: "/contact" },
+const navLinks = [
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "SERVICES", href: "/services" },
+  { label: "PRICING", href: "/pricing" },
+  { label: "OUR WORK", href: "/our-work" },
+  { label: "CAREER", href: "/career" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
-const useDifferentNavBgRoutes = ["/about", "/services"];
+// const languages = [
+//   { code: "en", label: "EN" },
+//   { code: "de", label: "DEUTSCH" },
+//   { code: "fr", label: "FRANÇAIS" },
+// ];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // const [langMenuOpen, setLangMenuOpen] = useState(false);
+  // const [currentLang, setCurrentLang] = useState("EN");
+  const [activeLink, setActiveLink] = useState("/");
 
-  const isActive = useCallback(
-    (href: string) =>
-      href === "/" ? pathname === "/" : pathname.startsWith(href),
-    [pathname],
-  );
+  // Function to change language using Google Translate
+  // const changeLanguage = (langCode: string, langLabel: string) => {
+  //   setCurrentLang(langLabel);
+  //   setLangMenuOpen(false);
 
+  //   // Wait for Google Translate to be ready
+  //   const attemptTranslation = () => {
+  //     try {
+  //       // Method 1: Try to find and trigger the select element
+  //       const selectElement = document.querySelector(
+  //         "select.goog-te-combo",
+  //       ) as HTMLSelectElement;
+
+  //       if (selectElement) {
+  //         selectElement.value = langCode;
+  //         selectElement.dispatchEvent(new Event("change", { bubbles: true }));
+  //         return;
+  //       }
+
+  //       // Method 2: Try using Google Translate API directly
+  //       if (window.google?.translate?.TranslateElement) {
+  //         const translateElement = document.querySelector(
+  //           "#google_translate_element",
+  //         );
+  //         if (translateElement) {
+  //           // Force re-initialization
+  //           window.google.translate.TranslateElement(
+  //             {
+  //               pageLanguage: "en",
+  //               includedLanguages: "en,de,fr",
+  //               layout:
+  //                 window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+  //             },
+  //             "google_translate_element",
+  //           );
+
+  //           // Then set the language
+  //           setTimeout(() => {
+  //             const select = document.querySelector(
+  //               "select.goog-te-combo",
+  //             ) as HTMLSelectElement;
+  //             if (select) {
+  //               select.value = langCode;
+  //               select.dispatchEvent(new Event("change", { bubbles: true }));
+  //             }
+  //           }, 100);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error("Translation error:", error);
+  //     }
+  //   };
+
+  //   // Try immediately and with delay
+  //   attemptTranslation();
+  //   setTimeout(attemptTranslation, 500);
+  //   setTimeout(attemptTranslation, 1000);
+  // };
+
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const onEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
-    };
-    if (mobileOpen) {
-      document.addEventListener("keydown", onEscape);
+    if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.removeEventListener("keydown", onEscape);
-      document.body.style.overflow = "";
+      document.body.style.overflow = "unset";
     };
-  }, [mobileOpen]);
+  }, [mobileMenuOpen]);
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={cn(
-          `fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
-            scrolled
-              ? "bg-white/95 backdrop-blur-xl border-b border-stone-200 shadow-sm"
-              : "bg-transparent"
-          }`,
-          useDifferentNavBgRoutes.includes(pathname) &&
-            !scrolled &&
-            "bg-stone-900",
-        )}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          mobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"
+        }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link
-              href="/"
-              className="flex-shrink-0 relative w-32 h-9 md:w-40 md:h-11 z-10"
-              aria-label="Empass Law home"
-            >
+            <Link href="/" className="flex-shrink-0 relative z-50">
               <Image
                 src="/logo.png"
-                alt=""
-                fill
-                className={`object-contain transition-all duration-300 ${
-                  scrolled ? "" : "brightness-0 invert"
+                alt="Empass Law"
+                width={180}
+                height={45}
+                className={`h-11 w-auto transition-all duration-300 ${
+                  mobileMenuOpen ? "brightness-100" : "brightness-0 invert"
                 }`}
                 priority
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav
-              className="hidden xl:flex items-center gap-1"
-              aria-label="Main"
-            >
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-4 py-2 text-sm font-medium tracking-wide transition-all relative group ${
-                    isActive(item.href)
-                      ? scrolled
-                        ? "text-stone-900"
-                        : "text-white"
-                      : scrolled
-                        ? "text-stone-600 hover:text-stone-900"
-                        : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                  {isActive(item.href) && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className={`absolute bottom-0 left-0 right-0 h-0.5 ${
-                        scrolled ? "bg-amber-600" : "bg-white"
-                      }`}
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
+            {/* Desktop Navigation + Language */}
+            <div className="hidden lg:flex items-center gap-6">
+              {/* Nav Links */}
+              <div className="flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setActiveLink(link.href)}
+                    className={`px-4 py-2 text-[13px] font-medium tracking-wide transition-colors relative group
+                      ${activeLink === link.href ? "text-white" : "text-white/80 hover:text-white"}`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transform transition-transform
+                        ${activeLink === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
                     />
-                  )}
-                </Link>
-              ))}
-            </nav>
+                  </Link>
+                ))}
+              </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden xl:flex items-center gap-3">
-              <a
-                href="tel:+442071234567"
-                className={`px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2 ${
-                  scrolled
-                    ? "text-stone-700 hover:text-stone-900"
-                    : "text-white/90 hover:text-white"
-                }`}
-              >
-                <Phone className="w-4 h-4" />
-                <span className="hidden 2xl:inline">+44 20 7123 4567</span>
-              </a>
-              <Link
-                href="/contact"
-                className={`px-6 py-2.5 font-semibold text-sm transition-all ${
-                  scrolled
-                    ? "bg-stone-900 text-white hover:bg-stone-800"
-                    : "bg-white text-stone-900 hover:bg-stone-100"
-                }`}
-              >
-                Get started
-              </Link>
+              {/* Language Dropdown */}
+              {/* <div className="relative">
+                <button
+                  onClick={() => setLangMenuOpen(!langMenuOpen)}
+                  className="flex items-center gap-2 px-3 py-2 text-[13px] font-medium text-white/80 hover:text-white transition-colors"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                    />
+                  </svg>
+                  <span>{currentLang}</span>
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-200 ${langMenuOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {langMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg border border-gray-200 py-1 animate-fadeIn">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code, lang.label)}
+                        className={`w-full text-left px-4 py-2 text-[13px] transition-colors
+                          ${currentLang === lang.label ? "bg-[#f0f4f8] text-[#2c5697] font-medium" : "text-[#445566] hover:bg-gray-50"}`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div> */}
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              type="button"
-              onClick={() => setMobileOpen((o) => !o)}
-              className={`xl:hidden p-2 -mr-2 transition-colors ${
-                scrolled
-                  ? "text-stone-700 hover:text-stone-900"
-                  : "text-white hover:text-white/80"
-              }`}
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-menu"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 relative z-50 w-10 h-10 flex items-center justify-center"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                {/* Top line */}
+                <span
+                  className={`w-full h-0.5 transition-all duration-300 ease-in-out ${
+                    mobileMenuOpen
+                      ? "bg-gray-800 rotate-45 translate-y-2"
+                      : "bg-white rotate-0 translate-y-0"
+                  }`}
+                />
+                {/* Middle line */}
+                <span
+                  className={`w-full h-0.5 transition-all duration-300 ease-in-out ${
+                    mobileMenuOpen
+                      ? "bg-gray-800 opacity-0"
+                      : "bg-white opacity-100"
+                  }`}
+                />
+                {/* Bottom line */}
+                <span
+                  className={`w-full h-0.5 transition-all duration-300 ease-in-out ${
+                    mobileMenuOpen
+                      ? "bg-gray-800 -rotate-45 -translate-y-2"
+                      : "bg-white rotate-0 translate-y-0"
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
-      </motion.header>
+      </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="xl:hidden fixed inset-0 z-40 bg-stone-950/60 backdrop-blur-sm"
-              onClick={() => setMobileOpen(false)}
-              aria-hidden
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="xl:hidden fixed right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl z-50 overflow-y-auto"
-            >
-              <div className="p-6">
-                {/* Mobile Header */}
-                <div className="flex items-center justify-between mb-8">
-                  <Link
-                    href="/"
-                    onClick={() => setMobileOpen(false)}
-                    className="relative w-32 h-9"
-                  >
-                    <Image
-                      src="/logo.png"
-                      alt=""
-                      fill
-                      className="object-contain"
-                    />
-                  </Link>
-                  <button
-                    onClick={() => setMobileOpen(false)}
-                    className="p-2 text-stone-700"
-                    aria-label="Close menu"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
 
-                {/* Mobile Navigation */}
-                <nav className="flex flex-col gap-1 mb-8" aria-label="Mobile">
-                  {NAV_ITEMS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={`py-3 px-4 rounded-lg text-base font-medium transition-all ${
-                        isActive(item.href)
-                          ? "bg-stone-100 text-stone-900"
-                          : "text-stone-600 hover:bg-stone-50 hover:text-stone-900"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
+      {/* Mobile Menu Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[280px] sm:w-[320px] bg-white z-40 lg:hidden shadow-2xl transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full pt-24 pb-6 px-6 overflow-y-auto">
+          {/* Navigation Links */}
+          <div className="space-y-1 mb-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => {
+                  setActiveLink(link.href);
+                  setMobileMenuOpen(false);
+                }}
+                className={`block px-4 py-3 text-[14px] font-medium tracking-wide rounded-lg transition-all duration-200
+                  ${
+                    activeLink === link.href
+                      ? "bg-[#2c5697] text-white"
+                      : "text-[#445566] hover:bg-gray-50 active:bg-gray-100"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
-                {/* Mobile Contact */}
-                <div className="space-y-3 pt-6 border-t border-stone-200">
-                  <a
-                    href="tel:+442071234567"
-                    className="flex items-center gap-3 text-stone-700 hover:text-stone-900"
-                  >
-                    <Phone className="w-5 h-5" />
-                    <span className="font-medium">+44 20 7123 4567</span>
-                  </a>
-                  <Link
-                    href="/contact"
-                    onClick={() => setMobileOpen(false)}
-                    className="block w-full py-4 text-center bg-stone-900 text-white font-semibold rounded-lg hover:bg-stone-800 transition-colors"
-                  >
-                    Get started
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+          {/* Language Switcher */}
+          {/* <div className="pt-6 mt-auto border-t border-gray-200">
+            <p className="px-4 py-2 text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Language
+            </p>
+            <div className="space-y-1">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    changeLanguage(lang.code, lang.label);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`block w-full text-left px-4 py-3 text-[14px] font-medium tracking-wide rounded-lg transition-all duration-200
+                    ${
+                      currentLang === lang.label
+                        ? "bg-[#f0f4f8] text-[#2c5697]"
+                        : "text-[#445566] hover:bg-gray-50 active:bg-gray-100"
+                    }`}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
+          </div> */}
+        </div>
+      </div>
     </>
   );
 }

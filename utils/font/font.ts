@@ -6,6 +6,7 @@ import {
   Inter,
   Raleway,
   Roboto,
+  Playfair_Display,
 } from "next/font/google";
 
 /** Editorial display – headlines, pull quotes (AG/Khaitan style) */
@@ -22,6 +23,13 @@ export const dmSans = DM_Sans({
   variable: "--font-body",
 });
 
+export const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const raleway = Raleway({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -29,9 +37,9 @@ export const raleway = Raleway({
 
 export const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
+  display: "swap",
 });
-
 export const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],

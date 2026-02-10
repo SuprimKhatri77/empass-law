@@ -1,196 +1,276 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-  Twitter,
-  Instagram,
-} from "lucide-react";
-import { motion } from "framer-motion";
-
-interface FooterLink {
-  label: string;
-  href: string;
-}
-
-interface FooterSection {
-  title: string;
-  links: FooterLink[];
-}
-
-const SECTIONS: FooterSection[] = [
-  {
-    title: "Practice areas",
-    links: [
-      { label: "Corporate & M&A", href: "/services/corporate-law" },
-      { label: "Litigation & ADR", href: "/services/litigation-and-adr" },
-      { label: "Employment Law", href: "/services/employment" },
-      { label: "Banking & Finance", href: "/services/banking-finance" },
-      { label: "Commercial Law", href: "/services/commercial-law" },
-      { label: "Real Estate", href: "/services/property" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About us", href: "/about" },
-      { label: "Our team", href: "/team" },
-      { label: "Careers", href: "/career" },
-      { label: "Case studies", href: "/our-work" },
-      { label: "News & insights", href: "/insights" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Pricing", href: "/pricing" },
-      { label: "Contact", href: "/contact" },
-      { label: "Privacy policy", href: "/privacy" },
-      { label: "Terms of service", href: "/terms" },
-      { label: "Cookie policy", href: "/cookies" },
-    ],
-  },
-];
-
-const SOCIALS: { icon: typeof Linkedin; href: string; label: string }[] = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-];
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-950 text-stone-400 relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 to-transparent pointer-events-none" />
+    <footer className="bg-[#2c4a6e] text-white relative overflow-hidden">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
 
-      <div className="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 py-20 lg:py-24">
-        {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
-          {/* Brand Column */}
-          <div className="lg:col-span-4 space-y-6">
-            <Link
-              href="/"
-              className="inline-block relative w-40 h-11"
-              aria-label="Empass Law home"
-            >
-              <Image
-                src="/logo.png"
-                alt=""
-                fill
-                className="object-contain brightness-0 invert opacity-90"
-              />
-            </Link>
-            <p className="text-stone-500 leading-relaxed max-w-sm">
-              A London-headquartered law firm delivering exceptional legal
-              outcomes for clients worldwide since 1892.
-            </p>
-
-            {/* Contact Info */}
-            <div className="space-y-4 pt-4">
-              <a
-                href="tel:+442071234567"
-                className="flex items-center gap-3 text-stone-400 hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-stone-900 flex items-center justify-center group-hover:bg-stone-800 transition-colors">
-                  <Phone className="w-4 h-4" aria-hidden />
-                </div>
-                <span className="font-medium">+44 20 7123 4567</span>
-              </a>
-              <a
-                href="mailto:info@empass.law"
-                className="flex items-center gap-3 text-stone-400 hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-stone-900 flex items-center justify-center group-hover:bg-stone-800 transition-colors">
-                  <Mail className="w-4 h-4" aria-hidden />
-                </div>
-                <span className="font-medium">info@empass.law</span>
-              </a>
-              <div className="flex items-start gap-3 text-stone-400">
-                <div className="w-10 h-10 rounded-lg bg-stone-900 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4" aria-hidden />
-                </div>
-                <span className="pt-2">123 Fleet Street, London EC4A 2AB</span>
+      {/* Discover More Section */}
+      <div className="border-b border-white/10 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex items-center gap-6">
+              {/* Logo */}
+              <div className="w-16 h-16 relative flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Empass Law Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
+
+              <h3 className="text-[24px] lg:text-[32px] font-normal">
+                Discover more about Empass Law
+              </h3>
+            </div>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-white text-[14px] font-medium border-b-2 border-white pb-0.5 hover:border-white/60 transition-colors whitespace-nowrap"
+            >
+              Learn more
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Company */}
+          <div>
+            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
+              COMPANY
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/people"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Our People
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/locations"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Locations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
+              SERVICES
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/services/corporate"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Corporate Law
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/litigation"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Commercial Litigation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ip"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Intellectual Property
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/employment"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Employment Law
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
+              RESOURCES
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/case-studies"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/insights"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Insights
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/innovation"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Innovation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-[14px] text-white/80 hover:text-white transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
+              CONTACT
+            </h4>
+            <div className="space-y-3 text-[14px] text-white/80">
+              <p>
+                41 Lothbury
+                <br />
+                London EC2R 7AE
+                <br />
+                United Kingdom
+              </p>
+              <p>+44 (0) 20 7123 4567</p>
+              <p>contact@empasslaw.com</p>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-3 pt-4">
-              {SOCIALS.map((s) => (
-                <motion.a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 rounded-lg bg-stone-900 flex items-center justify-center text-stone-400 hover:text-white hover:bg-stone-800 transition-colors"
+            <div className="flex items-center gap-3 mt-6">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <s.icon className="w-5 h-5" aria-hidden />
-                </motion.a>
-              ))}
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
             </div>
-          </div>
-
-          {/* Links Columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
-            {SECTIONS.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-stone-500 mb-5">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-stone-400 hover:text-white transition-colors inline-block"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-stone-500">
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <p>© {new Date().getFullYear()} Empass Law. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <span className="hidden sm:block w-1 h-1 rounded-full bg-stone-700" />
-              <span className="text-xs">SRA Regulated</span>
-              <span className="w-1 h-1 rounded-full bg-stone-700" />
-              <span className="text-xs">ISO 27001 Certified</span>
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/60">
+            <p>© 2026 Empass Law LLP – All rights reserved (SRA ID 440721)</p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/accessibility"
+                className="hover:text-white transition-colors"
+              >
+                Accessibility
+              </Link>
+              <span>|</span>
+              <Link
+                href="/terms"
+                className="hover:text-white transition-colors"
+              >
+                Terms and Conditions
+              </Link>
+              <span>|</span>
+              <Link
+                href="/cookies"
+                className="hover:text-white transition-colors"
+              >
+                Cookie Policy
+              </Link>
+              <span>|</span>
+              <Link
+                href="/privacy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy
+              </Link>
             </div>
-          </div>
-          <div className="flex gap-6">
-            <Link
-              href="/privacy"
-              className="hover:text-stone-400 transition-colors"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-stone-400 transition-colors"
-            >
-              Terms
-            </Link>
-            <Link
-              href="/cookies"
-              className="hover:text-stone-400 transition-colors"
-            >
-              Cookies
-            </Link>
           </div>
         </div>
       </div>
