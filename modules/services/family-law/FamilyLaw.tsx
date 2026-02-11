@@ -3,19 +3,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FileText,
-  Handshake,
-  ShieldCheck,
+  Heart,
   Scale,
-  Briefcase,
-  Building2,
+  Baby,
+  FileText,
+  Home,
+  Handshake,
+  Globe,
   ArrowRight,
   CheckCircle2,
-  FileCheck,
 } from "lucide-react";
 import Link from "next/link";
-
-/* ---------------- Types ---------------- */
 
 interface ServiceOffering {
   id: string;
@@ -29,100 +27,82 @@ interface ClientType {
   description: string;
 }
 
-/* ---------------- Data ---------------- */
-
 const SERVICE_OFFERINGS: ServiceOffering[] = [
   {
-    id: "commercial-contracts",
-    title: "Commercial Contracts",
-    icon: FileText,
+    id: "divorce",
+    title: "Divorce & Civil Partnership",
+    icon: Heart,
     description:
-      "Drafting and negotiating comprehensive commercial contracts tailored to protect your business interests and ensure legal compliance.",
+      "Strategic advice and representation in divorce and civil partnership dissolution proceedings.",
   },
   {
-    id: "distribution-agreements",
-    title: "Distribution Agreements",
-    icon: Handshake,
-    description:
-      "Expert advice on distribution and supply agreements, including territory rights, pricing structures, and termination provisions.",
-  },
-  {
-    id: "terms-conditions",
-    title: "Terms & Conditions",
-    icon: FileCheck,
-    description:
-      "Bespoke terms and conditions for sales, services, and online transactions.",
-  },
-  {
-    id: "partnership-agreements",
-    title: "Partnership Agreements",
-    icon: Briefcase,
-    description:
-      "Clear partnership structures covering rights, responsibilities, and exit strategies.",
-  },
-  {
-    id: "franchise-law",
-    title: "Franchise Law",
-    icon: Building2,
-    description:
-      "Comprehensive franchise documentation and regulatory compliance support.",
-  },
-  {
-    id: "commercial-disputes",
-    title: "Commercial Dispute Resolution",
+    id: "financial-disputes",
+    title: "Financial Disputes",
     icon: Scale,
     description:
-      "Strategic dispute resolution through negotiation, mediation, or litigation.",
+      "Resolution of asset division, maintenance, and complex financial settlements.",
   },
   {
-    id: "supplier-agreements",
-    title: "Supplier Agreements",
+    id: "child-arrangements",
+    title: "Child Arrangement Orders",
+    icon: Baby,
+    description:
+      "Advice and advocacy in child residence, contact, and relocation matters.",
+  },
+  {
+    id: "pre-post-nuptials",
+    title: "Pre & Post Nuptial Agreements",
+    icon: FileText,
+    description:
+      "Drafting and negotiation of prenuptial and postnuptial agreements.",
+  },
+  {
+    id: "cohabitation",
+    title: "Cohabitation Agreements",
+    icon: Home,
+    description:
+      "Clear contractual arrangements for unmarried partners.",
+  },
+  {
+    id: "separation",
+    title: "Separation Agreements",
     icon: Handshake,
     description:
-      "Robust procurement contracts covering quality standards and delivery terms.",
+      "Negotiated separation terms formalised without court proceedings.",
   },
   {
-    id: "licensing-agreements",
-    title: "Licensing Agreements",
-    icon: ShieldCheck,
+    id: "international",
+    title: "International Family Disputes",
+    icon: Globe,
     description:
-      "IP licensing agreements with appropriate commercial protections.",
-  },
-  {
-    id: "joint-ventures",
-    title: "Joint Ventures",
-    icon: Briefcase,
-    description:
-      "Strategic joint venture structures defining contributions and profit sharing.",
+      "Cross-border family matters involving multiple jurisdictions.",
   },
 ];
 
 const CLIENT_TYPES: ClientType[] = [
   {
-    title: "SMEs & Start-ups",
+    title: "Domestic Families",
     description:
-      "Scalable commercial legal solutions for growing businesses.",
+      "Individuals and families requiring expert family law representation.",
   },
   {
-    title: "Established Businesses",
+    title: "International Clients",
     description:
-      "Sophisticated contract and risk management support.",
+      "Cross-border families with global asset or jurisdictional considerations.",
   },
   {
-    title: "International Traders",
+    title: "High Net Worth Individuals",
     description:
-      "Cross-border commercial transaction advisory.",
+      "Complex financial disputes involving significant asset portfolios.",
   },
   {
-    title: "Franchise Operations",
+    title: "Cohabiting Partners",
     description:
-      "Specialised legal expertise for franchise systems.",
+      "Unmarried couples seeking structured legal protections.",
   },
 ];
 
-/* ---------------- Component ---------------- */
-
-export default function CommercialLaw() {
+export default function FamilyLaw() {
   return (
     <div className="min-h-screen bg-white">
 
@@ -132,23 +112,23 @@ export default function CommercialLaw() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-px w-8 bg-cyan-400"></div>
               <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400 uppercase">
-                Commercial Law
+                Family Law
               </span>
               <div className="h-px w-8 bg-cyan-400"></div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Commercial Law Services
+              Trusted Family Law Advisors
             </h1>
 
             <p className="text-lg sm:text-xl text-white/90">
-              Strategic legal advice across contracts, partnerships,
-              franchise structures, and commercial disputes.
+              Strategic, pragmatic, and compassionate legal support
+              across all aspects of family law.
             </p>
           </motion.div>
         </div>
@@ -158,18 +138,16 @@ export default function CommercialLaw() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Comprehensive Commercial Legal Support
+            Practical and Sensitive Legal Guidance
           </h2>
-
           <p className="text-gray-600 leading-relaxed mb-4">
-            Our commercial law team advises businesses at every stage —
-            from start-up structuring and contract drafting to complex
-            negotiations and dispute resolution.
+            Family proceedings can be emotionally and financially challenging.
+            Our team provides strategic advice focused on protecting your
+            interests while working toward efficient, balanced outcomes.
           </p>
-
           <p className="text-gray-600 leading-relaxed">
-            We deliver commercially focused solutions aligned with your
-            operational and strategic objectives.
+            We regularly advise on complex financial disputes, child
+            arrangements, and international family matters.
           </p>
         </div>
       </section>
@@ -179,10 +157,10 @@ export default function CommercialLaw() {
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Commercial Law Services
+              Our Family Law Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Advisory and transactional expertise across commercial operations.
+              Comprehensive advisory and dispute resolution services.
             </p>
           </div>
 
@@ -224,7 +202,7 @@ export default function CommercialLaw() {
               Who We Serve
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Supporting businesses across industries and growth stages.
+              Supporting individuals and families across jurisdictions.
             </p>
           </div>
 
@@ -256,12 +234,12 @@ export default function CommercialLaw() {
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="bg-gradient-to-br from-[#2C4A6B] to-[#3D5F8A] rounded-2xl p-10 sm:p-14 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Need Commercial Legal Advice?
+              Need Family Law Advice?
             </h2>
 
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Contact our experienced team for structured,
-              commercially focused legal guidance.
+              Speak to our experienced family law team for strategic,
+              sensitive, and effective representation.
             </p>
 
             <Link
