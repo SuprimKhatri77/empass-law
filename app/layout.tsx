@@ -99,14 +99,14 @@ export default function RootLayout({
         <div id="google_translate_element" style={{ display: "none" }} />
 
         <LoadingProvider>
-          <LenisProvider>
+          {/* <LenisProvider> */}
             <ReactQueryProvider>
               <NavbarFooterProviderWrapper>
                 {children}
               </NavbarFooterProviderWrapper>
               <Toaster />
             </ReactQueryProvider>
-          </LenisProvider>
+          {/* </LenisProvider> */}
         </LoadingProvider>
       </body>
     </html>
