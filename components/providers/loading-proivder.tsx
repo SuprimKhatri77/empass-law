@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import PageLoader from "./page-loader";
 
@@ -8,8 +7,22 @@ interface LoadingProviderProps {
 }
 
 export default function LoadingProvider({ children }: LoadingProviderProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Check if loader has already been shown in this session
+    const hasLoadedBefore = sessionStorage.getItem("hasLoadedOnce");
+
+    if (!hasLoadedBefore) {
+      setIsLoading(true);
+      // Mark as loaded for this session
+      sessionStorage.setItem("hasLoadedOnce", "true");
+    } else {
+      // Skip loader, show content immediately
+      setShowContent(true);
+    }
+  }, []);
 
   useEffect(() => {
     // Prevent scrolling while loading

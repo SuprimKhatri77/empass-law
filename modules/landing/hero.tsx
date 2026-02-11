@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] w-full flex items-center justify-center py-20 overflow-hidden">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       {/* <video
         autoPlay
@@ -32,24 +32,24 @@ export default function Hero() {
         </div>
 
         {/* Elegant geometric shapes */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-56 sm:w-64 lg:w-80 h-56 sm:h-64 lg:h-80 bg-blue-400/10 rounded-full blur-3xl" />
 
-        {/* Subtle lines for sophistication */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        {/* Subtle lines for sophistication - positioned to avoid text */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="absolute top-[15%] sm:top-[18%] lg:top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="absolute bottom-[25%] sm:bottom-[20%] lg:bottom-[15%] left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
       </div>
 
       {/* Content - Left aligned, more sophisticated */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full py-32 sm:py-40 lg:py-48">
         <div className="max-w-3xl">
-          <div className="mb-6">
-            <div className="w-16 h-1 bg-white/40 mb-8" />
+          <div className="mb-6 sm:mb-8">
+            <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-white/40 mb-6 sm:mb-8" />
           </div>
 
-          <h1 className="text-[44px] sm:text-[52px] lg:text-[64px] leading-[1.15] font-light text-white mb-6 tracking-tight">
+          <h1 className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[64px] xl:text-[72px] leading-[1.15] font-light text-white mb-4 sm:mb-6 tracking-tight">
             Delivering high quality
             <br />
             <span className="font-semibold">legal outcomes,</span>
@@ -57,18 +57,18 @@ export default function Hero() {
             <span className="font-semibold">globally</span>
           </h1>
 
-          <p className="text-white/70 text-[17px] leading-relaxed mb-10 max-w-xl font-light">
+          <p className="text-white/70 text-[15px] sm:text-[17px] lg:text-[18px] leading-relaxed mb-8 sm:mb-10 max-w-xl font-light">
             Excellence in legal services with a global perspective. Trusted by
             leading organizations worldwide.
           </p>
 
           <Link
             href="/about"
-            className="inline-flex items-center gap-3 text-white text-[14px] font-medium tracking-wide uppercase border-b border-white/40 pb-2 hover:border-white transition-all group"
+            className="inline-flex items-center gap-2 sm:gap-3 text-white text-[13px] sm:text-[14px] font-medium tracking-wide uppercase border-b border-white/40 pb-2 hover:border-white transition-all group"
           >
             About Empass Law
             <svg
-              className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
