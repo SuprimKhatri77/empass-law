@@ -16,7 +16,7 @@ const navLinks = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-const languages = ["EN", "DEUTSCH", "FRANÇAIS"];
+// const languages = ["EN", "DEUTSCH", "FRANÇAIS"];
 
 export default function Navbar() {
   const pathname = usePathname();
