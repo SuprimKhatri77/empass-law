@@ -10,28 +10,28 @@ interface QuickLink {
 
 const quickLinks: QuickLink[] = [
   {
-    title: "SECTOR EXPERTISE",
-    href: "/expertise/sectors",
+    title: "SERVICES",
+    href: "/services",
   },
   {
-    title: "INTERNATIONAL EXPERTISE",
-    href: "/expertise/international",
-  },
-  {
-    title: "CASE STUDIES",
-    href: "/case-studies",
-  },
-  {
-    title: "INNOVATION",
-    href: "/innovation",
-  },
-  {
-    title: "RESPONSIBLE BUSINESS",
-    href: "/responsible-business",
+    title: "OUR PEOPLE",
+    href: "/our-people",
   },
   {
     title: "CAREERS",
     href: "/careers",
+  },
+  {
+    title: "OUR WORK",
+    href: "/our-work",
+  },
+  {
+    title: "ABOUT",
+    href: "/about",
+  },
+  {
+    title: "CONTACT",
+    href: "/contact",
   },
 ];
 

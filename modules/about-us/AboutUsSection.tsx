@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutUsSection() {
   return (
@@ -30,7 +31,7 @@ export default function AboutUsSection() {
         <div className="relative mb-20">
           <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
             {/* Video Background */}
-            <video
+            {/* <video
               autoPlay
               muted
               loop
@@ -38,7 +39,14 @@ export default function AboutUsSection() {
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/london-skyline.mp4" type="video/mp4" />
-            </video>
+            </video> */}
+
+            <Image
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=2000&q=90"
+              alt="About Image"
+              fill
+              className="object-cover h-full w-full"
+            />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#2c4a6e]/80 via-transparent to-transparent" />
