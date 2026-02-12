@@ -3,15 +3,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Heart,
-  Scale,
-  Baby,
   FileText,
-  Home,
-  Handshake,
-  Globe,
+  Scale,
+  Users,
+  AlertTriangle,
+  FileCheck,
+  ShieldCheck,
   ArrowRight,
   CheckCircle2,
+  Briefcase,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -27,84 +27,81 @@ interface ClientType {
   description: string;
 }
 
+interface EmploymentLawProps {
+  className?: string;
+}
+
+/* ---------------- Data ---------------- */
+
 const SERVICE_OFFERINGS: ServiceOffering[] = [
   {
-    id: "divorce",
-    title: "Divorce & Civil Partnership",
-    icon: Heart,
-    description:
-      "Strategic advice and representation in divorce and civil partnership dissolution proceedings.",
-  },
-  {
-    id: "financial-disputes",
-    title: "Financial Disputes",
-    icon: Scale,
-    description:
-      "Resolution of asset division, maintenance, and complex financial settlements.",
-  },
-  {
-    id: "child-arrangements",
-    title: "Child Arrangement Orders",
-    icon: Baby,
-    description:
-      "Advice and advocacy in child residence, contact, and relocation matters.",
-  },
-  {
-    id: "pre-post-nuptials",
-    title: "Pre & Post Nuptial Agreements",
+    id: "contracts-employment",
+    title: "Contracts of Employment",
     icon: FileText,
     description:
-      "Drafting and negotiation of prenuptial and postnuptial agreements.",
+      "Comprehensive drafting and review of employment contracts, and expert advice on varying contractual terms to ensure legal compliance.",
   },
   {
-    id: "cohabitation",
-    title: "Cohabitation Agreements",
-    icon: Home,
+    id: "wrongful-dismissal",
+    title: "Wrongful Dismissal & Unfair Dismissal Claims",
+    icon: AlertTriangle,
     description:
-      "Clear contractual arrangements for unmarried partners.",
+      "Strategic representation in wrongful and unfair dismissal claims.",
   },
   {
-    id: "separation",
-    title: "Separation Agreements",
-    icon: Handshake,
+    id: "employment-tribunal",
+    title: "Employment Tribunal Representation",
+    icon: Scale,
     description:
-      "Negotiated separation terms formalised without court proceedings.",
+      "Expert representation and issuing of claims in employment tribunals.",
   },
   {
-    id: "international",
-    title: "International Family Disputes",
-    icon: Globe,
+    id: "disciplinary-grievance",
+    title: "Disciplinary & Grievance Procedures",
+    icon: Users,
     description:
-      "Cross-border family matters involving multiple jurisdictions.",
+      "Guidance on fair disciplinary and grievance procedures.",
+  },
+  {
+    id: "settlement-agreements",
+    title: "Settlement Agreements",
+    icon: FileCheck,
+    description:
+      "Negotiation and review of settlement agreements.",
+  },
+  {
+    id: "restrictive-covenants",
+    title: "Restrictive Covenants",
+    icon: ShieldCheck,
+    description:
+      "Drafting and enforcing restrictive covenants.",
   },
 ];
 
 const CLIENT_TYPES: ClientType[] = [
   {
-    title: "Domestic Families",
-    description:
-      "Individuals and families requiring expert family law representation.",
+    title: "Domestic Organizations",
+    description: "Employment law compliance and advisory services.",
   },
   {
-    title: "International Clients",
-    description:
-      "Cross-border families with global asset or jurisdictional considerations.",
+    title: "National Businesses",
+    description: "Multi-location businesses needing consistent guidance.",
   },
   {
-    title: "High Net Worth Individuals",
-    description:
-      "Complex financial disputes involving significant asset portfolios.",
+    title: "International Organizations",
+    description: "Cross-border employment regulation advisory.",
   },
   {
-    title: "Cohabiting Partners",
-    description:
-      "Unmarried couples seeking structured legal protections.",
+    title: "Individual Employees",
+    description: "Representation and employment rights advice.",
   },
 ];
 
-export default function FamilyLaw() {
+/* ---------------- Component ---------------- */
+
+const EmploymentLaw: React.FC<EmploymentLawProps> = ({ className = "" }) => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className={`min-h-screen bg-white ${className}`}>
 
       {/* HERO */}
       <section className="bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
@@ -112,24 +109,34 @@ export default function FamilyLaw() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 mb-6">
-              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <div className="h-px w-8 bg-[#00a3a3]" />
               <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
-                Family Law
+                Employment Law
               </span>
-              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <div className="h-px w-8 bg-[#00a3a3]" />
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Trusted Family Law Advisors
+              Employment Law Services
             </h1>
 
             <p className="text-lg sm:text-xl text-white/90">
-              Strategic, pragmatic, and compassionate legal support
-              across all aspects of family law.
+              Strategic legal guidance across contracts, disputes,
+              tribunals, and workplace compliance.
             </p>
+
+            {/* <div className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2C4A6B] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div> */}
           </motion.div>
         </div>
       </section>
@@ -138,16 +145,18 @@ export default function FamilyLaw() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
           <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
-            Practical and Sensitive Legal Guidance
+            Comprehensive Employment Law Support
           </h2>
+
           <p className="text-gray-600 leading-relaxed mb-4">
-            Family proceedings can be emotionally and financially challenging.
-            Our team provides strategic advice focused on protecting your
-            interests while working toward efficient, balanced outcomes.
+            We advise domestic and international organisations on
+            employment-related matters, including litigation,
+            consultancy, and regulatory compliance.
           </p>
+
           <p className="text-gray-600 leading-relaxed">
-            We regularly advise on complex financial disputes, child
-            arrangements, and international family matters.
+            Our team delivers commercially focused and legally robust
+            solutions aligned with your operational objectives.
           </p>
         </div>
       </section>
@@ -157,10 +166,10 @@ export default function FamilyLaw() {
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
-              Our Family Law Services
+              Our Employment Law Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive advisory and dispute resolution services.
+              Advisory and litigation expertise across employment matters.
             </p>
           </div>
 
@@ -202,7 +211,7 @@ export default function FamilyLaw() {
               Who We Serve
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Supporting individuals and families across jurisdictions.
+              Supporting employers and employees across industries.
             </p>
           </div>
 
@@ -234,12 +243,12 @@ export default function FamilyLaw() {
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="bg-gradient-to-br from-[#2C4A6B] to-[#3D5F8A] rounded-2xl p-10 sm:p-14 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Need Family Law Advice?
+              Need Employment Law Advice?
             </h2>
 
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Speak to our experienced family law team for strategic,
-              sensitive, and effective representation.
+              Speak with our employment law team for structured,
+              legally robust guidance.
             </p>
 
             <Link
@@ -255,4 +264,6 @@ export default function FamilyLaw() {
 
     </div>
   );
-}
+};
+
+export default EmploymentLaw;

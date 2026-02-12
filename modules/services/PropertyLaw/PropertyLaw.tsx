@@ -113,11 +113,11 @@ export default function PropertyLaw() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 mb-6">
-              <div className="h-px w-8 bg-cyan-400"></div>
-              <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400 uppercase">
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
                 Property Law
               </span>
-              <div className="h-px w-8 bg-cyan-400"></div>
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -143,7 +143,7 @@ export default function PropertyLaw() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
               Property Law Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -167,7 +167,7 @@ export default function PropertyLaw() {
                     <Icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-[#2c5697] mb-2">
                     {service.title}
                   </h3>
 
@@ -191,7 +191,7 @@ export default function PropertyLaw() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
               Who We Serve
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -210,7 +210,7 @@ export default function PropertyLaw() {
                 className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-md transition-all"
               >
                 <CheckCircle2 className="w-6 h-6 text-[#2C4A6B] mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">
+                <h3 className="font-semibold text-[#2c5697] mb-2">
                   {client.title}
                 </h3>
                 <p className="text-sm text-gray-600">
