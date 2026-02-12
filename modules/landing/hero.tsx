@@ -49,7 +49,7 @@ export default function Hero() {
             <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-white/40 mb-6 sm:mb-8" />
           </div>
 
-          <h1 className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[64px] xl:text-[72px] leading-[1.15] font-light text-white mb-4 sm:mb-6 tracking-tight">
+          <h1 className="text-[36px] uppercase sm:text-[44px] md:text-[52px] lg:text-[64px] xl:text-[72px] leading-[1.15] font-light text-white mb-4 sm:mb-6 tracking-wider">
             Delivering high quality
             <br />
             <span className="font-semibold">legal outcomes,</span>

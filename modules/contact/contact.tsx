@@ -161,8 +161,8 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-block px-4 py-2 mb-6 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
-              <span className="text-sm font-semibold text-cyan-400 uppercase tracking-wider">
+            <div className="inline-block px-4 py-2 mb-6 bg-[#2c5697]/10 border border-[#2c5697]/30 rounded-full">
+              <span className="text-sm font-semibold text-[#5a7ba8] uppercase tracking-wider">
                 Get In Touch
               </span>
             </div>
@@ -197,8 +197,8 @@ export default function ContactPage() {
                 whileHover={{ y: -4 }}
                 className="group relative p-8 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200"
               >
-                <div className="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-200 transition-colors">
-                  <item.icon className="w-7 h-7 text-cyan-600" />
+                <div className="w-14 h-14 bg-[#2c5697]/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#2c5697]/20 transition-colors">
+                  <item.icon className="w-7 h-7 text-[#2c5697]" />
                 </div>
 
                 <h3 className="text-sm font-semibold uppercase text-slate-500 mb-2">
@@ -211,7 +211,7 @@ export default function ContactPage() {
 
                 <p className="text-sm text-slate-600">{item.subtext}</p>
 
-                <ArrowRight className="absolute top-8 right-8 w-5 h-5 text-cyan-600 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="absolute top-8 right-8 w-5 h-5 text-[#2c5697] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </motion.a>
             ))}
           </div>
@@ -225,10 +225,10 @@ export default function ContactPage() {
             {/* Form - Takes 3 columns */}
             <div className="lg:col-span-3">
               <div className="mb-12">
-                <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-[#2c5697] mb-4">
                   Send Us a Message
                 </h2>
-                <p className="text-lg text-slate-600">
+                <p className="text-lg text-[#5a7ba8]">
                   Fill out the form below and we'll get back to you within 24
                   hours.
                 </p>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
+                    className="block text-sm font-semibold text-[#2c5697] mb-2"
                   >
                     Full Name *
                   </label>
@@ -253,7 +253,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className={`w-full pl-12 pr-4 py-3 border ${
                         errors.name ? "border-red-500" : "border-slate-300"
-                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all`}
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                       placeholder="John Doe"
                     />
                   </div>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-semibold text-slate-700 mb-2"
+                      className="block text-sm font-semibold text-[#2c5697] mb-2"
                     >
                       Email Address *
                     </label>
@@ -282,7 +282,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className={`w-full pl-12 pr-4 py-3 border ${
                           errors.email ? "border-red-500" : "border-slate-300"
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all`}
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                         placeholder="john@example.com"
                       />
                     </div>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-semibold text-slate-700 mb-2"
+                      className="block text-sm font-semibold text-[#2c5697] mb-2"
                     >
                       Phone Number *
                     </label>
@@ -311,7 +311,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className={`w-full pl-12 pr-4 py-3 border ${
                           errors.phone ? "border-red-500" : "border-slate-300"
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all`}
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                         placeholder="+44 20 1234 5678"
                       />
                     </div>
@@ -327,7 +327,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
+                    className="block text-sm font-semibold text-[#2c5697] mb-2"
                   >
                     Company (Optional)
                   </label>
@@ -339,7 +339,7 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                      className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all"
                       placeholder="Your Company Ltd"
                     />
                   </div>
@@ -349,7 +349,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
+                    className="block text-sm font-semibold text-[#2c5697] mb-2"
                   >
                     Message *
                   </label>
@@ -363,7 +363,7 @@ export default function ContactPage() {
                       rows={6}
                       className={`w-full pl-12 pr-4 py-3 border ${
                         errors.message ? "border-red-500" : "border-slate-300"
-                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none`}
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all resize-none`}
                       placeholder="Tell us about your legal needs..."
                     />
                   </div>
@@ -423,10 +423,10 @@ export default function ContactPage() {
               {/* Office Hours Card */}
               <div className="p-8 bg-slate-50 rounded-xl border border-slate-200">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-cyan-600" />
+                  <div className="w-12 h-12 bg-[#2c5697]/10 rounded-lg flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-[#2c5697]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h3 className="text-2xl font-bold text-[#2c5697]">
                     Office Hours
                   </h3>
                 </div>
@@ -437,8 +437,8 @@ export default function ContactPage() {
                       key={index}
                       className="flex justify-between items-center py-3 border-b border-slate-200 last:border-0"
                     >
-                      <span className="text-slate-600">{schedule.day}</span>
-                      <span className="font-semibold text-slate-900">
+                      <span className="text-[#5a7ba8]">{schedule.day}</span>
+                      <span className="font-semibold text-[#2c5697]">
                         {schedule.hours}
                       </span>
                     </div>
@@ -447,17 +447,17 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Info */}
-              <div className="p-8 bg-cyan-50 rounded-xl border border-cyan-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+              <div className="p-8 bg-[#2c5697]/5 rounded-xl border border-[#2c5697]/20">
+                <h3 className="text-xl font-bold text-[#2c5697] mb-3">
                   Need Immediate Assistance?
                 </h3>
-                <p className="text-slate-600 mb-4">
+                <p className="text-[#5a7ba8] mb-4">
                   For urgent legal matters, please call our 24/7 emergency
                   hotline.
                 </p>
                 <a
                   href="tel:+442071234567"
-                  className="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#2c5697] font-semibold hover:gap-3 transition-all"
                 >
                   Call Emergency Line
                   <ArrowRight className="w-4 h-4" />
@@ -466,7 +466,7 @@ export default function ContactPage() {
 
               {/* Additional Info */}
               <div className="p-8 bg-slate-50 rounded-xl border border-slate-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-xl font-bold text-[#2c5697] mb-4">
                   What Happens Next?
                 </h3>
                 <ul className="space-y-3">
@@ -477,12 +477,12 @@ export default function ContactPage() {
                     "Transparent pricing discussed",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-bold text-cyan-600">
+                      <div className="w-6 h-6 bg-[#2c5697]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-[#2c5697]">
                           {index + 1}
                         </span>
                       </div>
-                      <span className="text-slate-600">{item}</span>
+                      <span className="text-[#5a7ba8]">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -496,16 +496,16 @@ export default function ContactPage() {
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#2c5697] mb-4">
               Visit Our Office
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-[#5a7ba8]">
               Located in the heart of London's financial district
             </p>
           </div>
 
           <div className="relative">
-            {/* Map Container - NO GRAYSCALE */}
+            {/* Map Container */}
             <div className="relative h-[500px] lg:h-[600px] bg-slate-200 rounded-2xl overflow-hidden shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9234567890123!2d-0.1435423386339631!3d51.51632903444329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzU4LjgiTiAwwrAwOCczNi44Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
@@ -521,26 +521,26 @@ export default function ContactPage() {
               <div className="absolute inset-0 bg-transparent pointer-events-auto" />
 
               {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-cyan-500 pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-cyan-500 pointer-events-none" />
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-[#2c5697] pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-[#2c5697] pointer-events-none" />
             </div>
 
             {/* Map Info Card Overlay */}
             <div className="absolute bottom-6 left-6 right-6 sm:left-auto sm:right-6 sm:w-96 p-6 bg-white rounded-xl shadow-2xl border border-slate-200">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-cyan-600" />
+                <div className="w-12 h-12 bg-[#2c5697]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-[#2c5697]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-1">Empass Law</h4>
-                  <p className="text-sm text-slate-600 mb-3">
+                  <h4 className="font-bold text-[#2c5697] mb-1">Empass Law</h4>
+                  <p className="text-sm text-[#5a7ba8] mb-3">
                     41 Lothbury, London EC2R 7AE
                   </p>
                   <a
                     href="https://maps.google.com/?q=51.51632903444329,-0.1435423386339631"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-cyan-600 font-semibold hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-sm text-[#2c5697] font-semibold hover:gap-3 transition-all"
                   >
                     Get Directions
                     <Navigation className="w-4 h-4" />
@@ -553,26 +553,26 @@ export default function ContactPage() {
           {/* Directions Info */}
           <div className="grid sm:grid-cols-3 gap-6 mt-12">
             <div className="p-6 bg-white rounded-xl border border-slate-200">
-              <h4 className="text-sm font-semibold uppercase text-cyan-600 mb-2">
+              <h4 className="text-sm font-semibold uppercase text-[#2c5697] mb-2">
                 Underground
               </h4>
-              <p className="text-slate-600 text-sm">
+              <p className="text-[#5a7ba8] text-sm">
                 Bank Station (Central & Northern lines) - 2 min walk
               </p>
             </div>
             <div className="p-6 bg-white rounded-xl border border-slate-200">
-              <h4 className="text-sm font-semibold uppercase text-cyan-600 mb-2">
+              <h4 className="text-sm font-semibold uppercase text-[#2c5697] mb-2">
                 Bus
               </h4>
-              <p className="text-slate-600 text-sm">
+              <p className="text-[#5a7ba8] text-sm">
                 Routes 8, 25, 242, 388 - Bank stop
               </p>
             </div>
             <div className="p-6 bg-white rounded-xl border border-slate-200">
-              <h4 className="text-sm font-semibold uppercase text-cyan-600 mb-2">
+              <h4 className="text-sm font-semibold uppercase text-[#2c5697] mb-2">
                 Parking
               </h4>
-              <p className="text-slate-600 text-sm">
+              <p className="text-[#5a7ba8] text-sm">
                 London Wall Car Park - 3 min walk
               </p>
             </div>
@@ -583,10 +583,10 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#2c5697] mb-6">
             Prefer to Speak Directly?
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-[#5a7ba8] mb-8">
             Our team is available to discuss your legal needs over the phone.
           </p>
           <Link

@@ -1,3 +1,5 @@
+import CareerPage from "@/modules/career/career";
+
 export default function Page() {
-  return <h1>Career Page</h1>;
+  return <CareerPage />;
 }

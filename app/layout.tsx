@@ -98,16 +98,16 @@ export default function RootLayout({
         {/* Hidden Google Translate Element */}
         <div id="google_translate_element" style={{ display: "none" }} />
 
-        <LoadingProvider>
-          <LenisProvider>
-            <ReactQueryProvider>
-              <NavbarFooterProviderWrapper>
-                {children}
-              </NavbarFooterProviderWrapper>
-              <Toaster />
-            </ReactQueryProvider>
-          </LenisProvider>
-        </LoadingProvider>
+        {/* <LoadingProvider> */}
+        <LenisProvider>
+          <ReactQueryProvider>
+            <NavbarFooterProviderWrapper>
+              {children}
+            </NavbarFooterProviderWrapper>
+            <Toaster />
+          </ReactQueryProvider>
+        </LenisProvider>
+        {/* </LoadingProvider> */}
       </body>
     </html>
   );
