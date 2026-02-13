@@ -278,6 +278,15 @@ export default function WorkDetailPage() {
             {/* Title - Adaptive sizing with line clamp */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#2c5697] mb-6 leading-tight">
               {work.title}
+              {work.titleHighlight && (
+                <span
+                  style={{ color: work.accentColor || "#2c5697" }}
+                  className="font-black"
+                >
+                  {work.titleHighlight}
+                </span>
+              )}
+              {work.titleEnd && <span>{work.titleEnd}</span>}
             </h1>
 
             {/* Decorative line */}

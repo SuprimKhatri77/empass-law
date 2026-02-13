@@ -170,6 +170,11 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
     return cleaned.slice(0, maxLength).trim() + "...";
   };
 
+  // const getPreviewText = (desc: string) => {
+  //   const cleaned = desc.replace(/\s+/g, " ").trim();
+  //   if (cleaned.length <= 250) return cleaned;
+  //   return cleaned.slice(0, 250).trim() + "...";
+  // };
   return (
     <Link href={`/our-work/${work.slug}`}>
       <motion.div
@@ -211,12 +216,21 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
 
               {/* Title - with smart truncation */}
               <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-[#2c5697] transition-colors duration-300">
-                {truncateTitle(work.title, 120)}
+                {work.title}
+                {work.titleHighlight && (
+                  <span
+                    style={{ color: work.accentColor || "#2c5697" }}
+                    className="font-bold"
+                  >
+                    {work.titleHighlight}
+                  </span>
+                )}
+                {work.titleEnd && <span>{work.titleEnd}</span>}
               </h2>
 
               {/* Description - with smart truncation */}
-              <p className="text-base lg:text-lg text-slate-600 leading-relaxed mb-8 line-clamp-4">
-                {truncateDescription(work.description, 280)}
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed mb-8">
+                {truncateDescription(work.description, 200)}
               </p>
 
               {/* CTA */}
