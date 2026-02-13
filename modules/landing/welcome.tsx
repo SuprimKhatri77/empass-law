@@ -37,14 +37,14 @@ export default function Welcome() {
               Welcome
             </h2>
             <p className="text-[16px] lg:text-[17px] leading-relaxed text-[#002441] mb-6 opacity-60">
-              We are a London headquartered, international, full-service law
-              firm that consistently delivers high-quality outcomes for our
-              clients globally. We have been advising clients for 250 years, and
-              today we support over 5000 of the world's most respected
-              organisations. We help them in over 50 areas of business law,
-              across more than 100 countries. We are also known for
-              award-winning innovation all of which we harness to bring impact
-              to clients.
+              We are a progressive law firm located in the city of London
+              focused on providing high-quality legal services. We provide
+              specialist legal services to businesses and individuals in a range
+              of practice areas. Our services are tailored to our client&apos;s
+              individual needs and resources and no service is too big or too
+              small for us. As a valued client of Empass Law, our goal is to
+              provide you with the most personal & satisfying legal service
+              possible.
             </p>
 
             <Link

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { lawFirm } from "@/utils/details/details";
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-6">
               {/* Logo */}
-              <div className="w-16 h-16 relative flex-shrink-0">
+              <div className="w-25 h-25 relative flex-shrink-0">
                 <Image
                   src="/logo.png"
                   alt="Empass Law Logo"
@@ -192,21 +193,15 @@ export default function Footer() {
               CONTACT
             </h4>
             <div className="space-y-3 text-[14px] text-white/80">
-              <p>
-                41 Lothbury
-                <br />
-                London EC2R 7AE
-                <br />
-                United Kingdom
-              </p>
-              <p>+44 (0) 20 7123 4567</p>
-              <p>contact@empasslaw.com</p>
+              <p>{lawFirm.address}</p>
+              <p>{lawFirm.contactNumber}</p>
+              <p>{lawFirm.contactEmail}</p>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3 mt-6">
               <a
-                href="https://linkedin.com"
+                href={`${lawFirm.linkedInLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -220,7 +215,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href={`${lawFirm.instagramLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -240,7 +235,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/60">
-            <p>© 2026 Empass Law LLP – All rights reserved (SRA ID 440721)</p>
+            <p>
+              © {new Date().getFullYear()} Empass Law LLP – All rights
+              reserved{" "}
+            </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <Link
