@@ -3,89 +3,73 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
-interface InsightCard {
-  type: "NEWS" | "FEATURED INSIGHT";
-  title: string;
-  titleHighlight?: string;
-  description: string;
-  ctaText: string;
-  ctaHref: string;
-  imageUrl: string;
-  imageAlt: string;
-}
-
-const insightCards: InsightCard[] = [
-  {
-    type: "NEWS",
-    title: "Appointed to ",
-    titleHighlight: "UK Government's CCS Legal Panel",
-    description:
-      "We have been named as a supplier on the Crown Commercial Service's Legal Panel, advising on major projects and rail legal services.",
-    ctaText: "Read more",
-    ctaHref: "/news/uk-government-ccs-legal-panel",
-    imageUrl: "/images/news-government.jpg",
-    imageAlt: "UK Government Buildings",
-  },
-  {
-    type: "FEATURED INSIGHT",
-    title: "Report: ",
-    titleHighlight: "M&A Outlook 2026",
-    description:
-      "Explore the sector trends, deal drivers and strategic considerations shaping the year ahead in the M&A Outlook 2026 report.",
-    ctaText: "Download here",
-    ctaHref: "/insights/ma-outlook-2026",
-    imageUrl: "/images/insight-ma.jpg",
-    imageAlt: "M&A Report",
-  },
-  {
-    type: "FEATURED INSIGHT",
-    title: "Series: The Future of ",
-    titleHighlight: "Data Centres",
-    description:
-      "Explore how key jurisdictions around the world are responding to the rapid rise in digital infrastructure demand, driven by AI, cloud computing, and global data flows.",
-    ctaText: "Read more",
-    ctaHref: "/insights/future-of-data-centres",
-    imageUrl: "/images/insight-data.jpg",
-    imageAlt: "Data Centres",
-  },
-];
+import { mockWorkPosts } from "@/utils/mock/mock-blog";
 
 export function FeaturedInsights() {
+  // Get posts 4, 5, 6 for the insights section (since 1-3 are in news)
+  const insightPosts = mockWorkPosts.slice(3, 6);
+
+  // Color schemes for each card
+  const colorSchemes = [
+    {
+      bg: "bg-gradient-to-br from-green-100 to-green-200",
+      text: "text-green-600",
+      hover: "hover:text-green-700",
+      underline: "bg-green-600",
+      badge: "text-green-600",
+    },
+    {
+      bg: "bg-gradient-to-br from-purple-100 to-purple-200",
+      text: "text-purple-600",
+      hover: "hover:text-purple-700",
+      underline: "bg-purple-600",
+      badge: "text-purple-600",
+    },
+    {
+      bg: "bg-gradient-to-br from-cyan-100 to-cyan-200",
+      text: "text-cyan-500",
+      hover: "hover:text-cyan-600",
+      underline: "bg-cyan-500",
+      badge: "text-cyan-500",
+    },
+  ];
+
   return (
     <section className="relative bg-[linear-gradient(90deg,#435b76_0%,#002041_100%)] py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {insightCards.map((card, index) => (
-            <article
-              key={index}
-              className="group bg-white overflow-hidden transition-all duration-300 hover:shadow-2xl"
-            >
-              {/* Card Header */}
-              <div className="bg-gray-100 px-6 py-3">
-                <span className="text-xs font-semibold text-gray-600 tracking-wider uppercase">
-                  {card.type}
-                </span>
-              </div>
+          {insightPosts.map((post, index) => {
+            const colors = colorSchemes[index];
 
-              {/* Image */}
-              <div className="relative h-32 overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-gradient-to-br opacity-80"
-                  style={{
-                    backgroundColor:
-                      index === 0
-                        ? "#6ee7b7"
-                        : index === 1
-                          ? "#e9d5ff"
-                          : "#bae6fd",
-                  }}
-                />
-                {/* Placeholder pattern - replace with actual images */}
-                <div className="absolute inset-0 flex items-center justify-center">
+            return (
+              <article
+                key={post.id}
+                className="group bg-white overflow-hidden transition-all duration-300 hover:shadow-2xl rounded-sm"
+              >
+                {/* Card Header */}
+                <div className="bg-gray-100 px-6 py-3">
+                  <span className="text-xs font-semibold text-gray-600 tracking-wider uppercase">
+                    FEATURED INSIGHT
+                  </span>
+                </div>
+
+                {/* Image with gradient overlay */}
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={post.images[0]}
+                    alt={post.title}
+                    fill
+                    className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Colored overlay */}
                   <div
-                    className="w-full h-full opacity-20"
+                    className={`absolute inset-0 ${colors.bg} opacity-60 mix-blend-multiply`}
+                  />
+
+                  {/* Subtle pattern overlay */}
+                  <div
+                    className="absolute inset-0 opacity-20"
                     style={{
                       backgroundImage:
                         index === 0
@@ -102,63 +86,46 @@ export function FeaturedInsights() {
                     }}
                   />
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl md:text-2xl font-normal text-gray-800 mb-4 leading-tight">
-                  {card.title}
-                  <span
-                    className={
-                      index === 0
-                        ? "text-green-600 font-normal"
-                        : index === 1
-                          ? "text-purple-600 font-normal"
-                          : "text-cyan-500 font-normal"
-                    }
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl md:text-2xl font-normal text-gray-800 mb-4 leading-tight">
+                    {post.title}
+                    {post.titleHighlight && (
+                      <span className={`${colors.text} font-normal`}>
+                        {post.titleHighlight}
+                      </span>
+                    )}
+                    {post.titleEnd && <span>{post.titleEnd}</span>}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 line-clamp-3 overflow-hidden">
+                    {post.description.trim()}
+                  </p>
+
+                  {/* CTA Link */}
+                  <Link
+                    href={`/our-work/${post.slug}`}
+                    className={`inline-flex items-center gap-2 text-sm font-semibold group/link transition-all duration-300 ${colors.text} ${colors.hover}`}
                   >
-                    {card.titleHighlight}
-                  </span>
-                </h3>
-
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
-                  {card.description}
-                </p>
-
-                {/* CTA Link */}
-                <Link
-                  href={card.ctaHref}
-                  className={`inline-flex items-center gap-2 text-sm font-semibold group/link transition-all duration-300 ${
-                    index === 0
-                      ? "text-green-600 hover:text-green-700"
-                      : index === 1
-                        ? "text-purple-600 hover:text-purple-700"
-                        : "text-cyan-500 hover:text-cyan-600"
-                  }`}
-                >
-                  <span className="relative">
-                    {card.ctaText}
-                    <span
-                      className={`absolute -bottom-1 left-0 w-full h-0.5 transition-all duration-300 ${
-                        index === 0
-                          ? "bg-green-600"
-                          : index === 1
-                            ? "bg-purple-600"
-                            : "bg-cyan-500"
-                      }`}
-                    />
-                  </span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-                </Link>
-              </div>
-            </article>
-          ))}
+                    <span className="relative">
+                      {post.cta || "Read more"}
+                      <span
+                        className={`absolute -bottom-1 left-0 w-full h-0.5 transition-all duration-300 ${colors.underline}`}
+                      />
+                    </span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         {/* View All Link */}
         <div className="flex justify-end">
           <Link
-            href="/insights"
+            href="/our-work"
             className="inline-flex items-center gap-2 text-white font-semibold text-sm group/viewall transition-all duration-300 hover:text-cyan-300"
           >
             <span className="relative">

@@ -3,45 +3,39 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-const caseStudies = [
-  {
-    id: 1,
-    tag: "FEATURED",
-    title:
-      "Corporate Merger: Advising on £2.5 Billion Cross-Border Transaction",
-    description:
-      "Global legal partner to a leading multinational corporation. Strategic advice to support fast-paced deal execution. Protecting stakeholder interests across multiple jurisdictions. Another client success story, supported by Empass Law.",
-    link: "/case-studies/corporate-merger",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-  },
-  {
-    id: 2,
-    tag: "FEATURED",
-    title:
-      "Intellectual Property: Safeguarding Innovation for Tech Industry Leader",
-    description:
-      "Comprehensive IP protection strategy for a pioneering technology company. Successfully defended patent portfolio and negotiated favorable licensing agreements worldwide.",
-    link: "/case-studies/ip-protection",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-  },
-  {
-    id: 3,
-    tag: "FEATURED",
-    title: "Commercial Litigation: High-Stakes Financial Dispute Resolution",
-    description:
-      "Representing major financial institution in complex commercial litigation. Achieved favorable settlement through strategic negotiation and robust legal advocacy.",
-    link: "/case-studies/litigation",
-    image:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop",
-  },
-];
+import { mockWorkPosts } from "@/utils/mock/mock-blog";
 
 export default function FeaturedCaseStudy() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const currentCase = caseStudies[currentIndex];
+
+  // Use the first 3 posts as featured case studies
+  const featuredCases = mockWorkPosts.slice(0, 3);
+  const currentCase = featuredCases[currentIndex];
+
+  // Truncate title if too long
+  const getTruncatedTitle = (
+    title: string,
+    highlight?: string,
+    end?: string,
+  ) => {
+    const fullTitle = `${title}${highlight || ""}${end || ""}`;
+    if (fullTitle.length <= 100) {
+      return { title, highlight, end };
+    }
+
+    // If too long, just use the title part and truncate
+    if (title.length > 80) {
+      return { title: title.slice(0, 80) + "...", highlight: "", end: "" };
+    }
+
+    return { title, highlight, end };
+  };
+
+  const truncatedTitle = getTruncatedTitle(
+    currentCase.title,
+    currentCase.titleHighlight,
+    currentCase.titleEnd,
+  );
 
   return (
     <section className="bg-white py-12 md:py-20 lg:py-32">
@@ -50,10 +44,10 @@ export default function FeaturedCaseStudy() {
           {/* Left - Image */}
           <div className="relative aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden group">
             <Image
-              src={currentCase.image}
+              src={currentCase.images[0]}
               alt={currentCase.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-left transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 700px"
               priority
             />
@@ -64,21 +58,32 @@ export default function FeaturedCaseStudy() {
           {/* Right - Content */}
           <div>
             <div className="mb-4 md:mb-6">
-              <span className="inline-block px-4 py-1.5 bg-[#2c5697] text-white text-[11px] font-semibold tracking-wider">
-                {currentCase.tag}
+              <span className="inline-block px-4 py-1.5 bg-[#2c5697] text-white text-[11px] font-semibold tracking-wider uppercase">
+                Featured
               </span>
             </div>
 
-            <h2 className="text-[28px] sm:text-[32px] lg:text-[42px] leading-[1.2] font-normal text-[#2c5697] mb-4 md:mb-6">
-              {currentCase.title}
+            {/* Title with proper truncation */}
+            <h2 className="text-[28px] sm:text-[32px] lg:text-[42px] leading-[1.2] font-normal text-[#2c5697] mb-4 md:mb-6 line-clamp-3">
+              {truncatedTitle.title}
+              {truncatedTitle.highlight && (
+                <span
+                  style={{ color: currentCase.accentColor || "#2c5697" }}
+                  className="font-normal"
+                >
+                  {truncatedTitle.highlight}
+                </span>
+              )}
+              {truncatedTitle.end && <span>{truncatedTitle.end}</span>}
             </h2>
 
-            <p className="text-[15px] md:text-[17px] leading-relaxed text-[#445566] mb-6 md:mb-8">
-              {currentCase.description}
+            {/* Description with truncation */}
+            <p className="text-[15px] md:text-[17px] leading-relaxed text-[#445566] mb-6 md:mb-8 line-clamp-4 overflow-hidden">
+              {currentCase.description.trim()}
             </p>
 
             <Link
-              href={currentCase.link}
+              href={`/our-work/${currentCase.slug}`}
               className="inline-flex items-center gap-2 text-[#2c5697] text-[14px] md:text-[15px] font-medium border-b-2 border-[#2c5697] pb-0.5 hover:border-[#2c5697]/60 transition-colors mb-8 md:mb-12"
             >
               Read the case study
@@ -103,7 +108,7 @@ export default function FeaturedCaseStudy() {
                 onClick={() =>
                   setCurrentIndex(
                     (prev) =>
-                      (prev - 1 + caseStudies.length) % caseStudies.length,
+                      (prev - 1 + featuredCases.length) % featuredCases.length,
                   )
                 }
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-300 hover:border-[#2c5697] hover:bg-[#2c5697] hover:text-white flex items-center justify-center transition-all duration-300 group"
@@ -126,7 +131,7 @@ export default function FeaturedCaseStudy() {
 
               <button
                 onClick={() =>
-                  setCurrentIndex((prev) => (prev + 1) % caseStudies.length)
+                  setCurrentIndex((prev) => (prev + 1) % featuredCases.length)
                 }
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gray-300 hover:border-[#2c5697] hover:bg-[#2c5697] hover:text-white flex items-center justify-center transition-all duration-300 group"
                 aria-label="Next case study"
@@ -148,7 +153,7 @@ export default function FeaturedCaseStudy() {
 
               {/* Dots */}
               <div className="flex items-center gap-2 ml-2 md:ml-4">
-                {caseStudies.map((_, index) => (
+                {featuredCases.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}

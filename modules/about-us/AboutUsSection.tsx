@@ -96,16 +96,21 @@ export default function AboutUsSection() {
               Who we are
             </h3>
             <p className="text-[16px] leading-relaxed text-[#445566] mb-6">
-              We are a London-headquartered, international law firm that
-              consistently delivers high-quality outcomes for our clients
-              globally. We have been advising clients for over a decade,
-              supporting businesses and individuals across multiple
-              jurisdictions.
+              Welcome to Empass Law, a forward-looking law firm nestled in
+              London's bustling heart. Our mission is simple: to deliver
+              top-tier legal services. With a client-centred approach, we serve
+              both businesses and individuals across diverse practice areas.
             </p>
             <p className="text-[16px] leading-relaxed text-[#445566]">
-              Our team brings together expertise from leading international
-              firms, combining technical excellence with practical commercial
-              insight.
+              Our adept legal team is devoted to grasping each client's unique
+              needs. Whether it's intricate corporate affairs or personal
+              matters, we're here to help. No case is beyond our scope; every
+              client and issue receives the highest level of attention and
+              professionalism. Our success formula hinges on comprehending your
+              objectives and hurdles. By blending expertise with a personal
+              touch, we craft custom legal answers that suit your needs.
+              Navigating the legal complexities, we keep you informed,
+              empowering you to make confident decisions.
             </p>
           </div>
 

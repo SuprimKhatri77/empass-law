@@ -115,20 +115,33 @@ export default function WorkDetailPage() {
     return <ErrorState error={error || "Case study not found"} />;
   }
 
+  // Format description with proper paragraphs
+  const formatDescription = (desc: string) => {
+    // Split by newlines and filter empty strings
+    const paragraphs = desc
+      .split("\n")
+      .map((p) => p.trim())
+      .filter((p) => p.length > 0);
+
+    return paragraphs;
+  };
+
+  const descriptionParagraphs = formatDescription(work.description);
+
   return (
     <div className="min-h-screen bg-gray-50 py-20">
       {/* Reading Progress Bar */}
-      {/* <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-[100]">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-[100]">
         <motion.div
           className="h-full bg-gradient-to-r from-[#2c5697] via-[#3d6baa] to-[#2c5697]"
           style={{ width: `${readingProgress}%` }}
           initial={{ width: 0 }}
         />
-      </div> */}
+      </div>
 
       {/* Navigation Bar */}
-      <div className=" z-50 bg-white py-5 ">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-4">
+      <div className=" z-50 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between gap-4">
             <Link
               href="/our-work"
@@ -223,19 +236,18 @@ export default function WorkDetailPage() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative border-b border-gray-200 overflow-hidden bg-white">
+      <div className="relative border-b border-gray-200 overflow-hidden bg-white mt-16">
         {/* Animated background gradient */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#2c5697] opacity-[0.03] blur-[150px]" />
 
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-15 ">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
           >
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a93b8] mb-6 sm:mb-8">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a93b8] mb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>{formatDate(work.createdAt)}</span>
@@ -257,35 +269,30 @@ export default function WorkDetailPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2c5697]/10 border border-[#2c5697]/30 text-[#2c5697] text-xs sm:text-sm font-bold mb-6 sm:mb-8 rounded-full"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2c5697]/10 border border-[#2c5697]/30 text-[#2c5697] text-xs sm:text-sm font-bold mb-6 rounded-full"
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               Featured Case Study
             </motion.div>
 
-            {/* Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#2c5697] mb-6 sm:mb-8 leading-tight">
+            {/* Title - Adaptive sizing with line clamp */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#2c5697] mb-6 leading-tight">
               {work.title}
             </h1>
 
-            {/* Description */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-[#5a7ba8] leading-relaxed">
-              {work.description}
-            </p>
-
             {/* Decorative line */}
-            <div className="mt-8 sm:mt-12 h-px w-24 sm:w-32 bg-gradient-to-r from-[#2c5697] to-transparent" />
+            <div className="h-px w-24 sm:w-32 bg-gradient-to-r from-[#2c5697] to-transparent" />
           </motion.div>
         </div>
       </div>
 
       {/* Main Image */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-video sm:aspect-[16/9] overflow-hidden bg-gray-100 border border-gray-200 group rounded-lg"
+          className="relative aspect-video overflow-hidden bg-gray-100 border border-gray-200 group rounded-lg shadow-lg"
         >
           <img
             src={work.images[activeImage]}
@@ -323,9 +330,9 @@ export default function WorkDetailPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6"
+            className="grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6"
           >
-            {work.images.map((img, idx) => (
+            {work.images.slice(0, 2).map((img, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveImage(idx)}
@@ -346,108 +353,97 @@ export default function WorkDetailPage() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-4xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8 sm:space-y-12"
+        >
+          {/* Main Description Content */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#2c5697] mb-6">
+              Case Details
+            </h2>
+
+            <div className="prose prose-lg max-w-none space-y-4">
+              {descriptionParagraphs.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-base sm:text-lg text-[#5a7ba8] leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Achievements */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#2c5697] mb-6">
+              Key Achievements
+            </h2>
+
+            <ul className="space-y-4">
+              {[
+                "Secured favorable settlement exceeding client expectations",
+                "Established new legal precedent in the field",
+                "Protected client's market position and reputation",
+                "Achieved resolution within projected timeline and budget",
+              ].map((item, idx) => (
+                <motion.li
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="flex gap-3 sm:gap-4 text-base sm:text-lg text-[#5a7ba8] leading-relaxed group"
+                >
+                  <div className="w-2 h-2 bg-[#2c5697] mt-2 sm:mt-2.5 shrink-0 group-hover:scale-150 transition-transform duration-200 rounded-full" />
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Results Highlight Box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8 sm:space-y-12"
+            className="relative p-6 sm:p-8 bg-gradient-to-br from-[#2c5697]/10 via-[#2c5697]/5 to-transparent border border-[#2c5697]/20 overflow-hidden group rounded-lg"
           >
-            {/* Main content */}
-            <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#2c5697] mb-4 sm:mb-6">
-                Overview
-              </h2>
+            {/* Animated background accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#2c5697] opacity-[0.05] blur-[80px] group-hover:opacity-[0.1] transition-opacity duration-500" />
 
-              <div className="space-y-4 sm:space-y-6">
-                <p className="text-base sm:text-lg text-[#5a7ba8] leading-relaxed">
-                  This case study exemplifies our commitment to achieving
-                  exceptional results for our clients. Through meticulous
-                  preparation, strategic litigation, and expert negotiation, we
-                  successfully navigated complex legal challenges to secure a
-                  favorable outcome.
-                </p>
-
-                <p className="text-base sm:text-lg text-[#5a7ba8] leading-relaxed">
-                  Our multidisciplinary team brought together expertise across
-                  various legal domains, regulatory compliance, and commercial
-                  strategy. This integrated approach allowed us to identify
-                  innovative solutions and anticipate potential challenges
-                  throughout the proceedings.
-                </p>
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-8 bg-gradient-to-b from-[#2c5697] to-transparent rounded-full" />
+                <h3 className="text-xl sm:text-2xl font-black text-[#2c5697]">
+                  Results & Impact
+                </h3>
               </div>
+              <p className="text-base sm:text-lg text-[#5a7ba8] leading-relaxed">
+                The case set important precedents and has been widely recognized
+                within the legal community for its strategic approach and
+                successful resolution. Our client was able to continue their
+                business operations without disruption while achieving their
+                legal objectives.
+              </p>
             </div>
-
-            {/* Key Achievements */}
-            <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#2c5697] mb-6 sm:mb-8">
-                Key Achievements
-              </h2>
-
-              <ul className="space-y-4 sm:space-y-5">
-                {[
-                  "Secured favorable settlement exceeding client expectations",
-                  "Established new legal precedent in the field",
-                  "Protected client's market position and reputation",
-                  "Achieved resolution within projected timeline and budget",
-                ].map((item, idx) => (
-                  <motion.li
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="flex gap-3 sm:gap-4 text-base sm:text-lg text-[#5a7ba8] leading-relaxed group"
-                  >
-                    <div className="w-2 h-2 bg-[#2c5697] mt-2 sm:mt-2.5 shrink-0 group-hover:scale-150 transition-transform duration-200 rounded-full" />
-                    <span>{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Results Highlight Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-[#2c5697]/10 via-[#2c5697]/5 to-transparent border border-[#2c5697]/20 overflow-hidden group rounded-lg"
-            >
-              {/* Animated background accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#2c5697] opacity-[0.05] blur-[80px] group-hover:opacity-[0.1] transition-opacity duration-500" />
-
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                  <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-[#2c5697] to-transparent rounded-full" />
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#2c5697]">
-                    Results & Impact
-                  </h3>
-                </div>
-                <p className="text-base sm:text-lg text-[#5a7ba8] leading-relaxed">
-                  The case set important precedents and has been widely
-                  recognized within the legal community for its strategic
-                  approach and successful resolution. Our client was able to
-                  continue their business operations without disruption while
-                  achieving their legal objectives.
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Metadata Section */}
       <div className="bg-white border-t border-gray-200">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {[
               { label: "Published", value: formatDate(work.createdAt) },
               { label: "Last Updated", value: formatDate(work.updatedAt) },
-              // { label: "Case ID", value: `#${work.id}` },
-              // { label: "Author ID", value: work.authorId },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -457,10 +453,10 @@ export default function WorkDetailPage() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="bg-gray-50 border border-gray-200 p-4 sm:p-6 hover:border-[#2c5697]/30 transition-all duration-200 group rounded-lg"
               >
-                <div className="text-[10px] sm:text-xs text-[#7a93b8] uppercase tracking-wider mb-2">
+                <div className="text-xs text-[#7a93b8] uppercase tracking-wider mb-2">
                   {item.label}
                 </div>
-                <div className="text-sm sm:text-base text-[#2c5697] font-bold truncate group-hover:text-[#234578] transition-colors duration-200">
+                <div className="text-sm sm:text-base text-[#2c5697] font-bold group-hover:text-[#234578] transition-colors duration-200">
                   {item.value}
                 </div>
               </motion.div>
@@ -475,13 +471,13 @@ export default function WorkDetailPage() {
 // Enhanced Loading State with Skeleton
 function LoadingState() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 py-20">
       {/* Progress bar skeleton */}
       <div className="h-1 bg-gray-200" />
 
       {/* Nav skeleton */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-4">
+      <div className=" z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="h-10 w-32 bg-gray-200 animate-pulse rounded" />
             <div className="h-10 w-24 bg-gray-200 animate-pulse rounded" />
@@ -490,9 +486,9 @@ function LoadingState() {
       </div>
 
       {/* Hero skeleton */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-20 lg:py-32">
-          <div className="max-w-4xl space-y-6">
+      <div className="bg-white border-b border-gray-200 mt-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-6">
             {/* Meta skeleton */}
             <div className="flex gap-4">
               <div className="h-4 w-32 bg-gray-200 animate-pulse rounded" />
@@ -505,15 +501,8 @@ function LoadingState() {
 
             {/* Title skeleton */}
             <div className="space-y-4">
-              <div className="h-12 sm:h-16 lg:h-20 w-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse rounded" />
-              <div className="h-12 sm:h-16 lg:h-20 w-5/6 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse rounded" />
-            </div>
-
-            {/* Description skeleton */}
-            <div className="space-y-3 pt-4">
-              <div className="h-6 w-full bg-gray-200 animate-pulse rounded" />
-              <div className="h-6 w-full bg-gray-200 animate-pulse rounded" />
-              <div className="h-6 w-3/4 bg-gray-200 animate-pulse rounded" />
+              <div className="h-10 sm:h-12 w-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse rounded" />
+              <div className="h-10 sm:h-12 w-5/6 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse rounded" />
             </div>
 
             {/* Decorative line */}
@@ -523,12 +512,12 @@ function LoadingState() {
       </div>
 
       {/* Image skeleton */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="aspect-video bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 animate-pulse border border-gray-200 rounded-lg" />
 
         {/* Thumbnails skeleton */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6">
-          {[1, 2, 3, 4].map((i) => (
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6">
+          {[1, 2].map((i) => (
             <div
               key={i}
               className="aspect-video bg-gray-200 animate-pulse border border-gray-200 rounded-lg"
@@ -538,8 +527,8 @@ function LoadingState() {
       </div>
 
       {/* Content skeleton */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-4xl space-y-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="space-y-12">
           {/* Section 1 */}
           <div className="space-y-6">
             <div className="h-10 w-48 bg-gray-200 animate-pulse rounded" />
@@ -547,11 +536,6 @@ function LoadingState() {
               <div className="h-4 w-full bg-gray-200 animate-pulse rounded" />
               <div className="h-4 w-full bg-gray-200 animate-pulse rounded" />
               <div className="h-4 w-5/6 bg-gray-200 animate-pulse rounded" />
-            </div>
-            <div className="space-y-3">
-              <div className="h-4 w-full bg-gray-200 animate-pulse rounded" />
-              <div className="h-4 w-full bg-gray-200 animate-pulse rounded" />
-              <div className="h-4 w-4/5 bg-gray-200 animate-pulse rounded" />
             </div>
           </div>
 
@@ -569,7 +553,7 @@ function LoadingState() {
           </div>
 
           {/* Highlight box skeleton */}
-          <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-gray-100 to-transparent border border-gray-200 rounded-lg">
+          <div className="p-6 sm:p-8 bg-gradient-to-br from-gray-100 to-transparent border border-gray-200 rounded-lg">
             <div className="space-y-4">
               <div className="h-8 w-56 bg-gray-300 animate-pulse rounded" />
               <div className="space-y-3">
@@ -584,9 +568,9 @@ function LoadingState() {
 
       {/* Metadata skeleton */}
       <div className="bg-white border-t border-gray-200">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            {[1, 2, 3, 4].map((i) => (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            {[1, 2].map((i) => (
               <div
                 key={i}
                 className="bg-gray-50 border border-gray-200 p-4 sm:p-6 rounded-lg"

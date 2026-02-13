@@ -156,6 +156,20 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
   const isEven = index % 2 === 0;
   const isFirst = index === 0;
 
+  // Truncate title to max 120 characters
+  const truncateTitle = (title: string, maxLength: number = 120) => {
+    if (title.length <= maxLength) return title;
+    return title.slice(0, maxLength).trim() + "...";
+  };
+
+  // Truncate description to max 250 characters
+  const truncateDescription = (desc: string, maxLength: number = 250) => {
+    // Remove extra whitespace and newlines
+    const cleaned = desc.replace(/\s+/g, " ").trim();
+    if (cleaned.length <= maxLength) return cleaned;
+    return cleaned.slice(0, maxLength).trim() + "...";
+  };
+
   return (
     <Link href={`/our-work/${work.slug}`}>
       <motion.div
@@ -195,14 +209,14 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
                 <span>{formatDate(work.createdAt)}</span>
               </div>
 
-              {/* Title */}
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-[#2c5697] transition-colors duration-300">
-                {work.title}
+              {/* Title - with smart truncation */}
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-[#2c5697] transition-colors duration-300">
+                {truncateTitle(work.title, 120)}
               </h2>
 
-              {/* Description */}
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                {work.description}
+              {/* Description - with smart truncation */}
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed mb-8 line-clamp-4">
+                {truncateDescription(work.description, 280)}
               </p>
 
               {/* CTA */}
@@ -236,7 +250,7 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
                 src={work.images[0]}
                 alt={work.title}
                 className={`
-                  w-full h-full object-cover transition-all duration-700
+                  w-full h-full object-cover object-left transition-all duration-700
                   ${imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}
                   group-hover:scale-105
                 `}

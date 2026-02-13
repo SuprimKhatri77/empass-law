@@ -60,9 +60,9 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Empass Law"
-                width={180}
-                height={45}
-                className={`h-11 w-auto transition-all duration-300 ${
+                width={200}
+                height={65}
+                className={`h-20 w-auto transition-all duration-300 py-2 ${
                   isHomepage && !mobileMenuOpen
                     ? "brightness-0 invert"
                     : "brightness-100"
