@@ -1,0 +1,269 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FileText,
+  Scale,
+  Users,
+  AlertTriangle,
+  FileCheck,
+  ShieldCheck,
+  ArrowRight,
+  CheckCircle2,
+  Briefcase,
+} from "lucide-react";
+import Link from "next/link";
+
+interface ServiceOffering {
+  id: string;
+  title: string;
+  icon: React.ElementType;
+  description: string;
+}
+
+interface ClientType {
+  title: string;
+  description: string;
+}
+
+interface EmploymentLawProps {
+  className?: string;
+}
+
+/* ---------------- Data ---------------- */
+
+const SERVICE_OFFERINGS: ServiceOffering[] = [
+  {
+    id: "contracts-employment",
+    title: "Contracts of Employment",
+    icon: FileText,
+    description:
+      "Comprehensive drafting and review of employment contracts, and expert advice on varying contractual terms to ensure legal compliance.",
+  },
+  {
+    id: "wrongful-dismissal",
+    title: "Wrongful Dismissal & Unfair Dismissal Claims",
+    icon: AlertTriangle,
+    description:
+      "Strategic representation in wrongful and unfair dismissal claims.",
+  },
+  {
+    id: "employment-tribunal",
+    title: "Employment Tribunal Representation",
+    icon: Scale,
+    description:
+      "Expert representation and issuing of claims in employment tribunals.",
+  },
+  {
+    id: "disciplinary-grievance",
+    title: "Disciplinary & Grievance Procedures",
+    icon: Users,
+    description:
+      "Guidance on fair disciplinary and grievance procedures.",
+  },
+  {
+    id: "settlement-agreements",
+    title: "Settlement Agreements",
+    icon: FileCheck,
+    description:
+      "Negotiation and review of settlement agreements.",
+  },
+  {
+    id: "restrictive-covenants",
+    title: "Restrictive Covenants",
+    icon: ShieldCheck,
+    description:
+      "Drafting and enforcing restrictive covenants.",
+  },
+];
+
+const CLIENT_TYPES: ClientType[] = [
+  {
+    title: "Domestic Organizations",
+    description: "Employment law compliance and advisory services.",
+  },
+  {
+    title: "National Businesses",
+    description: "Multi-location businesses needing consistent guidance.",
+  },
+  {
+    title: "International Organizations",
+    description: "Cross-border employment regulation advisory.",
+  },
+  {
+    title: "Individual Employees",
+    description: "Representation and employment rights advice.",
+  },
+];
+
+/* ---------------- Component ---------------- */
+
+const EmploymentLaw: React.FC<EmploymentLawProps> = ({ className = "" }) => {
+  return (
+    <div className={`min-h-screen bg-white ${className}`}>
+
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 text-center max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-px w-8 bg-[#00a3a3]" />
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
+                Employment Law
+              </span>
+              <div className="h-px w-8 bg-[#00a3a3]" />
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Employment Law Services
+            </h1>
+
+            <p className="text-lg sm:text-xl text-white/90">
+              Strategic legal guidance across contracts, disputes,
+              tribunals, and workplace compliance.
+            </p>
+
+            {/* <div className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2C4A6B] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div> */}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* DESCRIPTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
+            Comprehensive Employment Law Support
+          </h2>
+
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We advise domestic and international organisations on
+            employment-related matters, including litigation,
+            consultancy, and regulatory compliance.
+          </p>
+
+          <p className="text-gray-600 leading-relaxed">
+            Our team delivers commercially focused and legally robust
+            solutions aligned with your operational objectives.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="py-20 sm:py-28 bg-gray-50">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
+              Our Employment Law Services
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Advisory and litigation expertise across employment matters.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICE_OFFERINGS.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-all"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 group-hover:bg-[#2C4A6B]/10 transition-colors">
+                    <Icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-[#2c5697] mb-2">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CLIENT TYPES */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
+              Who We Serve
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Supporting employers and employees across industries.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CLIENT_TYPES.map((client, i) => (
+              <motion.div
+                key={client.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-md transition-all"
+              >
+                <CheckCircle2 className="w-6 h-6 text-[#2C4A6B] mb-4" />
+                <h3 className="font-semibold text-[#2c5697] mb-2">
+                  {client.title}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {client.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="bg-gradient-to-br from-[#2C4A6B] to-[#3D5F8A] rounded-2xl p-10 sm:p-14 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Need Employment Law Advice?
+            </h2>
+
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+              Speak with our employment law team for structured,
+              legally robust guidance.
+            </p>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2C4A6B] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Contact Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default EmploymentLaw;

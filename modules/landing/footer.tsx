@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/people"
+                  href="/our-people"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
                   Our People
@@ -88,10 +88,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/locations"
+                  href="/services"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
-                  Locations
+                  Services
                 </Link>
               </li>
               <li>
@@ -113,7 +113,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/services/corporate"
+                  href="/services/corporate-law"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
                   Corporate Law
@@ -121,23 +121,23 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/litigation"
+                  href="/services/litigation-and-adr"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
-                  Commercial Litigation
+                  Litigation & ADR
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/ip"
+                  href="/services/family-law"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
-                  Intellectual Property
+                  Family Law
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/employment"
+                  href="/services/employment-law"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
                   Employment Law
@@ -154,28 +154,13 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/case-studies"
+                  href="/our-work"
                   className="text-[14px] text-white/80 hover:text-white transition-colors"
                 >
-                  Case Studies
+                  Our Work
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/insights"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Insights
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/innovation"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Innovation
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/contact"
@@ -241,13 +226,6 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/accessibility"
-                className="hover:text-white transition-colors"
-              >
-                Accessibility
-              </Link>
-              <span>|</span>
               <Link
                 href="/terms"
                 className="hover:text-white transition-colors"

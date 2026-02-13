@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Shield,
   AlertTriangle,
@@ -11,11 +11,11 @@ import {
   Gavel,
   CheckCircle2,
   ChevronDown,
-  ExternalLink,
   Clock,
   Building2,
+  ArrowRight,
 } from "lucide-react";
-import { useRef } from "react";
+import Link from "next/link";
 
 interface PolicySection {
   id: string;
@@ -223,8 +223,6 @@ export default function AcceptableUsePolicy() {
   const [acknowledgedSections, setAcknowledgedSections] = useState<string[]>(
     [],
   );
-  const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: true });
 
   const toggleSection = (sectionId: string) => {
     setExpandedSections((prev) =>
@@ -243,106 +241,97 @@ export default function AcceptableUsePolicy() {
   const progress = (acknowledgedSections.length / policySections.length) * 100;
 
   return (
-    <div className="min-h-screen bg-[#0A0F1C]">
-      {/* Hero Header */}
-      <motion.div
-        ref={headerRef}
-        className="relative overflow-hidden border-b border-white/5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00D9FF] blur-[150px]" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00D9FF] blur-[150px]" />
-        </div>
-
-        <div className="relative max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32">
+    <div className="min-h-screen bg-white">
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <Shield className="w-12 h-12 text-[#00D9FF]" />
-              <span className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] px-4 py-2 border border-[#00D9FF]/20 bg-[#00D9FF]/5">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
                 Legal Policy
               </span>
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Acceptable Use Policy
             </h1>
 
-            <p className="text-lg text-white/60 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/90 mb-8">
               This policy outlines the terms and conditions for accessing and
               using our website. By continuing to use our services, you
               acknowledge and agree to these terms.
             </p>
 
             {/* Company Info Card */}
-            <div className="bg-white/[0.02] border border-white/10 p-6 space-y-3">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
               <div className="flex items-center gap-2 mb-4">
-                <Building2 className="w-5 h-5 text-[#00D9FF]" />
-                <span className="text-sm font-bold text-white/90">
+                <Building2 className="w-5 h-5 text-white" />
+                <span className="text-sm font-semibold text-white">
                   Operated By
                 </span>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-white/40 block mb-1">Company Name</span>
-                  <span className="text-white/70">{companyInfo.name}</span>
+                  <span className="text-white/60 block mb-1">Company Name</span>
+                  <span className="text-white font-medium">
+                    {companyInfo.name}
+                  </span>
                 </div>
                 <div>
-                  <span className="text-white/40 block mb-1">
+                  <span className="text-white/60 block mb-1">
                     Registration Number
                   </span>
-                  <span className="text-white/70">
+                  <span className="text-white font-medium">
                     {companyInfo.registration}
                   </span>
                 </div>
                 <div className="sm:col-span-2">
-                  <span className="text-white/40 block mb-1">
+                  <span className="text-white/60 block mb-1">
                     Registered Address
                   </span>
-                  <span className="text-white/70">{companyInfo.address}</span>
+                  <span className="text-white font-medium">
+                    {companyInfo.address}
+                  </span>
                 </div>
                 <div>
-                  <span className="text-white/40 block mb-1">VAT Number</span>
-                  <span className="text-white/70">{companyInfo.vat}</span>
+                  <span className="text-white/60 block mb-1">VAT Number</span>
+                  <span className="text-white font-medium">
+                    {companyInfo.vat}
+                  </span>
                 </div>
                 <div>
-                  <span className="text-white/40 block mb-1">Website</span>
-                  <a
-                    href={`https://${companyInfo.website}`}
-                    className="text-[#00D9FF] hover:underline flex items-center gap-1"
-                  >
+                  <span className="text-white/60 block mb-1">Website</span>
+                  <span className="text-white font-medium">
                     {companyInfo.website}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Progress Tracker */}
-      <div className="sticky top-0 z-40 bg-[#0D1425]/95 backdrop-blur-sm border-b border-white/5">
+      {/* PROGRESS TRACKER */}
+      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 py-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold tracking-widest uppercase text-white/40">
+            <span className="text-xs font-semibold tracking-wider uppercase text-gray-500">
               Reading Progress
             </span>
-            <span className="text-xs font-bold text-[#00D9FF]">
+            <span className="text-xs font-bold text-[#2C4A6B]">
               {acknowledgedSections.length} / {policySections.length} Sections
             </span>
           </div>
-          <div className="h-1 bg-white/5 overflow-hidden">
+          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-[#00D9FF]"
+              className="h-full bg-[#2C4A6B] rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
@@ -351,27 +340,27 @@ export default function AcceptableUsePolicy() {
         </div>
       </div>
 
-      {/* Policy Sections */}
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 py-20">
-        <div className="space-y-4">
-          {policySections.map((section, index) => {
-            const isExpanded = expandedSections.includes(section.id);
-            const isAcknowledged = acknowledgedSections.includes(section.id);
-            const Icon = section.icon;
+      {/* POLICY SECTIONS */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto space-y-6">
+            {policySections.map((section, index) => {
+              const isExpanded = expandedSections.includes(section.id);
+              const isAcknowledged = acknowledgedSections.includes(section.id);
+              const Icon = section.icon;
 
-            return (
-              <motion.div
-                key={section.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <div
-                  className={`
-                  bg-white/[0.02] border transition-all duration-200
-                  ${isExpanded ? "border-[#00D9FF]/30" : "border-white/10 hover:border-white/20"}
-                `}
+              return (
+                <motion.div
+                  key={section.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className={`bg-white border rounded-lg transition-all duration-200 ${
+                    isExpanded
+                      ? "border-[#2C4A6B] shadow-lg"
+                      : "border-gray-200 hover:border-gray-300 hover:shadow-md"
+                  }`}
                 >
                   {/* Section Header */}
                   <button
@@ -380,19 +369,20 @@ export default function AcceptableUsePolicy() {
                   >
                     <div className="flex items-center gap-4 flex-1">
                       <div
-                        className={`
-                        flex items-center justify-center w-12 h-12 transition-colors duration-200
-                        ${isExpanded ? "text-[#00D9FF]" : "text-white/70 group-hover:text-[#00D9FF]"}
-                      `}
+                        className={`flex items-center justify-center w-12 h-12 rounded-lg transition-colors duration-200 ${
+                          isExpanded
+                            ? "bg-[#2C4A6B] text-white"
+                            : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"
+                        }`}
                       >
                         <Icon className="w-6 h-6" />
                       </div>
 
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-1">
+                        <h3 className="text-xl font-bold text-[#2c5697] mb-1">
                           {section.title}
                         </h3>
-                        <p className="text-sm text-white/40">
+                        <p className="text-sm text-gray-500">
                           {isExpanded
                             ? "Click to collapse"
                             : "Click to expand and read"}
@@ -402,13 +392,13 @@ export default function AcceptableUsePolicy() {
 
                     <div className="flex items-center gap-3">
                       {isAcknowledged && (
-                        <CheckCircle2 className="w-5 h-5 text-[#00D9FF]" />
+                        <CheckCircle2 className="w-5 h-5 text-green-600" />
                       )}
                       <motion.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <ChevronDown className="w-5 h-5 text-white/40" />
+                        <ChevronDown className="w-5 h-5 text-gray-400" />
                       </motion.div>
                     </div>
                   </button>
@@ -423,14 +413,11 @@ export default function AcceptableUsePolicy() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 sm:px-8 pb-8 border-t border-white/5">
+                    <div className="px-6 sm:px-8 pb-8 border-t border-gray-200">
                       <div className="pt-6 space-y-6">
                         {/* Main Content */}
                         {section.content.map((paragraph, idx) => (
-                          <p
-                            key={idx}
-                            className="text-white/60 leading-relaxed"
-                          >
+                          <p key={idx} className="text-gray-600 leading-relaxed">
                             {paragraph}
                           </p>
                         ))}
@@ -441,18 +428,18 @@ export default function AcceptableUsePolicy() {
                             {section.subsections.map((subsection, subIdx) => (
                               <div
                                 key={subIdx}
-                                className="bg-white/[0.02] border border-white/5 p-6"
+                                className="bg-gray-50 border border-gray-200 rounded-lg p-6"
                               >
-                                <h4 className="text-sm font-bold tracking-widest uppercase text-[#00D9FF] mb-4">
+                                <h4 className="text-sm font-bold tracking-wider uppercase text-[#2C4A6B] mb-4">
                                   {subsection.title}
                                 </h4>
                                 <ul className="space-y-3">
                                   {subsection.items.map((item, itemIdx) => (
                                     <li
                                       key={itemIdx}
-                                      className="flex gap-3 text-white/60 leading-relaxed"
+                                      className="flex gap-3 text-gray-600 leading-relaxed"
                                     >
-                                      <span className="text-[#00D9FF] mt-1.5 block w-1 h-1 bg-[#00D9FF] shrink-0" />
+                                      <CheckCircle2 className="w-4 h-4 text-[#2C4A6B] flex-shrink-0 mt-1" />
                                       <span>{item}</span>
                                     </li>
                                   ))}
@@ -466,7 +453,7 @@ export default function AcceptableUsePolicy() {
                         {!isAcknowledged && (
                           <button
                             onClick={() => acknowledgeSection(section.id)}
-                            className="mt-6 px-6 py-3 bg-[#00D9FF] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold transition-colors duration-200 flex items-center gap-2 group"
+                            className="mt-6 px-6 py-3 bg-[#2C4A6B] hover:bg-[#1e3a57] text-white font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2"
                           >
                             <CheckCircle2 className="w-5 h-5" />I have read and
                             understood this section
@@ -475,56 +462,71 @@ export default function AcceptableUsePolicy() {
                       </div>
                     </div>
                   </motion.div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        {acknowledgedSections.length === policySections.length && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="mt-12 bg-gradient-to-br from-[#00D9FF]/10 to-transparent border border-[#00D9FF]/20 p-8 sm:p-12 text-center"
-          >
-            <CheckCircle2 className="w-16 h-16 text-[#00D9FF] mx-auto mb-6" />
-            <h3 className="text-2xl font-black text-white mb-4">
-              Policy Acknowledgment Complete
-            </h3>
-            <p className="text-white/60 mb-8 max-w-2xl mx-auto">
-              You have reviewed all sections of our Acceptable Use Policy. By
-              continuing to use our services, you confirm your acceptance of
-              these terms.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-[#00D9FF] hover:bg-[#00B8DD] text-[#0A0F1C] font-bold transition-colors duration-200">
-                Return to Home
-              </button>
-              <button className="px-8 py-4 border-2 border-white/20 hover:bg-white/5 text-white font-bold transition-colors duration-200">
-                Contact Legal Team
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Last Updated */}
-        <div className="mt-12 pt-8 border-t border-white/5 text-center text-sm text-white/40">
-          <p>
-            This policy may be updated from time to time. Please check regularly
-            for changes.
-          </p>
-          <p className="mt-2">
-            Last reviewed:{" "}
-            {new Date().toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
+                </motion.div>
+              );
             })}
-          </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* COMPLETION CTA */}
+      {acknowledgedSections.length === policySections.length && (
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-4xl mx-auto bg-gradient-to-br from-green-50 to-blue-50 border border-green-200 rounded-2xl p-8 sm:p-12 text-center"
+            >
+              <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-6" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#2c5697] mb-4">
+                Policy Acknowledgment Complete
+              </h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                You have reviewed all sections of our Acceptable Use Policy. By
+                continuing to use our services, you confirm your acceptance of
+                these terms.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#2C4A6B] hover:bg-[#1e3a57] text-white font-semibold rounded-lg transition-colors"
+                >
+                  Return to Home
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[#2C4A6B] text-[#2C4A6B] hover:bg-gray-100 font-semibold rounded-lg transition-colors"
+                >
+                  Contact Legal Team
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* LAST UPDATED */}
+      <section className="py-12 bg-white border-t border-gray-200">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center text-sm text-gray-500">
+            <p>
+              This policy may be updated from time to time. Please check
+              regularly for changes.
+            </p>
+            <p className="mt-2">
+              Last reviewed:{" "}
+              {new Date().toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

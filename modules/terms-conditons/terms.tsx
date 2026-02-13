@@ -9,8 +9,7 @@ import {
   Globe,
   Info,
   CheckCircle2,
-  ChevronRight,
-  ExternalLink,
+  ArrowRight,
   Gavel,
 } from "lucide-react";
 import Link from "next/link";
@@ -210,93 +209,63 @@ const sections: Section[] = [
 ];
 
 export default function TermsPage() {
-  const heroRef = useRef<HTMLElement>(null);
-  const isHeroInView = useInView(heroRef, { once: true });
-
   return (
-    <main className="bg-[#0A0F1C] text-white min-h-screen">
-      {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative py-32 lg:py-40 overflow-hidden"
-      >
-        <div className="absolute inset-0">
+    <div className="min-h-screen bg-white">
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, rgba(0, 217, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 217, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: "100px 100px",
-            }}
-            animate={{
-              backgroundPosition: ["0px 0px", "100px 100px"],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        </div>
-
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-[#00D9FF]/10 rounded-full blur-[120px]" />
-
-        <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-2 mb-6 bg-[#00D9FF]/10 border border-[#00D9FF]/20">
-              <FileText className="w-4 h-4 text-[#00D9FF]" />
-              <span className="text-xs font-bold tracking-widest text-[#00D9FF] uppercase">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
                 Legal Document
               </span>
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Terms & Conditions
             </h1>
 
-            <p className="text-xl sm:text-2xl text-white/60 leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-white/90 mb-6">
               Please read these terms carefully before using our site. By using
               www.empasslaw.com, you agree to be bound by these terms.
             </p>
 
-            <div className="flex items-center gap-6 text-sm">
-              <div className="flex items-center gap-2 text-white/50">
-                <CheckCircle2 className="w-4 h-4 text-[#00D9FF]" />
+            <div className="flex items-center gap-4 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4" />
                 <span>Legally Binding</span>
               </div>
-              <div className="w-px h-4 bg-white/20" />
-              <div className="flex items-center gap-2 text-white/50">
-                <span>Last Updated: {lastUpdated}</span>
-              </div>
+              <div className="w-px h-4 bg-white/30"></div>
+              <span>Last Updated: {lastUpdated}</span>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Important Notice */}
-      <section className="relative py-16 bg-[#0D1425] border-y border-white/5">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      {/* IMPORTANT NOTICE */}
+      <section className="py-16 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-4xl"
           >
-            <div className="p-8 bg-[#00D9FF]/5 border-l-4 border-[#00D9FF]">
+            <div className="p-6 sm:p-8 bg-red-50 border-l-4 border-red-600">
               <div className="flex items-start gap-4">
-                <AlertTriangle className="w-6 h-6 text-[#00D9FF] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h2 className="text-xl font-black text-white mb-2 uppercase tracking-wider">
+                  <h2 className="text-lg font-bold text-gray-900 mb-2">
                     Please Read Carefully
                   </h2>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     These terms and conditions govern your use of our website.
                     By accessing or using our site, you acknowledge that you
                     have read, understood, and agree to be bound by these terms.
@@ -308,72 +277,58 @@ export default function TermsPage() {
         </div>
       </section>
 
-      {/* Content Sections */}
-      <section className="relative py-20 sm:py-32 bg-[#0A0F1C]">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl space-y-20">
+      {/* CONTENT SECTIONS */}
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl space-y-16">
             {sections.map((section, sectionIndex) => (
               <motion.div
                 key={sectionIndex}
-                id={section.title
-                  .toLowerCase()
-                  .replace(/[^\w\s]/g, "")
-                  .replace(/\s+/g, "-")}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true }}
                 transition={{ delay: sectionIndex * 0.05 }}
-                className="scroll-mt-32"
+                className={`${section.highlight
+                    ? "p-6 sm:p-8 bg-blue-50 border-l-4 border-[#2C4A6B] rounded-r-lg"
+                    : ""
+                  }`}
               >
                 {/* Section Header */}
-                <div className="flex items-start gap-6 mb-8">
-                  <div
-                    className={`w-14 h-14 ${section.highlight ? "bg-[#00D9FF]/20 border-2 border-[#00D9FF]" : "bg-[#00D9FF]/10 border border-[#00D9FF]/20"} flex items-center justify-center flex-shrink-0`}
-                  >
-                    <section.icon
-                      className={`w-7 h-7 ${section.highlight ? "text-[#00D9FF]" : "text-[#00D9FF]"}`}
-                    />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <section.icon className="w-6 h-6 text-[#2C4A6B]" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#2c5697]">
                       {section.title}
                     </h2>
-                    <div className="h-[2px] w-16 bg-[#00D9FF]" />
                   </div>
                 </div>
 
                 {/* Main Content */}
-                <div
-                  className={`space-y-6 ${section.highlight ? "p-6 bg-white/[0.02] border-l-2 border-[#00D9FF]/50" : ""}`}
-                >
-                  <div className="space-y-6 pl-20">
-                    {section.content.map((paragraph, pIndex) => (
-                      <p
-                        key={pIndex}
-                        className="text-lg text-white/70 leading-relaxed"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
+                <div className="text-gray-600">
+                  {section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
 
                   {/* Subsections */}
                   {section.subsections && (
-                    <div className="space-y-8 pl-20 mt-8">
+                    <div className="space-y-6 mt-6">
                       {section.subsections.map((subsection, subIndex) => (
-                        <div key={subIndex} className="space-y-4">
-                          <h3 className="text-xl font-bold text-white/90 flex items-center gap-2">
-                            <div className="w-1 h-6 bg-[#00D9FF]" />
+                        <div key={subIndex} className="space-y-3">
+                          <h3 className="text-lg font-semibold text-[#2c5697] mt-4">
                             {subsection.title}
                           </h3>
-                          <ul className="space-y-3">
+                          <ul className="space-y-2">
                             {subsection.items.map((item, itemIndex) => (
                               <li
                                 key={itemIndex}
-                                className="flex items-start gap-3 group"
+                                className="flex items-start gap-3"
                               >
-                                <div className="w-1.5 h-1.5 bg-[#00D9FF] flex-shrink-0 mt-2.5" />
-                                <span className="text-white/60 leading-relaxed group-hover:text-white/70 transition-colors">
+                                <CheckCircle2 className="w-4 h-4 text-[#2C4A6B] flex-shrink-0 mt-1" />
+                                <span className="text-gray-600 leading-relaxed">
                                   {item}
                                 </span>
                               </li>
@@ -386,8 +341,8 @@ export default function TermsPage() {
                 </div>
 
                 {/* Divider */}
-                {sectionIndex < sections.length - 1 && (
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mt-12" />
+                {sectionIndex < sections.length - 1 && !section.highlight && (
+                  <div className="h-px w-full bg-gray-200 mt-12" />
                 )}
               </motion.div>
             ))}
@@ -395,99 +350,97 @@ export default function TermsPage() {
         </div>
       </section>
 
-      {/* Company Details Card */}
-      <section className="relative py-20 bg-[#0D1425] border-y border-white/5">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      {/* COMPANY DETAILS */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-4xl"
           >
-            <h2 className="text-3xl font-black text-white mb-8">
+            <h2 className="text-3xl font-bold text-[#2c5697] mb-8">
               Company Information
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-6 bg-white/[0.02] border border-white/10">
-                <h3 className="text-sm font-bold tracking-wider uppercase text-white/50 mb-3">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg">
+                <h3 className="text-sm font-semibold uppercase text-gray-500 mb-3 tracking-wider">
                   Registered Name
                 </h3>
-                <p className="text-white font-medium">{companyDetails.name}</p>
+                <p className="text-gray-900 font-medium">{companyDetails.name}</p>
               </div>
 
-              <div className="p-6 bg-white/[0.02] border border-white/10">
-                <h3 className="text-sm font-bold tracking-wider uppercase text-white/50 mb-3">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg">
+                <h3 className="text-sm font-semibold uppercase text-gray-500 mb-3 tracking-wider">
                   Company Number
                 </h3>
-                <p className="text-white font-medium">
+                <p className="text-gray-900 font-medium">
                   {companyDetails.number}
                 </p>
               </div>
 
-              <div className="p-6 bg-white/[0.02] border border-white/10 sm:col-span-2">
-                <h3 className="text-sm font-bold tracking-wider uppercase text-white/50 mb-3">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg sm:col-span-2">
+                <h3 className="text-sm font-semibold uppercase text-gray-500 mb-3 tracking-wider">
                   Registered Address
                 </h3>
-                <p className="text-white font-medium">
+                <p className="text-gray-900 font-medium">
                   {companyDetails.address}
                 </p>
               </div>
 
-              <div className="p-6 bg-white/[0.02] border border-white/10">
-                <h3 className="text-sm font-bold tracking-wider uppercase text-white/50 mb-3">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg">
+                <h3 className="text-sm font-semibold uppercase text-gray-500 mb-3 tracking-wider">
                   VAT Number
                 </h3>
-                <p className="text-white font-medium">{companyDetails.vat}</p>
+                <p className="text-gray-900 font-medium">{companyDetails.vat}</p>
               </div>
 
-              <div className="p-6 bg-white/[0.02] border border-white/10">
-                <h3 className="text-sm font-bold tracking-wider uppercase text-white/50 mb-3">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg">
+                <h3 className="text-sm font-semibold uppercase text-gray-500 mb-3 tracking-wider">
                   Contact
                 </h3>
-                <p className="text-white font-medium mb-2">
+                <p className="text-gray-900 font-medium mb-2">
                   {companyDetails.email}
                 </p>
-                <p className="text-white font-medium">{companyDetails.phone}</p>
+                <p className="text-gray-900 font-medium">{companyDetails.phone}</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="relative py-20 sm:py-32 bg-[#0A0F1C]">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-black mb-6 text-white">
+      {/* CTA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="bg-gradient-to-br from-[#2C4A6B] to-[#3D5F8A] rounded-2xl p-10 sm:p-14 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Questions About These Terms?
             </h2>
-            <p className="text-lg text-white/60 mb-8">
+
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
               If you have any questions regarding these terms and conditions,
               please get in touch.
             </p>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00D9FF] text-white font-bold hover:bg-[#0088BB] transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2C4A6B] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
                 Contact Us
-                <ChevronRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/privacy-policy"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold hover:bg-white/5 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
               >
                 Privacy Policy
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

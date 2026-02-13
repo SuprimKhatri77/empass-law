@@ -108,6 +108,8 @@ const TEAM_MEMBERS: TeamMember[] = [
 const DEPARTMENTS = ["All", "Corporate", "Litigation", "Property", "Family"];
 
 export default function OurPeoplePage() {
+  const [activeCard, setActiveCard] = useState<number | null | string>(null);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedMember, setSelectedMember] = useState<string | null>(null);
@@ -190,11 +192,10 @@ export default function OurPeoplePage() {
                 <button
                   key={dept}
                   onClick={() => setSelectedDepartment(dept)}
-                  className={`px-4 py-2 rounded-lg text-[13px] font-medium whitespace-nowrap transition-colors ${
-                    selectedDepartment === dept
-                      ? "bg-[#2c5697] text-white"
-                      : "bg-gray-100 text-[#445566] hover:bg-gray-200"
-                  }`}
+                  className={`px-4 py-2 rounded-lg text-[13px] font-medium whitespace-nowrap transition-colors ${selectedDepartment === dept
+                    ? "bg-[#2c5697] text-white"
+                    : "bg-gray-100 text-[#445566] hover:bg-gray-200"
+                    }`}
                 >
                   {dept}
                 </button>
@@ -222,71 +223,110 @@ export default function OurPeoplePage() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredMembers.map((member) => (
-                <article
+                <div
                   key={member.id}
-                  className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                  className="relative w-full max-w-[340px] h-[430px] mx-auto bg-[#2C4A6B] overflow-hidden group shadow-lg"
                 >
-                  {/* Image */}
-                  <div className="relative h-[320px] overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover object-[center_top] group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c4a6e]/90 via-transparent to-transparent" />
 
-                    {/* Floating badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-[#2c5697] text-[11px] font-bold tracking-wider rounded-full">
-                        {member.department}
-                      </span>
-                    </div>
+                  {/* ================= FRONT SLIDE ================= */}
+                  <div
+                    className={`
+    absolute inset-0 z-20
+    transition-transform duration-500 ease-in-out
+    ${activeCard === member.id ? "-translate-y-full" : "translate-y-0"}
+    lg:group-hover:-translate-y-full
+  `}
+                  >
 
-                    {/* Name overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-[24px] font-bold mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-[14px] font-medium text-[#00a3a3]">
-                        {member.role}
-                      </p>
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={1000}
+                        height={1000}
+                        className="object-cover object-[center_top]"
+                      />
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#2C4A6B]/95 via-[#2C4A6B]/60 to-transparent" />
+
+                      {/* Department */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-white/90 text-[#2c5697] text-[11px] font-bold tracking-wider">
+                          {member.department}
+                        </span>
+                      </div>
+
+                      {/* Name + Role */}
+                      <div className="absolute bottom-6 left-6 right-6 text-white">
+                        <h3 className="text-[22px] font-bold mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-[14px] font-medium text-[#00a3a3]">
+                          {member.role}
+                        </p>
+                      </div>
+                      {/* Mobile View Button */}
+                      <button
+                        onClick={() =>
+                          setActiveCard(
+                            activeCard === member.id ? null : member.id
+                          )
+                        }
+                        className="lg:hidden absolute bottom-4 right-4 bg-white text-[#2c5697] text-xs font-semibold px-3 py-1 rounded shadow"
+                      >
+                        View
+                      </button>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    {/* Bio */}
-                    <p className="text-[14px] text-[#445566] leading-relaxed mb-4 line-clamp-3">
-                      {member.bio}
-                    </p>
+                  {/* ================= BACK SLIDE ================= */}
+                  <div
+                    className={`
+    absolute inset-0 z-10 p-8 bg-white
+    transition-transform duration-500 ease-in-out
+    ${activeCard === member.id ? "translate-y-0" : "translate-y-full"}
+    lg:group-hover:translate-y-0
+    flex flex-col justify-between
+  `}
+                  >
 
-                    {/* Expertise tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {member.expertise.slice(0, 3).map((exp, index) => (
-                        <span
-                          key={index}
-                          className="inline-block px-2 py-1 bg-gray-100 text-[#445566] text-[11px] font-medium rounded"
-                        >
-                          {exp}
-                        </span>
-                      ))}
-                      {member.expertise.length > 3 && (
-                        <span className="inline-block px-2 py-1 bg-gray-100 text-[#445566] text-[11px] font-medium rounded">
-                          +{member.expertise.length - 3} more
-                        </span>
-                      )}
+
+                    <div>
+                      <h3 className="text-lg font-bold text-[#2c5697] mb-4 uppercase tracking-wide">
+                        About {member.name.split(" ")[0]}
+                      </h3>
+
+                      <p className="text-sm text-[#445566] leading-relaxed mb-6 line-clamp-5">
+                        {member.bio}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {member.expertise.slice(0, 3).map((exp, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 bg-gray-100 text-[#445566] text-[11px] rounded"
+                          >
+                            {exp}
+                          </span>
+                        ))}
+                        {member.expertise.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-100 text-[#445566] text-[11px] rounded">
+                            +{member.expertise.length - 3} more
+                          </span>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Contact buttons */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    {/* Contact */}
+                    <div className="flex items-center gap-4 pt-4 border-t border-gray-200 text-sm font-medium">
                       <a
                         href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 text-[#2c5697] hover:text-[#234578] text-[13px] font-medium transition-colors"
+                        className="text-[#2c5697] hover:text-[#234578] transition-colors"
                       >
-                        <Mail className="w-4 h-4" />
-                        <span>Email</span>
+                        Email
                       </a>
+
                       {member.linkedin && (
                         <>
                           <span className="text-gray-300">|</span>
@@ -294,16 +334,26 @@ export default function OurPeoplePage() {
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-[#2c5697] hover:text-[#234578] text-[13px] font-medium transition-colors"
+                            className="text-[#2c5697] hover:text-[#234578] transition-colors"
                           >
-                            <Linkedin className="w-4 h-4" />
-                            <span>LinkedIn</span>
+                            LinkedIn
                           </a>
                         </>
                       )}
                     </div>
+                    {/* Mobile Close Button */}
+                    <button
+                      onClick={() =>
+                        setActiveCard(null)
+                      }
+                      className="lg:hidden mt-4 w-full bg-[#2c5697] text-white text-sm font-semibold py-2 rounded"
+                    >
+                      Close
+                    </button>
+
                   </div>
-                </article>
+
+                </div>
               ))}
             </div>
           )}

@@ -1,428 +1,193 @@
 "use client";
 
-import React from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  Building2,
-  FileText,
-  TrendingUp,
-  Users,
-  Shield,
-  Briefcase,
   ArrowRight,
-  CheckCircle2,
-  ChevronRight,
+  Building2,
+  Users,
+  FileText,
+  Search,
+  TrendingUp,
+  Briefcase,
+  Scale,
+  Handshake,
 } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 
-// Type definitions
-interface ServiceOffering {
-  id: string;
-  title: string;
-  icon: React.ElementType;
-  description: string;
-}
-
-interface ClientType {
-  title: string;
-  description: string;
-}
-
-interface CorporateLawProps {
-  className?: string;
-}
-
-// Data
-const SERVICE_OFFERINGS: ServiceOffering[] = [
+const corporateServices = [
   {
-    id: "shareholders-agreement",
-    title: "Shareholders Agreement",
-    icon: Users,
-    description:
-      "Comprehensive shareholder agreements that protect interests and define rights, obligations, and dispute resolution mechanisms.",
-  },
-  {
-    id: "corporate-governance",
-    title: "Corporate Governance",
-    icon: Shield,
-    description:
-      "Expert guidance on corporate governance structures, compliance, and best practices to ensure effective management.",
-  },
-  {
-    id: "share-purchase",
-    title: "Sale and Purchase of Shares",
-    icon: TrendingUp,
-    description:
-      "Strategic advice on share transactions, including valuations, negotiations, and documentation for seamless transfers.",
-  },
-  {
-    id: "due-diligence",
-    title: "Due Diligence",
     icon: FileText,
-    description:
-      "Thorough due diligence investigations covering legal, financial, and commercial aspects of corporate transactions.",
+    title: "Shareholders Agreement",
+    description: "Comprehensive agreements protecting shareholder rights and defining governance structures.",
   },
   {
-    id: "investment-agreement",
-    title: "Investment Agreement",
-    icon: Briefcase,
-    description:
-      "Drafting and negotiating investment agreements to secure funding while protecting stakeholder interests.",
+    icon: Scale,
+    title: "Corporate Governance",
+    description: "Ensuring compliance with regulatory requirements and best practice standards.",
   },
   {
-    id: "asset-purchase",
-    title: "Sale and Purchase of Business Assets",
-    icon: Building2,
-    description:
-      "Complete asset transaction services including structuring, documentation, and regulatory compliance.",
-  },
-  {
-    id: "partnership-agreement",
-    title: "Partnership Agreement",
-    icon: Users,
-    description:
-      "Tailored partnership agreements that establish clear terms, profit sharing, and governance structures.",
-  },
-  {
-    id: "capital-raising",
-    title: "Capital Raising",
     icon: TrendingUp,
-    description:
-      "Strategic support for capital raising initiatives, including equity and debt financing arrangements.",
+    title: "Sale and Purchase of Shares",
+    description: "Expert guidance on share transactions in your business.",
   },
   {
-    id: "corporate-reorganisation",
-    title: "Corporate Reorganisation",
+    icon: Search,
+    title: "Due Diligence",
+    description: "Thorough investigation and analysis of business transactions and investments.",
+  },
+  {
+    icon: Briefcase,
+    title: "Investment Agreement",
+    description: "Structuring and negotiating investment deals for optimal outcomes.",
+  },
+  {
     icon: Building2,
-    description:
-      "Expert advice on restructuring, mergers, demergers, and other corporate reorganization transactions.",
+    title: "Sale and Purchase of Business Assets",
+    description: "Strategic advice on asset acquisitions and disposals.",
+  },
+  {
+    icon: Handshake,
+    title: "Partnership Agreement",
+    description: "Drafting and negotiating partnership structures and terms.",
+  },
+  {
+    icon: Coins,
+    title: "Capital Raising",
+    description: "Support for fundraising initiatives and capital structure optimization.",
+  },
+  {
+    icon: Users,
+    title: "Corporate Reorganisation",
+    description: "Restructuring advice for business transformation and efficiency.",
   },
 ];
 
-const CLIENT_TYPES: ClientType[] = [
-  {
-    title: "Multi-National Corporations",
-    description: "Large international companies requiring sophisticated corporate legal support",
-  },
-  {
-    title: "Publicly Listed Companies",
-    description: "Public companies with complex compliance and governance requirements",
-  },
-  {
-    title: "Small Family Businesses",
-    description: "Family-run enterprises seeking personalized corporate legal guidance",
-  },
-  {
-    title: "Start-ups",
-    description: "Emerging businesses needing strategic corporate formation and growth support",
-  },
-];
-
-const CorporateLaw: React.FC<CorporateLawProps> = ({ className = "" }) => {
-  const headerRef = React.useRef<HTMLElement>(null);
-  const descriptionRef = React.useRef<HTMLDivElement>(null);
-  const servicesRef = React.useRef<HTMLDivElement>(null);
-  const clientsRef = React.useRef<HTMLDivElement>(null);
-  const ctaRef = React.useRef<HTMLDivElement>(null);
-
-  const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
-  const descriptionInView = useInView(descriptionRef, { once: true, margin: "-100px" });
-  const servicesInView = useInView(servicesRef, { once: true, margin: "-100px" });
-  const clientsInView = useInView(clientsRef, { once: true, margin: "-100px" });
-  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
-
+function Coins(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <div className={`relative bg-[#0A0F1C] ${className}`}>
-      {/* Background subtle grid */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-            backgroundSize: "50px 50px",
-          }}
-        />
-      </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="8" cy="8" r="6" />
+      <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
+      <path d="M7 6h1v4" />
+      <path d="m16.71 13.88.7.71-2.82 2.82" />
+    </svg>
+  );
+}
 
+export default function CorporateLaw() {
+  return (
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={headerRef} className="relative py-20 sm:py-32 overflow-hidden">
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={headerInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="inline-block mb-6">
-                <span className="px-6 py-2 border border-[#00D9FF]/20 bg-[#00D9FF]/5 text-[#00D9FF] text-xs font-bold tracking-widest uppercase">
-                  Service/
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
-                Corporate Law
-              </h1>
-              <p className="text-xl sm:text-2xl text-white/70 font-bold mb-6">
-                Expertise in all aspects of Corporate Law
-              </p>
-              <div className="h-px bg-gradient-to-r from-[#00D9FF] via-[#00D9FF]/50 to-transparent w-48 mb-8" />
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-bold px-8 py-4 transition-colors duration-200 group"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-200" />
-                </a>
-                <a
-                  href="/services"
-                  className="inline-flex items-center gap-2 border-2 border-white/20 hover:bg-white/5 text-white font-bold px-8 py-4 transition-colors duration-200"
-                >
-                  <span>All Services</span>
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={headerInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="relative"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-white/5 border border-white/10">
-                <Image
-                  src="/services/Corporate-Law-Banner.webp"
-                  alt="Corporate Law"
-                  fill
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0F1C]/20 via-transparent to-[#0A0F1C]/40" />
-              </div>
-              {/* Decorative corner */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#00D9FF]/30" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Description Section */}
-      <section ref={descriptionRef} className="relative py-12 sm:py-20">
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="relative bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
+        <div className="relative max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={descriptionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3 }}
-            className="max-w-4xl mx-auto"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <div className="bg-white/[0.02] border border-white/10 p-8 sm:p-12 lg:p-16">
-              <h2 className="text-2xl sm:text-3xl font-black text-white mb-6">
-                Dynamic and Pragmatic Legal Advice
-              </h2>
-              <p className="text-lg text-white/60 leading-relaxed mb-6">
-                The corporate department consists of experienced and commercially aware corporate
-                solicitors and legal counsel who provide dynamic and pragmatic advice to assist you
-                and your business.
-              </p>
-              <p className="text-lg text-white/60 leading-relaxed">
-                Our clients range from large multi-national companies and publicly listed companies
-                to small family-run businesses and start-ups, all of whom are given the same level
-                of commitment, experience, and communication from the team.
-              </p>
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#00a3a3] uppercase">
+                Corporate Law
+              </span>
+              <div className="h-px w-8 bg-[#00a3a3]"></div>
             </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Expertise in all aspects of Corporate Law
+            </h1>
+            <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-6">
+              The corporate department consists of experienced and commercially aware corporate 
+              solicitors and legal counsel who provide dynamic and pragmatic advice to assist 
+              you and your business.
+            </p>
+            <p className="text-base sm:text-lg text-white/75 max-w-3xl mx-auto">
+              Our clients range from large multi-national companies and publicly listed companies 
+              to small family-run businesses and start-ups, all of whom are given the same level 
+              of commitment, experience, and communication from the team.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section ref={servicesRef} className="relative py-12 sm:py-20">
+      {/* Services Grid Section */}
+      <section className="py-20 sm:py-28 bg-gray-50">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3 }}
-            className="mb-12"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              Our Corporate Law Services
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
+              Corporate Law Services
             </h2>
-            <p className="text-white/60 max-w-2xl">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               We provide advice on a range of corporate matters, including but not limited to:
             </p>
-            <div className="h-px bg-gradient-to-r from-[#00D9FF] via-[#00D9FF]/50 to-transparent w-64 mt-6" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICE_OFFERINGS.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                  className="group"
-                >
-                  <div className="bg-white/[0.02] border border-white/10 p-6 sm:p-8 h-full hover:border-white/20 transition-all duration-200">
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className="w-14 h-14 border border-white/10 flex items-center justify-center group-hover:border-[#00D9FF]/30 transition-colors duration-200">
-                        <Icon className="w-7 h-7 text-white/70 group-hover:text-[#00D9FF] transition-colors duration-200" />
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-white mb-3 min-h-[3.5rem] flex items-center">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-white/50 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Hover indicator */}
-                    {/* <div className="mt-6 flex items-center gap-2 text-sm font-bold text-white/40 group-hover:text-[#00D9FF] transition-colors duration-200">
-                      <span>Learn More</span>
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                    </div> */}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Types Section */}
-      <section ref={clientsRef} className="relative py-12 sm:py-20">
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={clientsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3 }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              Who We Serve
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              From multinational corporations to start-ups, every client receives the same level of
-              commitment and expertise.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {CLIENT_TYPES.map((client, index) => (
+            {corporateServices.map((service, i) => (
               <motion.div
-                key={client.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={clientsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
-                className="bg-white/[0.02] border border-white/10 p-6 hover:border-[#00D9FF]/30 transition-colors duration-200"
+                key={service.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="group h-full p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-all"
               >
-                <div className="mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-[#00D9FF]" />
+                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 group-hover:bg-[#2C4A6B]/10 transition-colors">
+                  <service.icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{client.title}</h3>
-                <p className="text-sm text-white/50">{client.description}</p>
+                <h3 className="text-lg font-semibold text-[#2c5697] mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Benefits Section */}
-      <section className="relative py-12 sm:py-20">
-        <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={clientsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            className="bg-white/[0.02] border border-white/10 p-8 sm:p-12 lg:p-16"
-          >
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-              <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">01</div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  Experienced Team
-                </h3>
-                <p className="text-white/50 leading-relaxed">
-                  Our corporate solicitors bring years of experience and commercial awareness to
-                  every engagement.
-                </p>
-              </div>
-
-              <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">02</div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  Equal Commitment
-                </h3>
-                <p className="text-white/50 leading-relaxed">
-                  Every client, regardless of size, receives the same dedication and quality of
-                  service from our team.
-                </p>
-              </div>
-
-              <div>
-                <div className="text-4xl font-black text-[#00D9FF] mb-4">03</div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  Pragmatic Solutions
-                </h3>
-                <p className="text-white/50 leading-relaxed">
-                  We deliver practical, business-focused advice tailored to your specific needs and
-                  objectives.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section ref={ctaRef} className="relative py-20 sm:py-32">
+      <section className="py-20 bg-white">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.3 }}
-            className="bg-white/[0.02] border border-white/10 p-12 sm:p-16 lg:p-20 text-center max-w-4xl mx-auto"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-[#2C4A6B] to-[#3D5F8A] rounded-2xl p-10 sm:p-14 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
-              Need Corporate Legal Support?
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Contact us now to inquire about our services
             </h2>
-            <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
-              Contact us now to inquire about our corporate law services and discover how our
-              experienced team can support your business objectives.
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+              Our experienced corporate law team is ready to provide you with dynamic 
+              and pragmatic legal advice tailored to your business needs.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#4988C4] hover:bg-[#1C4D8D] text-white font-bold px-8 py-4 transition-colors duration-200 group"
-              >
-                <span>Contact Us</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-200" />
-              </a>
-              <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:bg-white/5 text-white font-bold px-8 py-4 transition-colors duration-200"
-              >
-                <span>Meet Our Team</span>
-              </a>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="mt-12 flex justify-center gap-2">
-              <div className="w-2 h-2 bg-[#00D9FF]/30" />
-              <div className="w-2 h-2 bg-[#00D9FF]/60" />
-              <div className="w-2 h-2 bg-[#00D9FF]" />
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#2C4A6B] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Contact us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
       </section>
     </div>
   );
-};
-
-export default CorporateLaw;
+}
