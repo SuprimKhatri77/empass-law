@@ -241,10 +241,17 @@ export default function Footer() {
               </Link>
               <span>|</span>
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="hover:text-white transition-colors"
               >
                 Privacy
+              </Link>
+              <span>|</span>
+              <Link
+                href="/use-policy"
+                className="hover:text-white transition-colors"
+              >
+                Use Policy
               </Link>
             </div>
           </div>
