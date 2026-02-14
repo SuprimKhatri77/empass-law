@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300  ${
           isHomepage
             ? mobileMenuOpen
               ? "bg-white"
@@ -54,15 +54,15 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex  justify-between h-30 py-5 items-center">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 relative z-50">
+            <Link href="/" className="flex-shrink-0 relative z-50 ">
               <Image
                 src="/logo.png"
                 alt="Empass Law"
                 width={200}
                 height={65}
-                className={`h-20 w-auto transition-all duration-300 py-2 ${
+                className={`h-20 w-auto transition-all duration-300 ${
                   isHomepage && !mobileMenuOpen
                     ? "brightness-0 invert"
                     : "brightness-100"
