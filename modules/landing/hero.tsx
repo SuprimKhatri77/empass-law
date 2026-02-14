@@ -21,10 +21,10 @@ export default function Hero() {
         </video>
 
         {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332]/95 via-[#2c4a6e]/85 to-[#3d5a7e]/90" />
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332]/95 via-[#2c4a6e]/85 to-[#3d5a7e]/90" /> */}
 
         {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]">
+        {/* <div className="absolute inset-0 opacity-[0.03]">
           <div
             className="absolute inset-0"
             style={{
@@ -35,11 +35,11 @@ export default function Hero() {
               backgroundSize: "60px 60px",
             }}
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Elegant geometric accent elements */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
+      {/* <div className="absolute inset-0 z-[1] pointer-events-none">
         <div
           className="absolute top-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: "4s" }}
@@ -48,7 +48,7 @@ export default function Hero() {
           className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: "6s" }}
         />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-22">
@@ -59,27 +59,25 @@ export default function Hero() {
           </div> */}
 
           {/* Main heading */}
-          <h1 className="text-[48px] sm:text-[56px] md:text-[68px] lg:text-[82px] xl:text-[96px] leading-[1.05] font-light text-white mb-8 tracking-tight">
-            Delivering high quality
+          <h1 className="text-[48px] sm:text-[40px] xl:text-[60px] leading-[1.05] font-light text-white mb-8 tracking-tight">
+            Clear Guidance
             <br />
             <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              legal outcomes,
+              Confident Decisions
             </span>
-            <br />
+            {/* <br />
             <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               globally
-            </span>
+            </span> */}
           </h1>
 
           {/* Subtitle */}
           <p className="text-white/75 text-[17px] sm:text-[19px] lg:text-[21px] leading-relaxed mb-12 max-w-2xl font-light">
-            Excellence in legal services with a global perspective. Trusted by
-            leading organizations worldwide.
+            Expert legal insight delivered with clarity, care and precision.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            {/* mobile version button*/}
+          {/* <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <Link
               href="/about"
               className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white md:hidden text-[#1a2332] text-[14px] font-semibold tracking-wide uppercase rounded-sm hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -100,7 +98,6 @@ export default function Hero() {
               </svg>
             </Link>
 
-            {/* Desktop version buttton */}
             <Link
               href="/about"
               className="group items-center justify-center gap-3 px-8 py-4 hidden md:inline-flex font-semibold tracking-wide uppercase"
@@ -126,7 +123,7 @@ export default function Hero() {
                 />
               </svg>
             </Link>
-          </div>
+          </div> */}
 
           {/* Trust indicators */}
           {/* <div className="mt-16 pt-8 border-t border-white/10">
@@ -145,11 +142,11 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-3 bg-white/50 rounded-full" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

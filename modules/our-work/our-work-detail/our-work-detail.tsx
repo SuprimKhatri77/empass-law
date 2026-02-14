@@ -480,7 +480,7 @@ export default function WorkDetailPage() {
 // Enhanced Loading State with Skeleton
 function LoadingState() {
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50 py-40">
       {/* Progress bar skeleton */}
       <div className="h-1 bg-gray-200" />
 

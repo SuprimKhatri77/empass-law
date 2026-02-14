@@ -64,7 +64,7 @@ export default function Navbar() {
                 height={65}
                 className={`h-20 w-auto transition-all duration-300 ${
                   isHomepage && !mobileMenuOpen
-                    ? "brightness-0 invert"
+                    ? "brightness-100"
                     : "brightness-100"
                 }`}
                 priority
