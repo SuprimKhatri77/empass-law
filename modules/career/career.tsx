@@ -32,9 +32,9 @@ export default function CareerPage() {
         </div>
 
         <div className="max-w-[1400px] mx-auto relative z-10 w-full">
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="w-16 h-1 bg-white/40 mb-8" />
-          </div>
+          </div> */}
 
           <h1 className="text-[48px] sm:text-[56px] lg:text-[72px] leading-[1.15] font-light text-white mb-6 tracking-wider uppercase">
             Join Our

@@ -129,7 +129,7 @@ export default function WorkDetailPage() {
   const descriptionParagraphs = formatDescription(work.description);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50  flex flex-col py-40">
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-[100]">
         <motion.div
@@ -141,7 +141,7 @@ export default function WorkDetailPage() {
 
       {/* Navigation Bar */}
       <div className=" z-50 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex items-center justify-between gap-4">
             <Link
               href="/our-work"

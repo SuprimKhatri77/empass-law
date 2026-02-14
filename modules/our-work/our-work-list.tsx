@@ -38,7 +38,7 @@ export default function OurWorkPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white py-5">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 border-b border-slate-200">
         {/* Background Image */}
