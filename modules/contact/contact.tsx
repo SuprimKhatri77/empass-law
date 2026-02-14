@@ -169,7 +169,7 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="group relative p-6 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200"
+                className="group montserrat relative p-6 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200"
               >
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#2c5697]/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-[#2c5697]/20 transition-colors">
                   <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#2c5697]" />
@@ -195,7 +195,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form and Info Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-12 montserrat sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
             {/* Form - Takes 3 columns */}
