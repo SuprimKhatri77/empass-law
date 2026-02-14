@@ -19,10 +19,9 @@ export default function Hero() {
           <source src="/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
+        <div className="absolute inset-0 bg-zinc-950/50 backdrop-get-brightness-50" />
         {/* Gradient overlay for better text readability */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332]/95 via-[#2c4a6e]/85 to-[#3d5a7e]/90" /> */}
-
         {/* Subtle pattern overlay */}
         {/* <div className="absolute inset-0 opacity-[0.03]">
           <div

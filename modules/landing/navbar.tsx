@@ -57,18 +57,33 @@ export default function Navbar() {
           <div className="flex justify-between h-30 py-5 items-center">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 relative z-50">
-              <Image
-                src="/logo.png"
-                alt="Empass Law"
-                width={200}
-                height={65}
-                className={`h-20 w-auto transition-all duration-300 ${
-                  isHomepage && !mobileMenuOpen
-                    ? "brightness-100"
-                    : "brightness-100"
-                }`}
-                priority
-              />
+              {isHomepage ? (
+                <Image
+                  src="/logo-text-white-no-bg.png"
+                  alt="Empass Law"
+                  width={200}
+                  height={65}
+                  className={`h-20 w-auto transition-all duration-300 ${
+                    isHomepage && !mobileMenuOpen
+                      ? "brightness-100"
+                      : "brightness-100"
+                  }`}
+                  priority
+                />
+              ) : (
+                <Image
+                  src="/logo.png"
+                  alt="Empass Law"
+                  width={200}
+                  height={65}
+                  className={`h-20 w-auto transition-all duration-300 ${
+                    isHomepage && !mobileMenuOpen
+                      ? "brightness-100"
+                      : "brightness-100"
+                  }`}
+                  priority
+                />
+              )}
             </Link>
 
             {/* Desktop Navigation */}
