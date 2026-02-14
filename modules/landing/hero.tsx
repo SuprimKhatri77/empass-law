@@ -6,7 +6,7 @@ import SvgHoverEffect from "../effects/SvgHoverEffect";
 export default function Hero() {
   const [hoverEffect, setHoverEffect] = useState<boolean>(false);
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden ">
       {/* Video Background - Full screen with overlay */}
       <div className="absolute inset-0 z-0">
         <video
@@ -40,19 +40,23 @@ export default function Hero() {
 
       {/* Elegant geometric accent elements */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '4s' }} />
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '6s' }} />
+        <div
+          className="absolute top-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "4s" }}
+        />
+        <div
+          className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "6s" }}
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-20">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-22">
         <div className="max-w-4xl">
           {/* Decorative line */}
-          <div className="mb-10">
+          {/* <div className="mb-10">
             <div className="w-20 h-1 bg-gradient-to-r from-white/60 to-white/20" />
-          </div>
+          </div> */}
 
           {/* Main heading */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[68px] lg:text-[82px] xl:text-[96px] leading-[1.05] font-light text-white mb-8 tracking-tight">
