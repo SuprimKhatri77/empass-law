@@ -6,193 +6,34 @@ import { lawFirm } from "@/utils/details/details";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2c4a6e] text-white relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
-
-      {/* Discover More Section */}
-      <div className="border-b border-white/10 relative z-10">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-6">
-              {/* Logo */}
-              <div className="w-25 h-25 relative flex-shrink-0">
-                <Image
-                  src="/logo.png"
-                  alt="Empass Law Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-
-              <h3 className="text-[24px] lg:text-[32px] font-normal">
-                Discover more about Empass Law
-              </h3>
-            </div>
-
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-white text-[14px] font-medium border-b-2 border-white pb-0.5 hover:border-white/60 transition-colors whitespace-nowrap"
-            >
-              Learn more
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
-
+    <footer className="bg-[#2c5697] text-white relative overflow-hidden">
       {/* Main Footer */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company */}
-          <div>
-            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
-              COMPANY
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-people"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Our People
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Careers
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
-              SERVICES
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/services/corporate-law"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Corporate Law
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/litigation-and-adr"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Litigation & ADR
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/family-law"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Family Law
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/employment-law"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Employment Law
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
-              RESOURCES
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/our-work"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Our Work
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-[14px] text-white/80 hover:text-white transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-[13px] font-semibold tracking-wider mb-4">
-              CONTACT
-            </h4>
-            <div className="space-y-3 text-[14px] text-white/80">
-              <p>{lawFirm.address}</p>
-              <p>{lawFirm.contactNumber}</p>
-              <p>{lawFirm.contactEmail}</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+          {/* Company Info */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 relative mb-6">
+              <Image
+                src="/logo.png"
+                alt="Empass Law Logo"
+                fill
+                className="object-contain"
+              />
             </div>
-
+            <p className="text-sm sm:text-[15px] text-white/70 leading-relaxed mb-6">
+              Expert legal guidance delivered with clarity, care and precision.
+            </p>
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-3">
               <a
                 href={`${lawFirm.linkedInLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                aria-label="LinkedIn"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -203,10 +44,11 @@ export default function Footer() {
                 href={`${lawFirm.instagramLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                aria-label="Instagram"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -215,43 +57,143 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-xs sm:text-[13px] font-semibold tracking-wider mb-4 sm:mb-6 text-white/90">
+              COMPANY
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/our-people"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Our People
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-xs sm:text-[13px] font-semibold tracking-wider mb-4 sm:mb-6 text-white/90">
+              SERVICES
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/services/corporate-law"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Corporate Law
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/litigation-and-adr"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Litigation & ADR
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/family-law"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Family Law
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/employment-law"
+                  className="text-sm sm:text-[14px] text-white/70 hover:text-white transition-colors"
+                >
+                  Employment Law
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-xs sm:text-[13px] font-semibold tracking-wider mb-4 sm:mb-6 text-white/90">
+              CONTACT
+            </h4>
+            <div className="space-y-3 text-sm sm:text-[14px] text-white/70">
+              <p className="leading-relaxed">{lawFirm.address}</p>
+              <p>
+                <a
+                  href={`tel:${lawFirm.contactNumber}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {lawFirm.contactNumber}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`mailto:${lawFirm.contactEmail}`}
+                  className="hover:text-white transition-colors break-all"
+                >
+                  {lawFirm.contactEmail}
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/60">
-            <p>
-              © {new Date().getFullYear()} Empass Law LLP – All rights
-              reserved{" "}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-xs sm:text-[13px] text-white/60">
+            <p className="text-center md:text-left">
+              © {new Date().getFullYear()} Empass Law. All rights reserved.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Link
                 href="/terms"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors whitespace-nowrap"
               >
-                Terms and Conditions
+                Terms
               </Link>
-              <span>|</span>
-              <Link
-                href="/cookies"
-                className="hover:text-white transition-colors"
-              >
-                Cookie Policy
-              </Link>
-              <span>|</span>
+              <span className="text-white/30">|</span>
               <Link
                 href="/privacy-policy"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors whitespace-nowrap"
               >
                 Privacy
               </Link>
-              <span>|</span>
+              <span className="text-white/30">|</span>
               <Link
-                href="/use-policy"
-                className="hover:text-white transition-colors"
+                href="/cookies"
+                className="hover:text-white transition-colors whitespace-nowrap"
               >
-                Use Policy
+                Cookies
               </Link>
             </div>
           </div>

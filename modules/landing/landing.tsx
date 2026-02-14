@@ -13,7 +13,7 @@ export default function Landing() {
       <Hero />
       <NewsSection />
       <Welcome />
-      <FeaturedCaseStudy />
+      {/* <FeaturedCaseStudy /> */}
       <FeaturedInsights />
       <QuickLinks />
 

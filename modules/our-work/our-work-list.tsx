@@ -38,62 +38,36 @@ export default function OurWorkPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-5">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 border-b border-slate-200">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&h=900&fit=crop"
-            alt="London Skyline"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent" />
-        </div>
-
-        {/* Decorative Shape */}
-        <div className="absolute top-20 right-20 w-96 h-96 opacity-10">
-          <Image
-            src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?w=800&h=800&fit=crop"
-            alt="Architecture"
-            fill
-            className="object-cover"
-            style={{
-              clipPath:
-                "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-            }}
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+    <div className="min-h-screen bg-white py-25 lg:py-20">
+      {/* Hero Section - White Background */}
+      <div className="relative overflow-hidden bg-white border-b border-gray-100">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-6">
-              <Briefcase className="w-8 h-8 text-cyan-400" />
-              <div className="h-px flex-1 max-w-20 bg-gradient-to-r from-cyan-400 to-transparent" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
+                Our Work
+              </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-              Our Work
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#2c5697] mb-4 sm:mb-6 tracking-tight">
+              Case Studies & Success Stories
             </h1>
 
-            <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
-              Landmark cases, groundbreaking victories, and transformative legal
-              solutions. Explore our portfolio of exceptional work that sets
-              precedents and delivers results.
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
+              Explore our portfolio of exceptional work that delivers results.
             </p>
           </motion.div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <AnimatePresence mode="wait">
           {/* Loading State */}
           {loading && (
@@ -156,12 +130,6 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
   const isEven = index % 2 === 0;
   const isFirst = index === 0;
 
-  // Truncate title to max 120 characters
-  const truncateTitle = (title: string, maxLength: number = 120) => {
-    if (title.length <= maxLength) return title;
-    return title.slice(0, maxLength).trim() + "...";
-  };
-
   // Truncate description to max 250 characters
   const truncateDescription = (desc: string, maxLength: number = 250) => {
     // Remove extra whitespace and newlines
@@ -170,11 +138,6 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
     return cleaned.slice(0, maxLength).trim() + "...";
   };
 
-  // const getPreviewText = (desc: string) => {
-  //   const cleaned = desc.replace(/\s+/g, " ").trim();
-  //   if (cleaned.length <= 250) return cleaned;
-  //   return cleaned.slice(0, 250).trim() + "...";
-  // };
   return (
     <Link href={`/our-work/${work.slug}`}>
       <motion.div
@@ -190,7 +153,7 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
       >
         <div
           className={`
-          grid lg:grid-cols-2 gap-8 lg:gap-16 py-16 lg:py-24
+          grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 py-12 sm:py-16 lg:py-24
           ${isEven ? "" : "lg:grid-flow-dense"}
         `}
         >
@@ -209,13 +172,13 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               transition={{ duration: 0.6, delay: isFirst ? 0.3 : 0.2 }}
             >
               {/* Date */}
-              <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
-                <Calendar className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4">
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>{formatDate(work.createdAt)}</span>
               </div>
 
-              {/* Title - with smart truncation */}
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-[#2c5697] transition-colors duration-300">
+              {/* Title */}
+              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight group-hover:text-[#2c5697] transition-colors duration-300">
                 {work.title}
                 {work.titleHighlight && (
                   <span
@@ -228,19 +191,19 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
                 {work.titleEnd && <span>{work.titleEnd}</span>}
               </h2>
 
-              {/* Description - with smart truncation */}
-              <p className="text-base lg:text-lg text-slate-600 leading-relaxed mb-8">
+              {/* Description */}
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8">
                 {truncateDescription(work.description, 200)}
               </p>
 
               {/* CTA */}
-              <div className="flex items-center gap-3 text-[#2c5697] font-semibold group-hover:gap-4 transition-all duration-300">
+              <div className="flex items-center gap-2 sm:gap-3 text-[#2c5697] font-semibold text-sm sm:text-base group-hover:gap-4 transition-all duration-300">
                 <span>Read Full Case Study</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
 
               {/* Decorative line */}
-              <div className="mt-8 h-0.5 w-24 bg-gradient-to-r from-cyan-500 to-transparent" />
+              <div className="mt-6 sm:mt-8 h-0.5 w-16 sm:w-24 bg-gradient-to-r from-cyan-500 to-transparent" />
             </motion.div>
           </div>
 
@@ -280,8 +243,8 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Corner accents */}
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-transparent group-hover:border-cyan-500 transition-all duration-300" />
-              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-transparent group-hover:border-cyan-500 transition-all duration-300" />
+              <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-t-2 border-r-2 border-transparent group-hover:border-cyan-500 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-b-2 border-l-2 border-transparent group-hover:border-cyan-500 transition-all duration-300" />
             </motion.div>
           </div>
         </div>
@@ -295,21 +258,24 @@ function LoadingSkeleton() {
   return (
     <div className="space-y-0">
       {[1, 2, 3, 4].map((i) => (
-        <div key={i} className="border-b border-slate-200 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <div
+          key={i}
+          className="border-b border-slate-200 py-12 sm:py-16 lg:py-24"
+        >
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
             {/* Content skeleton */}
-            <div className="flex flex-col justify-center space-y-6">
-              <div className="h-4 w-32 bg-slate-200 rounded animate-pulse" />
-              <div className="space-y-4">
-                <div className="h-10 lg:h-12 w-full bg-slate-200 rounded animate-pulse" />
-                <div className="h-10 lg:h-12 w-5/6 bg-slate-200 rounded animate-pulse" />
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6">
+              <div className="h-3 sm:h-4 w-24 sm:w-32 bg-slate-200 rounded animate-pulse" />
+              <div className="space-y-3 sm:space-y-4">
+                <div className="h-8 sm:h-10 lg:h-12 w-full bg-slate-200 rounded animate-pulse" />
+                <div className="h-8 sm:h-10 lg:h-12 w-5/6 bg-slate-200 rounded animate-pulse" />
               </div>
-              <div className="space-y-3">
-                <div className="h-4 w-full bg-slate-200 rounded animate-pulse" />
-                <div className="h-4 w-full bg-slate-200 rounded animate-pulse" />
-                <div className="h-4 w-3/4 bg-slate-200 rounded animate-pulse" />
+              <div className="space-y-2 sm:space-y-3">
+                <div className="h-3 sm:h-4 w-full bg-slate-200 rounded animate-pulse" />
+                <div className="h-3 sm:h-4 w-full bg-slate-200 rounded animate-pulse" />
+                <div className="h-3 sm:h-4 w-3/4 bg-slate-200 rounded animate-pulse" />
               </div>
-              <div className="h-6 w-48 bg-slate-200 rounded animate-pulse" />
+              <div className="h-5 sm:h-6 w-36 sm:w-48 bg-slate-200 rounded animate-pulse" />
             </div>
 
             {/* Image skeleton */}
@@ -330,27 +296,29 @@ function ErrorState({
   onRetry: () => void;
 }) {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex items-center justify-center min-h-[60vh] px-4">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         className="text-center max-w-md"
       >
-        <div className="w-20 h-20 mx-auto mb-6 bg-red-50 rounded-full flex items-center justify-center">
-          <AlertCircle className="w-10 h-10 text-red-500" />
+        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-red-50 rounded-full flex items-center justify-center">
+          <AlertCircle className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />
         </div>
 
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">
           Something Went Wrong
         </h2>
 
-        <p className="text-slate-600 mb-8 leading-relaxed">{error}</p>
+        <p className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 leading-relaxed">
+          {error}
+        </p>
 
         <button
           onClick={onRetry}
-          className="px-8 py-4 bg-[#2c5697] hover:bg-[#234578] text-white font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2 mx-auto group"
+          className="px-6 sm:px-8 py-3 sm:py-4 bg-[#2c5697] hover:bg-[#234578] text-white font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2 mx-auto group text-sm sm:text-base"
         >
-          <RefreshCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+          <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
           Try Again
         </button>
       </motion.div>
@@ -361,21 +329,21 @@ function ErrorState({
 // Empty State Component
 function EmptyState() {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex items-center justify-center min-h-[60vh] px-4">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         className="text-center max-w-md"
       >
-        <div className="w-20 h-20 mx-auto mb-6 bg-slate-100 rounded-full flex items-center justify-center">
-          <Briefcase className="w-10 h-10 text-slate-400" />
+        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-slate-100 rounded-full flex items-center justify-center">
+          <Briefcase className="w-8 h-8 sm:w-10 sm:h-10 text-slate-400" />
         </div>
 
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">
           No Work Found
         </h2>
 
-        <p className="text-slate-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
           We haven't published any case studies yet. Check back soon for
           updates.
         </p>

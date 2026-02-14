@@ -9,35 +9,49 @@ export default function NewsSection() {
   const featuredPosts = mockWorkPosts.slice(0, 3);
 
   return (
-    <section className="bg-gradient-to-r from-[#435b76] to-[#002041] py-16 lg:py-24">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+    <section className="bg-white py-12 sm:py-16 lg:py-20 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mb-8 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
+            <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
+            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
+              Recent Work
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697]">
+            Latest Case Studies
+          </h2>
+        </div>
+
+        {/* Posts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {featuredPosts.map((post) => (
             <article
               key={post.id}
-              className="group flex flex-col bg-[#163353] rounded-sm overflow-hidden transition-transform hover:-translate-y-1 duration-300"
+              className="group flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden transition-all hover:shadow-xl hover:border-[#2c5697]/30 duration-300"
             >
               {/* Image Container */}
-              <div className="relative h-[260px] overflow-hidden bg-gray-800">
+              <div className="relative h-[200px] sm:h-[220px] lg:h-[240px] overflow-hidden bg-gray-100">
                 <Image
                   src={post.images[0]}
                   alt={post.title}
                   fill
-                  className="object-cover object-left opacity-90 group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-left group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
               {/* Content */}
-              <div className="flex-1 flex flex-col p-8">
+              <div className="flex-1 flex flex-col p-6 sm:p-8">
                 {/* Title with highlight support */}
-                <h3 className="text-[22px] lg:text-[24px] leading-[1.3] font-light text-white mb-5">
+                <h3 className="text-lg sm:text-xl lg:text-[22px] leading-[1.3] font-bold text-[#2c5697] mb-4 group-hover:text-[#234578] transition-colors">
                   {post.title}
                   {post.titleHighlight && (
                     <span
-                      style={{ color: post.accentColor || "#00bcd4" }}
-                      className="font-normal"
+                      style={{ color: post.accentColor || "#00a3a3" }}
+                      className="font-bold"
                     >
                       {post.titleHighlight}
                     </span>
@@ -46,18 +60,14 @@ export default function NewsSection() {
                 </h3>
 
                 {/* Description - truncated properly with no overflow */}
-                <p className="text-white/75 text-[15px] leading-[1.6] mb-6 flex-1 line-clamp-3 overflow-hidden">
+                <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 flex-1 line-clamp-3 overflow-hidden">
                   {post.description.trim()}
                 </p>
 
                 {/* CTA Link */}
                 <Link
                   href={`/our-work/${post.slug}`}
-                  className="inline-flex items-center gap-2 text-[14px] font-medium transition-all group/link self-start"
-                  style={{
-                    color: post.accentColor || "#00bcd4",
-                    borderBottom: `2px solid ${post.accentColor || "#00bcd4"}`,
-                  }}
+                  className="inline-flex items-center gap-2 text-sm sm:text-[14px] font-semibold text-[#2c5697] hover:text-[#234578] transition-all group/link self-start border-b-2 border-[#2c5697] hover:border-[#234578] pb-1"
                 >
                   {post.cta || "Read more"}
                   <svg
@@ -80,12 +90,12 @@ export default function NewsSection() {
         </div>
 
         {/* View All Link */}
-        <div className="flex justify-end mt-12">
+        <div className="flex justify-end mt-8 sm:mt-12">
           <Link
             href="/our-work"
-            className="inline-flex items-center gap-2 text-white text-[14px] font-medium border-b-2 border-white pb-1 hover:border-white/60 transition-colors group"
+            className="inline-flex items-center gap-2 text-[#2c5697] text-sm sm:text-[14px] font-semibold border-b-2 border-[#2c5697] pb-1 hover:border-[#234578] hover:text-[#234578] transition-all group"
           >
-            View all
+            View all case studies
             <svg
               className="w-4 h-4 group-hover:translate-x-1 transition-transform"
               fill="none"
