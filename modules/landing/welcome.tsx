@@ -12,17 +12,17 @@ export default function Welcome() {
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
               <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
+              <span className="text-[10px] raleway sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
                 Welcome
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.15] font-bold text-[#2c5697] mb-6 sm:mb-8">
+            <h2 className="text-2xl raleway sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.15] font-bold text-[#2c5697] mb-6 sm:mb-8">
               Legal Excellence in London
             </h2>
 
             <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-              <p className="text-sm sm:text-base lg:text-[17px] leading-relaxed text-gray-600">
+              <p className="text-sm raleway sm:text-base lg:text-[17px] leading-relaxed text-gray-600">
                 A progressive law firm in the City of London providing
                 high-quality legal services tailored to your individual needs.
               </p>
@@ -34,7 +34,7 @@ export default function Welcome() {
                 (point, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-[#00a3a3] rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-sm sm:text-[15px] text-gray-700 font-medium">
+                    <span className="text-sm raleway sm:text-[15px] text-gray-700 font-medium">
                       {point}
                     </span>
                   </div>
@@ -44,7 +44,7 @@ export default function Welcome() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-[#2c5697] text-sm sm:text-[14px] font-semibold border-b-2 border-[#2c5697] pb-1 hover:border-[#234578] hover:text-[#234578] hover:gap-3 transition-all group"
+              className="inline-flex raleway items-center gap-2 text-[#2c5697] text-sm sm:text-[14px] font-semibold border-b-2 border-[#2c5697] pb-1 hover:border-[#234578] hover:text-[#234578] hover:gap-3 transition-all group"
             >
               Learn More About Us
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />

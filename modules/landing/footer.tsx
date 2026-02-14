@@ -6,7 +6,7 @@ import { lawFirm } from "@/utils/details/details";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2c5697] text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white relative overflow-hidden">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">

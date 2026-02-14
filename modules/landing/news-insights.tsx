@@ -15,11 +15,11 @@ export default function NewsSection() {
         <div className="mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
             <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
+            <span className="text-[10px] raleway sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
               Recent Work
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697]">
+          <h2 className="text-2xl raleway sm:text-3xl lg:text-4xl font-bold text-[#2c5697]">
             Latest Case Studies
           </h2>
         </div>
@@ -29,7 +29,7 @@ export default function NewsSection() {
           {featuredPosts.map((post) => (
             <article
               key={post.id}
-              className="group flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden transition-all hover:shadow-xl hover:border-[#2c5697]/30 duration-300"
+              className="group raleway flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden transition-all hover:shadow-xl hover:border-[#2c5697]/30 duration-300"
             >
               {/* Image Container */}
               <div className="relative h-[200px] sm:h-[220px] lg:h-[240px] overflow-hidden bg-gray-100">
@@ -93,7 +93,7 @@ export default function NewsSection() {
         <div className="flex justify-end mt-8 sm:mt-12">
           <Link
             href="/our-work"
-            className="inline-flex items-center gap-2 text-[#2c5697] text-sm sm:text-[14px] font-semibold border-b-2 border-[#2c5697] pb-1 hover:border-[#234578] hover:text-[#234578] transition-all group"
+            className="inline-flex raleway items-center gap-2 text-[#2c5697] text-sm sm:text-[14px] font-semibold border-b-2 border-[#2c5697] pb-1 hover:border-[#234578] hover:text-[#234578] transition-all group"
           >
             View all case studies
             <svg

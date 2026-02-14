@@ -58,7 +58,7 @@ export default function Hero() {
           </div> */}
 
           {/* Main heading */}
-          <h1 className="text-[48px] sm:text-[40px] xl:text-[60px] leading-[1.05] font-light text-white mb-8 tracking-tight">
+          <h1 className="text-[48px] raleway sm:text-[40px] xl:text-[60px] leading-[1.05] font-light text-white mb-8 tracking-tight">
             Clear Guidance
             <br />
             <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -71,7 +71,7 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/75 text-[17px] sm:text-[19px] lg:text-[21px] leading-relaxed mb-12 max-w-2xl font-light">
+          <p className="text-white/75 inknut-antiqua-light text-[17px] sm:text-[19px] lg:text-[21px] leading-relaxed mb-12 max-w-2xl font-light">
             Expert legal insight delivered with clarity, care and precision.
           </p>
 

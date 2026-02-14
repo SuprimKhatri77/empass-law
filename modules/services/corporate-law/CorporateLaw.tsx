@@ -107,13 +107,13 @@ export default function CorporateLaw() {
               Expertise in all aspects of Corporate Law
             </h1>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-6">
-              The corporate department consists of experienced and commercially aware corporate 
-              solicitors and legal counsel who provide dynamic and pragmatic advice to assist 
+              The corporate department consists of experienced and commercially aware corporate
+              solicitors and legal counsel who provide dynamic and pragmatic advice to assist
               you and your business.
             </p>
             <p className="text-base sm:text-lg text-white/75 max-w-3xl mx-auto">
-              Our clients range from large multi-national companies and publicly listed companies 
-              to small family-run businesses and start-ups, all of whom are given the same level 
+              Our clients range from large multi-national companies and publicly listed companies
+              to small family-run businesses and start-ups, all of whom are given the same level
               of commitment, experience, and communication from the team.
             </p>
           </motion.div>
@@ -175,7 +175,7 @@ export default function CorporateLaw() {
               Contact us now to inquire about our services
             </h2>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Our experienced corporate law team is ready to provide you with dynamic 
+              Our experienced corporate law team is ready to provide you with dynamic
               and pragmatic legal advice tailored to your business needs.
             </p>
             <Link
