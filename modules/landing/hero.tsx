@@ -44,7 +44,7 @@ export default function Hero() {
         </video>
 
         {/* Multi-layer overlay for depth and better readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0  bg-[#09265F]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
 
@@ -68,16 +68,16 @@ export default function Hero() {
           }`}
         >
           {/* Content card with glassmorphism effect and animated border */}
-          <div className="relative p-8 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-md shadow-2xl">
+          <div className="relative p-8 sm:p-10 rounded-2xl">
             {/* Animated gradient border - white only */}
-            <div
+            {/* <div
               className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-gray-500/40 via-gray-600/60 to-gray-700/40 animate-border-flow -z-10"
               style={{ backgroundSize: "200% 200%" }}
             />
-            <div className="absolute inset-[2px] rounded-2xl bg-black/40 backdrop-blur-md" />
+            <div className="absolute inset-[2px] rounded-2xl bg-black/40 backdrop-blur-md" /> */}
 
             {/* Content wrapper with relative positioning */}
-            <div className="relative z-10">
+            <div className="relative z-10 mt-100 ">
               {/* Main heading - responsive wrapping */}
               <h1
                 className={`text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${
@@ -86,23 +86,27 @@ export default function Hero() {
                     : "opacity-0 translate-y-8"
                 }`}
               >
-                <span className="block">Purpose in Every Advice.</span>
-                <span className="block bg-gradient-to-r font-bold from-white to-white/90 bg-clip-text text-transparent">
-                  Precision in Every Result.
+                <span className="block text-[100px] font-extrabold raleway">
+                  EMPASS LAW
+                </span>
+                <span className="block font-mono bg-gradient-to-r font-bold   text-[#4ECDC4] bg-clip-text  text-[60px]">
+                  DRIVEN BY PURPOSE. MEASURED BY RESULTS.
                 </span>
               </h1>
 
               {/* Subtitle with fade-in */}
               <p
-                className={`text-white/90 text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal transition-all duration-1000 delay-500 ${
+                className={`text-white text-[16px] sm:text-[17px] lg:text-[24px] leading-[1.7] mb-12 max-w-7xl  transition-all duration-1000 delay-500 font-bold ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
                 }`}
               >
-                <span className="font-semibold text-white">Empass Law</span>
-                <br />
-                stands at the intersection of precision, integrity, and impact
+                {/* <span className="font-semibold text-white">Empass Law</span> */}
+                {/* <br /> */}
+                We stand at the intersection of precision, integrity, and
+                impact-cutting through complexity with clarity, confidence, and
+                unwavering commitment to our clients’ success.
               </p>
 
               {/* CTA Buttons with hover effects */}

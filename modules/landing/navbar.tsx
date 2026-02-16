@@ -52,14 +52,12 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-sm ${
           isHomepage
-            ? mobileMenuOpen
-              ? "bg-white shadow-lg"
-              : scrolled
-                ? "bg-black/80 backdrop-blur-xl shadow-lg"
-                : "bg-black/30 backdrop-blur-sm"
-            : "bg-white border-b border-gray-200 shadow-sm"
+            ? scrolled
+              ? "shadow-md"
+              : "shadow-sm"
+            : "border-b border-gray-200"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
@@ -69,29 +67,14 @@ export default function Navbar() {
               href="/"
               className="flex-shrink-0 relative z-50 transition-transform duration-300 hover:scale-105"
             >
-              {isHomepage ? (
-                <Image
-                  src="/Empass-law.png"
-                  alt="Empass Law"
-                  width={200}
-                  height={60}
-                  className={`h-20 w-auto transition-all duration-300 ${
-                    isHomepage && !mobileMenuOpen
-                      ? "brightness-0 invert"
-                      : "brightness-100"
-                  }`}
-                  priority
-                />
-              ) : (
-                <Image
-                  src="/logo.png"
-                  alt="Empass Law"
-                  width={200}
-                  height={65}
-                  className="h-20 w-auto transition-all duration-300"
-                  priority
-                />
-              )}
+              <Image
+                src="/logo-blue.jpeg"
+                alt="Empass Law"
+                width={200}
+                height={65}
+                className="h-20 w-auto transition-all duration-300 bg-transparent"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation with improved hover states */}
@@ -101,27 +84,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setActiveLink(link.href)}
-                  className={`px-4 py-2 text-[13px] font-medium tracking-wide transition-all duration-300 relative group rounded-lg ${
-                    isHomepage
-                      ? activeLink === link.href
-                        ? "text-white bg-white/10"
-                        : "text-white/80 hover:text-white hover:bg-white/5"
-                      : activeLink === link.href
-                        ? "text-[#2c5697] bg-blue-50"
-                        : "text-[#445566] hover:text-[#2c5697] hover:bg-gray-50"
+                  className={`px-4 py-2 text-[13px] font-bold tracking-wide transition-all duration-300 rounded-xs  ${
+                    activeLink === link.href
+                      ? "text-[#0B2D72] bg-[#4ECDC4]"
+                      : "text-[#0B2D72] hover:text-black hover:bg-[#4ECDC4]/30"
                   }`}
                 >
                   {link.label}
-                  {/* Animated underline */}
-                  <span
-                    className={`absolute bottom-1 left-4 right-4 h-0.5 transform transition-all duration-300 rounded-full ${
-                      isHomepage ? "bg-white" : "bg-[#2c5697]"
-                    } ${
-                      activeLink === link.href
-                        ? "scale-x-100 opacity-100"
-                        : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
-                    }`}
-                  />
                 </Link>
               ))}
             </div>
@@ -140,9 +109,7 @@ export default function Navbar() {
                     className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
                       mobileMenuOpen
                         ? "bg-gray-800 rotate-45"
-                        : isHomepage
-                          ? "bg-white -translate-y-2"
-                          : "bg-gray-800 -translate-y-2"
+                        : "bg-gray-800 -translate-y-2"
                     }`}
                   />
                   {/* Middle line */}
@@ -150,9 +117,7 @@ export default function Navbar() {
                     className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
                       mobileMenuOpen
                         ? "bg-gray-800 opacity-0 scale-0"
-                        : isHomepage
-                          ? "bg-white opacity-100 scale-100"
-                          : "bg-gray-800 opacity-100 scale-100"
+                        : "bg-gray-800 opacity-100 scale-100"
                     }`}
                   />
                   {/* Bottom line */}
@@ -160,9 +125,7 @@ export default function Navbar() {
                     className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
                       mobileMenuOpen
                         ? "bg-gray-800 -rotate-45"
-                        : isHomepage
-                          ? "bg-white translate-y-2"
-                          : "bg-gray-800 translate-y-2"
+                        : "bg-gray-800 translate-y-2"
                     }`}
                   />
                 </div>
@@ -209,7 +172,7 @@ export default function Navbar() {
                   setActiveLink(link.href);
                   setMobileMenuOpen(false);
                 }}
-                className={`block px-6 py-4 text-[15px] font-medium tracking-wide rounded-xl transition-all duration-300 transform active:scale-[0.98] ${
+                className={`block px-6 py-4 text-[15px] font-bold tracking-wide rounded-xl transition-all duration-300 transform active:scale-[0.98] ${
                   mobileMenuOpen
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-8 opacity-0"
