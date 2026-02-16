@@ -8,6 +8,8 @@ import {
   ArrowRight,
   Mail,
   Linkedin,
+  X,
+  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -28,11 +30,11 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "rohit-fogla",
     name: "Rohit Fogla",
-    role: "Managing Director",
+    role: "Managing Partner",
     department: "Corporate",
     location: "London",
     image: "/Rohit-Folgia.jpg",
-    bio: "Dual qualified lawyer (UK and India) specialising in corporate, commercial and banking law with experience at leading London firms.",
+    bio: "Rohit Fogla is a practising dual qualified Lawyer (UK and India) having qualified as an Indian Lawyer, after completing LL.B from the University of Mumbai. He then undertook the Graduate Diploma in Law (CPE) at the Kingston University, London, and both the Legal Practice Course and LL.M in Corporate Law at the London campus of the University of Law of England and Wales. Rohit completed his English Law training contract with Gunnercooke LLP specialising in corporate, commercial, and banking law.He further worked with Akin Gump LLP, Hill Dickinson LLP and Harrison Clark Rickerbys Limited in their London office. Rohit focuses his practice on domestic as well as international corporate, commercial, banking and litigation matters including corporate finance, mergers and acquisitions, private equity, commercial contracts, financing and commercial dispute matters.",
     email: "rohit.fogla@empasslaw.com",
     linkedin: "#",
     expertise: ["Corporate Law", "M&A", "Banking", "Commercial Contracts"],
@@ -40,11 +42,11 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "edward-colquhoun",
     name: "Edward Colquhoun",
-    role: "Partner",
+    role: "Head of Litigation",
     department: "Litigation",
     location: "London",
     image: "/Litigation.webp",
-    bio: "Former Deputy District Judge with extensive commercial litigation experience. Specialises in dispute resolution and mediation.",
+    bio: "Edward has substantial commercial litigation experience, having solely practised in this area for the span of his career, including serving as a Deputy District Judge in the County Court. He specialises in commercial and civil litigation and regularly appears in the County and High Courts. Ed's expertise includes contracts, trusts and estates, companies, property and construction, and insurance. He delivers thoughtful, balanced and solution-driven advice and his ability to see the big picture enables him to give strategic and tactical recommendations to our clients as a trusted advisor. Ed is particularly passionate about dispute resolution. He regularly conducts mediations in the context of litigation. He also assists parties in voluntary mediations of commercial disputes prior to litigation and with negotiations where an impartial third party will assist the parties to achieve the best possible outcome without dispute.",
     email: "edward.colquhoun@empasslaw.com",
     linkedin: "#",
     expertise: [
@@ -55,13 +57,29 @@ const TEAM_MEMBERS: TeamMember[] = [
     ],
   },
   {
-    id: "balwinder-sagoo",
-    name: "Balwinder Sagoo",
-    role: "Director",
+    id: "ardeshir-matini",
+    name: "Ardeshir Matini",
+    role: "Consultant Property",
     department: "Property",
     location: "London",
-    image: "/Balwinder-Sagoo.jpg",
-    bio: "Over 17 years advising ultra-high net worth individuals on prime Central London property transactions and secured lending.",
+    image: "/Litigation.webp",
+    bio: "Ardeshir works under the supervision of Mr Fogla and deals with variety of property matters. Ardeshir specialises in real estate development and investment transactions. With his vast experience in commercial property matters, Ardeshir provides strategic legal guidance to developers, investors, and businesses navigating complex real estate transactions. His practice encompasses all aspects of real estate law, from initial development planning through to completion of major commercial lettings. Ardeshir works closely with clients to deliver practical solutions that support their commercial objectives whilst managing legal risks effectively.",
+    email: "ardeshir.matini@empasslaw.com",
+    expertise: [
+      "Real Estate",
+      "Property Finance",
+      "High Net Worth",
+      "Secured Lending",
+    ],
+  },
+  {
+    id: "matthew-bosworth",
+    name: "Matthe Bosworth",
+    role: "Consultant Property",
+    department: "Property",
+    location: "London",
+    image: "/Litigation.webp",
+    bio: "Matthew is an experienced property Lawyer and was admitted as a Fellow of the Chartered Institute of Legal Executives. Matthew has also completed his MBA from Boston University. Charlie has dealt with a broad range of property transactions including both freehold and leasehold commercial and residential unit sales and assisted with the acquisition and funding of key development sites throughout the UK.",
     email: "balwinder.sagoo@empasslaw.com",
     expertise: [
       "Real Estate",
@@ -73,11 +91,11 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "gaynor-bannon",
     name: "Gaynor Bannon",
-    role: "Consultant",
+    role: "Consultant Property",
     department: "Property",
     location: "London",
     image: "/Gaynor-Bannon.png",
-    bio: "19+ years in commercial real estate, advising private investors, lenders, and institutions on transactions and finance.",
+    bio: "Gaynor is an experienced solicitor with over 19 years' practice in commercial real estate work. She is experienced in sales and purchases, commercial landlord and tenant, corporate support, property finance/secured lending, investment management and insolvency support. Gaynor is a commercial and practical lawyer who works with her clients to always meet deadlines and to understand her client's needs and requirements. She is dedicated to providing clients with commercial and practical solutions in a straightforward, cost-effective and timely manner. She advises private investors, commercial lenders, SME, limited companies, OMB and financial institutions.",
     email: "gaynor.bannon@empasslaw.com",
     expertise: [
       "Commercial Real Estate",
@@ -87,13 +105,42 @@ const TEAM_MEMBERS: TeamMember[] = [
     ],
   },
   {
+    id: "pankaj-gautam",
+    name: "Pankaj Gautam",
+    role: "Property Solicitor",
+    department: "Property",
+    location: "London",
+    image: "/Michelle-Bird.png",
+    bio: "Pankaj has extensive experience in the residential conveyancing sector having worked in this sector for more than a decade. Pankaj has specialised in all aspects of residential conveyancing matters, dealing with sales, purchases, re-mortgages, equity releases etc. Pankaj has built a strong reputation with estate agents and other property professionals who often refer work to  him. He offers a high standard of service to his clients that's personalised to their needs, whether they are first-time buyers or experienced property investors.",
+    email: "pankaj.gautam@empasslaw.com",
+    linkedin: "#",
+    expertise: [
+      "Real Estate",
+      "Property Finance",
+      "High Net Worth",
+      "Secured Lending",
+    ],
+  },
+  {
+    id: "rezijana-saiti",
+    name: "Rezijana Saiti",
+    role: "Consulatnt Immigration",
+    department: "Corporate",
+    location: "London",
+    image: "/Michelle-Bird.png",
+    bio: "Rezijana has particular experience in dealing with non-sponsored work routes, including entrepreneurs, innovators and sole representatives. She also assists businesses with skilled worker and expansion worker licence applications and compliance enquiries. Natasha advises on all aspects of immigration law and frequently assists individuals with partner and family based applications, as well as students and graduates.",
+    email: "rezijana.saiti@empasslaw.com",
+    linkedin: "#",
+    expertise: ["Immigrationn laws", "Visa processes"],
+  },
+  {
     id: "michelle-bird",
     name: "Michelle Bird",
-    role: "Partner",
+    role: "Family Partner",
     department: "Family",
     location: "London",
     image: "/Michelle-Bird.png",
-    bio: "24 years specialising in complex international family law matters and high-net-worth financial settlements.",
+    bio: "Michelle is a partner at Empass Law having joined in early 2024 from a boutique West End law firm where she was also a partner for many years. Michelle has over 24 years' experience as a family lawyer specialising in issues arising from the breakdown of a relationship, including the financial consequences of a divorce and or separation, and resolving arrangements for children, including cases involving their relocation both in the UK and abroad. Michelle has a keen interest in international complex cases to which often involve cross border disputes with medium to high-net-worth assets and has supported many families on returning to the UK to reside permanently and or assist parties with their plans to move abroad. Although Michelle has extensive experience of taking cases to court where required, she is also known for her conciliatory and pragmatic approach and desire to settle cases wherever possible. Thus, avoiding the further legal expense to the client which can often be a long and drawn-out court process. Michelle also has many years of expertise on advising parties prior to marriage with the drafting of a pre or post nuptial agreements and or cohabitation agreements and often refers to the process of like taking out an insurance policy with the hope of avoiding the potential risk of a messy and unnecessary separation and or divorce further down the line. Michelle was a keen supporter of the non-fault divorce campaign and has supported Resolutions before the Houses of Parliament to promote their campaign to seek the much-needed change to divorce process and of which came in to effect on the 6th April 2022. Michelle is recognised as an expert in her field and is also a member of Family Resolutions and Association of European Attorneys also called AEA International Lawyers network. In addition, Michelle runs a small case load to support young adults in applications under the Court of Protection in respect of both welfare and financial issues. These applications flowing from her 17plus years previously working in the public care sector. In her spare time, she likes to enjoy walking with her dogs and socialising with friends and family.",
     email: "michelle.bird@empasslaw.com",
     linkedin: "#",
     expertise: [
@@ -108,8 +155,6 @@ const TEAM_MEMBERS: TeamMember[] = [
 const DEPARTMENTS = ["All", "Corporate", "Litigation", "Property", "Family"];
 
 export default function OurPeoplePage() {
-  const [activeCard, setActiveCard] = useState<number | null | string>(null);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedMember, setSelectedMember] = useState<string | null>(null);
@@ -133,9 +178,11 @@ export default function OurPeoplePage() {
     });
   }, [searchQuery, selectedDepartment]);
 
+  const activeMember = TEAM_MEMBERS.find((m) => m.id === selectedMember);
+
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section - White Background */}
+      {/* Hero Section */}
       <section className="relative bg-white py-12 sm:py-16 lg:py-20 overflow-hidden border-b border-gray-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
@@ -156,7 +203,7 @@ export default function OurPeoplePage() {
       </section>
 
       {/* Search and Filters */}
-      <section className="z-40 bg-white  ">
+      <section className="z-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 items-stretch lg:items-center justify-between">
             {/* Search */}
@@ -178,11 +225,10 @@ export default function OurPeoplePage() {
                 <button
                   key={dept}
                   onClick={() => setSelectedDepartment(dept)}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-[13px] font-medium whitespace-nowrap transition-colors ${
-                    selectedDepartment === dept
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-[13px] font-medium whitespace-nowrap transition-colors ${selectedDepartment === dept
                       ? "bg-[#2c5697] text-white"
                       : "bg-gray-100 text-[#445566] hover:bg-gray-200"
-                  }`}
+                    }`}
                 >
                   {dept}
                 </button>
@@ -212,128 +258,57 @@ export default function OurPeoplePage() {
               {filteredMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="relative w-full max-w-[340px] h-[400px] sm:h-[430px] mx-auto bg-[#2C4A6B] overflow-hidden group shadow-lg rounded-lg"
+                  className="relative w-full max-w-[360px] mx-auto"
                 >
-                  {/* ================= FRONT SLIDE ================= */}
-                  <div
-                    className={`
-                      absolute inset-0 z-20
-                      transition-transform duration-500 ease-in-out
-                      ${activeCard === member.id ? "-translate-y-full" : "translate-y-0"}
-                      lg:group-hover:-translate-y-full
-                    `}
-                  >
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={1000}
-                        height={1000}
-                        className="object-cover object-[center_top] w-full h-full"
-                      />
+                  <div className="relative h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div className="relative w-full h-full bg-gradient-to-br from-[#2C4A6B] to-[#1a2d42]">
 
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2C4A6B]/95 via-[#2C4A6B]/60 to-transparent" />
+                      {/* Profile Image */}
+                      <div className="relative w-full h-full overflow-hidden">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={1000}
+                          height={1000}
+                          className="object-cover object-[center_top] w-full h-full"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#2C4A6B] via-[#2C4A6B]/40 to-transparent" />
+                      </div>
 
-                      {/* Department */}
-                      <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                        <span className="px-2.5 sm:px-3 py-1 bg-white/90 text-[#2c5697] text-[10px] sm:text-[11px] font-bold tracking-wider rounded">
+                      {/* Department Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm text-[#2c5697] text-[11px] font-bold tracking-wider rounded-md shadow-md">
                           {member.department}
                         </span>
                       </div>
 
-                      {/* Name + Role */}
-                      <div className="absolute bottom-14 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white">
-                        <h3 className="text-lg sm:text-[22px] font-bold mb-1">
+                      {/* Member Info */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h3 className="text-2xl font-bold mb-2 tracking-tight">
                           {member.name}
                         </h3>
-                        <p className="text-xs sm:text-sm font-medium text-[#00a3a3]">
+                        <p className="text-sm font-medium text-[#00a3a3] mb-4">
                           {member.role}
                         </p>
-                      </div>
 
-                      {/* Mobile View Button */}
-                      <button
-                        onClick={() =>
-                          setActiveCard(
-                            activeCard === member.id ? null : member.id,
-                          )
-                        }
-                        className="lg:hidden absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white text-[#2c5697] text-xs font-semibold px-3 py-1.5 rounded shadow hover:bg-gray-50 transition-colors"
-                      >
-                        View Profile
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* ================= BACK SLIDE ================= */}
-                  <div
-                    className={`
-                      absolute inset-0 z-10 p-6 sm:p-8 bg-white
-                      transition-transform duration-500 ease-in-out
-                      ${activeCard === member.id ? "translate-y-0" : "translate-y-full"}
-                      lg:group-hover:translate-y-0
-                      flex flex-col justify-between
-                      overflow-y-auto
-                    `}
-                  >
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold text-[#2c5697] mb-3 sm:mb-4 uppercase tracking-wide">
-                        About {member.name.split(" ")[0]}
-                      </h3>
-
-                      <p className="text-xs sm:text-sm text-[#445566] leading-relaxed mb-4 sm:mb-6">
-                        {member.bio}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                        {member.expertise.slice(0, 3).map((exp, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 bg-gray-100 text-[#445566] text-[10px] sm:text-[11px] rounded"
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => setSelectedMember(member.id)}
+                            className="flex-1 bg-white/10 backdrop-blur-md hover:bg-[#4988C4] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-all duration-300 border border-white/20 hover:border-[#ffffff]"
                           >
-                            {exp}
-                          </span>
-                        ))}
-                        {member.expertise.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-100 text-[#445566] text-[10px] sm:text-[11px] rounded">
-                            +{member.expertise.length - 3} more
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                            View Profile
+                          </button>
 
-                    {/* Contact */}
-                    <div className="flex items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-gray-200 text-xs sm:text-sm font-medium">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="text-[#2c5697] hover:text-[#234578] transition-colors"
-                      >
-                        Email
-                      </a>
-
-                      {member.linkedin && (
-                        <>
-                          <span className="text-gray-300">|</span>
                           <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#2c5697] hover:text-[#234578] transition-colors"
+                            href={`mailto:${member.email}`}
+                            className="p-2.5 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-lg transition-all duration-300 border border-white/20"
                           >
-                            LinkedIn
+                            <Mail className="w-5 h-5 text-white" />
                           </a>
-                        </>
-                      )}
-                    </div>
+                        </div>
+                      </div>
 
-                    {/* Mobile Close Button */}
-                    <button
-                      onClick={() => setActiveCard(null)}
-                      className="lg:hidden mt-3 sm:mt-4 w-full bg-[#2c5697] hover:bg-[#234578] text-white text-xs sm:text-sm font-semibold py-2 rounded transition-colors"
-                    >
-                      Close
-                    </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -341,6 +316,114 @@ export default function OurPeoplePage() {
           )}
         </div>
       </section>
+
+      {/* Modal for Mobile/Active View */}
+      {selectedMember && activeMember && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setSelectedMember(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-4 right-4 z-10 p-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            >
+              <X className="w-5 h-5 text-[#2c5697]" />
+            </button>
+
+            {/* Modal Content */}
+            <div className="overflow-y-auto max-h-[90vh]">
+              {/* Header Section with Image */}
+              <div className="relative h-64 bg-gradient-to-br from-[#2C4A6B] to-[#1a2d42]">
+                <Image
+                  src={activeMember.image}
+                  alt={activeMember.name}
+                  width={1000}
+                  height={1000}
+                  className="object-cover object-[center_top] w-full h-full opacity-40"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                {/* Member Info Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold tracking-wider rounded-md mb-3">
+                    {activeMember.department}
+                  </span>
+                  <h2 className="text-3xl font-bold mb-2">
+                    {activeMember.name}
+                  </h2>
+                  <p className="text-lg font-medium text-[#00a3a3]">
+                    {activeMember.role}
+                  </p>
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6 sm:p-8">
+                {/* Bio */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
+                    <div className="w-1 h-6 bg-[#00a3a3] rounded-full" />
+                    About
+                  </h3>
+                  <p className="text-sm text-[#445566] leading-relaxed">
+                    {activeMember.bio}
+                  </p>
+                </div>
+
+                {/* Expertise */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
+                    <div className="w-1 h-6 bg-[#00a3a3] rounded-full" />
+                    Areas of Expertise
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {activeMember.expertise.map((exp, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-[#445566] text-sm font-medium rounded-full border border-gray-200"
+                      >
+                        {exp}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Contact Section */}
+                <div className="pt-6 border-t border-gray-200">
+                  <h3 className="text-sm font-bold text-[#2c5697] uppercase tracking-wider mb-4">
+                    Get in Touch
+                  </h3>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={`mailto:${activeMember.email}`}
+                      className="flex-1 flex items-center justify-center gap-2 bg-[#2c5697] hover:bg-[#234578] text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Send Email</span>
+                    </a>
+                    {activeMember.linkedin && (
+                      <a
+                        href={activeMember.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 border-2 border-[#2c5697] hover:bg-[#2c5697] text-[#2c5697] hover:text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        <span>LinkedIn</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CTA Section */}
       <section className="bg-[#f0f4f8] py-12 sm:py-16 lg:py-20">
@@ -361,6 +444,50 @@ export default function OurPeoplePage() {
           </Link>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 }

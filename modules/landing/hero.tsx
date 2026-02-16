@@ -57,11 +57,11 @@ export default function Hero() {
             <div className="w-20 h-1 bg-gradient-to-r from-white/60 to-white/20" />
           </div> */}
 
-          {/* Main heading */}
-          <h1 className="text-[22px] montserrat sm:text-[40px] xl:text-[50px] leading-[1.05] font-light text-white mb-8 tracking-[2px] lg:tracking-[8px] uppercase">
+          {/* Main heading - H1: 48-60px desktop, 32-40px mobile, weight 300-400, line-height 1.2-1.3 */}
+          <h1 className="text-[32px] montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] font-light text-white mb-8 tracking-[2px] lg:tracking-[8px] uppercase">
             Clear Guidance
             <br />
-            <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            <span className="font-normal bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               Confident Decisions
             </span>
             {/* <br />
@@ -70,16 +70,16 @@ export default function Hero() {
             </span> */}
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-white/75 montserrat text-[17px] sm:text-[19px] lg:text-[21px] leading-relaxed mb-12 max-w-2xl font-light">
+          {/* Subtitle - Body Large: 18px, weight 400, line-height 1.6-1.8 */}
+          <p className="text-white/75 montserrat text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal">
             Expert legal insight delivered with clarity, care and precision.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - CTA Links: 16-18px, weight 500-600 */}
           {/* <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <Link
               href="/about"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white md:hidden text-[#1a2332] text-[14px] font-semibold tracking-wide uppercase rounded-sm hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white md:hidden text-[#1a2332] text-[16px] font-semibold tracking-wide uppercase rounded-sm hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               About Empass Law
               <svg
@@ -105,7 +105,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/40 text-white text-[14px] font-semibold tracking-wide uppercase rounded-sm hover:border-white hover:bg-white/10 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/40 text-white text-[16px] font-semibold tracking-wide uppercase rounded-sm hover:border-white hover:bg-white/10 transition-all duration-300"
             >
               Get in touch
               <svg
