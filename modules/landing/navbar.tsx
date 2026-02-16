@@ -49,23 +49,23 @@ export default function Navbar() {
           isHomepage
             ? mobileMenuOpen
               ? "bg-white"
-              : "bg-transparent"
+              : "bg-black/30"
             : "bg-white border-b border-gray-200"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-          <div className="flex justify-between h-30 py-5 items-center">
+          <div className="flex justify-between h-27 py-5 items-center">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 relative z-50">
               {isHomepage ? (
                 <Image
-                  src="/logo-text-white-no-bg.png"
+                  src="/Empass-law.png"
                   alt="Empass Law"
                   width={200}
-                  height={65}
+                  height={60}
                   className={`h-20 w-auto transition-all duration-300 ${
                     isHomepage && !mobileMenuOpen
-                      ? "brightness-100"
+                      ? "brightness-0 invert"
                       : "brightness-100"
                   }`}
                   priority
