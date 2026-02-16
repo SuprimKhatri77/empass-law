@@ -1,13 +1,35 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SvgHoverEffect from "../effects/SvgHoverEffect";
 
 export default function Hero() {
-  const [hoverEffect, setHoverEffect] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden ">
-      {/* Video Background - Full screen with overlay */}
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Add keyframe animation styles */}
+      <style jsx>{`
+        @keyframes border-flow {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        .animate-border-flow {
+          animation: border-flow 3s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Video Background with improved overlay */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -15,137 +37,138 @@ export default function Hero() {
           loop
           playsInline
           className="w-full h-full object-cover"
+          aria-hidden="true"
         >
           <source src="/hero-video2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* <div className="absolute inset-0 bg-zinc-950/30 backdrop-get-brightness-50" /> */}
-        {/* Gradient overlay for better text readability */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332]/95 via-[#2c4a6e]/85 to-[#3d5a7e]/90" /> */}
-        {/* Subtle pattern overlay */}
-        {/* <div className="absolute inset-0 opacity-[0.03]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px)
-              `,
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div> */}
+
+        {/* Multi-layer overlay for depth and better readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
 
-      {/* Elegant geometric accent elements */}
-      {/* <div className="absolute inset-0 z-[1] pointer-events-none">
+      {/* Ambient light effects */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div
-          className="absolute top-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: "4s" }}
+          className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] animate-pulse"
+          style={{ animationDuration: "8s" }}
         />
         <div
-          className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: "6s" }}
+          className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] animate-pulse"
+          style={{ animationDuration: "6s", animationDelay: "1s" }}
         />
-      </div> */}
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1400px] flex items-center mt-30 mx-auto px-6 sm:px-8 lg:px-12 w-full py-22">
-        <div className="max-w-3xl p-10 rounded-xl bg-black/50 ">
-          {/* Decorative line */}
-          {/* <div className="mb-10">
-            <div className="w-20 h-1 bg-gradient-to-r from-white/60 to-white/20" />
-          </div> */}
+      <div className="relative z-10 max-w-[1400px] flex items-center mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div
+          className={`w-full max-w-[1150px] transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Content card with glassmorphism effect and animated border */}
+          <div className="relative p-8 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-md shadow-2xl">
+            {/* Animated gradient border - white only */}
+            <div
+              className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-gray-500/40 via-gray-600/60 to-gray-700/40 animate-border-flow -z-10"
+              style={{ backgroundSize: "200% 200%" }}
+            />
+            <div className="absolute inset-[2px] rounded-2xl bg-black/40 backdrop-blur-md" />
 
-          {/* Main heading - H1: 48-60px desktop, 32-40px mobile, weight 300-400, line-height 1.2-1.3 */}
-          <h1 className="text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[20px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase">
-            Purpose in Every Advice.
-            <br />
-            <span className="bg-gradient-to-r font-bold from-white to-white bg-clip-text text-white">
-              Precision in Every Result.
-            </span>
-            {/* <br />
-            <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              globally
-            </span> */}
-          </h1>
-
-          {/* Subtitle - Body Large: 18px, weight 400, line-height 1.6-1.8 */}
-          <p className="text-white/75 text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal">
-            <span className="">Empass Law</span><br />stands at the intersection of precision, integrity, and impact
-          </p>
-
-          {/* CTA Buttons - CTA Links: 16-18px, weight 500-600 */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <Link
-              href="/about"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white md:hidden text-[#1a2332] text-[16px] font-semibold tracking-wide uppercase rounded-sm hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              About Empass Law
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Content wrapper with relative positioning */}
+            <div className="relative z-10">
+              {/* Main heading - responsive wrapping */}
+              <h1
+                className={`text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
+                <span className="block">Purpose in Every Advice.</span>
+                <span className="block bg-gradient-to-r font-bold from-white to-white/90 bg-clip-text text-transparent">
+                  Precision in Every Result.
+                </span>
+              </h1>
 
-            <Link
-              href="/about"
-              className="group items-center justify-center gap-3 px-8 py-4 hidden md:inline-flex font-semibold tracking-wide uppercase"
-            >
-              <SvgHoverEffect text="About Empass Law" />
-            </Link>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/40 text-white text-[16px] font-semibold tracking-wide uppercase rounded-sm hover:border-white hover:bg-white/10 transition-all duration-300"
-            >
-              Get in touch
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              {/* Subtitle with fade-in */}
+              <p
+                className={`text-white/90 text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal transition-all duration-1000 delay-500 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
-          </div> */}
+                <span className="font-semibold text-white">Empass Law</span>
+                <br />
+                stands at the intersection of precision, integrity, and impact
+              </p>
 
-          {/* Trust indicators */}
-          {/* <div className="mt-16 pt-8 border-t border-white/10">
-            <p className="text-white/50 text-[12px] uppercase tracking-widest mb-4 font-medium">
-              Trusted by leading organizations
-            </p>
-            <div className="flex flex-wrap gap-8 opacity-60">
-  
-              <div className="h-8 w-24 bg-white/20 rounded" />
-              <div className="h-8 w-24 bg-white/20 rounded" />
-              <div className="h-8 w-24 bg-white/20 rounded" />
-              <div className="h-8 w-24 bg-white/20 rounded" />
+              {/* CTA Buttons with hover effects */}
+              {/* <div
+                className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-700 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+              >
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#1a2332] text-[16px] font-semibold tracking-wide uppercase rounded-lg hover:bg-white/95 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  About Empass Law
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/40 text-white text-[16px] font-semibold tracking-wide uppercase rounded-lg hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Get in touch
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+              </div> */}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-white/50 rounded-full" />
+      {/* Animated scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-white/60 text-xs uppercase tracking-widest font-medium">
+            Scroll
+          </span>
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-white/60 rounded-full animate-pulse" />
+          </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }
