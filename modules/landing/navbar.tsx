@@ -8,9 +8,9 @@ import Image from "next/image";
 const navLinks = [
   { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
-  { label: "OUR PEOPLE", href: "/our-people" },
+  { label: "TEAM", href: "/our-people" },
   { label: "SERVICES", href: "/services" },
-  { label: "OUR WORK", href: "/our-work" },
+  { label: "CASES", href: "/our-work" },
   { label: "CAREER", href: "/career" },
   { label: "CONTACT", href: "/contact" },
 ];
@@ -68,7 +68,7 @@ export default function Navbar() {
               className="flex-shrink-0 relative z-50 transition-transform duration-300 hover:scale-105"
             >
               <Image
-                src="/logo-blue.jpeg"
+                src="/Empass-blue.png"
                 alt="Empass Law"
                 width={200}
                 height={65}

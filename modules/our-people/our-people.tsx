@@ -34,7 +34,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     department: "Corporate",
     location: "London",
     image: "/Rohit-Folgia.jpg",
-    bio: "Rohit Fogla is a practising dual qualified Lawyer (UK and India) having qualified as an Indian Lawyer, after completing LL.B from the University of Mumbai. He then undertook the Graduate Diploma in Law (CPE) at the Kingston University, London, and both the Legal Practice Course and LL.M in Corporate Law at the London campus of the University of Law of England and Wales. Rohit completed his English Law training contract with Gunnercooke LLP specialising in corporate, commercial, and banking law.He further worked with Akin Gump LLP, Hill Dickinson LLP and Harrison Clark Rickerbys Limited in their London office. Rohit focuses his practice on domestic as well as international corporate, commercial, banking and litigation matters including corporate finance, mergers and acquisitions, private equity, commercial contracts, financing and commercial dispute matters.",
+    bio: "Rohit Fogla is a practising dual qualified Lawyer (UK and India) having qualified as an Indian Lawyer, after completing LL.B from the University of Mumbai. He then undertook the Graduate Diploma in Law (CPE) at the Kingston University, London, and both the Legal Practice Course and LL.M in Corporate Law at the London campus of the University of Law of England and Wales. Rohit completed his English Law training contract with Gunnercooke LLP specialising in corporate, commercial, and banking law. He further worked with Akin Gump LLP, Hill Dickinson LLP and Harrison Clark Rickerbys Limited in their London office. Rohit focuses his practice on domestic as well as international corporate, commercial, banking and litigation matters including corporate finance, mergers and acquisitions, private equity, commercial contracts, financing and commercial dispute matters.",
     email: "rohit.fogla@empasslaw.com",
     linkedin: "#",
     expertise: ["Corporate Law", "M&A", "Banking", "Commercial Contracts"],
@@ -74,13 +74,13 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "matthew-bosworth",
-    name: "Matthe Bosworth",
+    name: "Matthew Bosworth",
     role: "Consultant Property",
     department: "Property",
     location: "London",
     image: "/Litigation.webp",
-    bio: "Matthew is an experienced property Lawyer and was admitted as a Fellow of the Chartered Institute of Legal Executives. Matthew has also completed his MBA from Boston University. Charlie has dealt with a broad range of property transactions including both freehold and leasehold commercial and residential unit sales and assisted with the acquisition and funding of key development sites throughout the UK.",
-    email: "balwinder.sagoo@empasslaw.com",
+    bio: "Matthew is an experienced property Lawyer and was admitted as a Fellow of the Chartered Institute of Legal Executives. Matthew has also completed his MBA from Boston University. Matthew has dealt with a broad range of property transactions including both freehold and leasehold commercial and residential unit sales and assisted with the acquisition and funding of key development sites throughout the UK.",
+    email: "matthew.bosworth@empasslaw.com",
     expertise: [
       "Real Estate",
       "Property Finance",
@@ -111,7 +111,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     department: "Property",
     location: "London",
     image: "/Michelle-Bird.png",
-    bio: "Pankaj has extensive experience in the residential conveyancing sector having worked in this sector for more than a decade. Pankaj has specialised in all aspects of residential conveyancing matters, dealing with sales, purchases, re-mortgages, equity releases etc. Pankaj has built a strong reputation with estate agents and other property professionals who often refer work to  him. He offers a high standard of service to his clients that's personalised to their needs, whether they are first-time buyers or experienced property investors.",
+    bio: "Pankaj has extensive experience in the residential conveyancing sector having worked in this sector for more than a decade. Pankaj has specialised in all aspects of residential conveyancing matters, dealing with sales, purchases, re-mortgages, equity releases etc. Pankaj has built a strong reputation with estate agents and other property professionals who often refer work to him. He offers a high standard of service to his clients that's personalised to their needs, whether they are first-time buyers or experienced property investors.",
     email: "pankaj.gautam@empasslaw.com",
     linkedin: "#",
     expertise: [
@@ -124,14 +124,14 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "rezijana-saiti",
     name: "Rezijana Saiti",
-    role: "Consulatnt Immigration",
+    role: "Consultant Immigration",
     department: "Corporate",
     location: "London",
     image: "/Michelle-Bird.png",
-    bio: "Rezijana has particular experience in dealing with non-sponsored work routes, including entrepreneurs, innovators and sole representatives. She also assists businesses with skilled worker and expansion worker licence applications and compliance enquiries. Natasha advises on all aspects of immigration law and frequently assists individuals with partner and family based applications, as well as students and graduates.",
+    bio: "Rezijana has particular experience in dealing with non-sponsored work routes, including entrepreneurs, innovators and sole representatives. She also assists businesses with skilled worker and expansion worker licence applications and compliance enquiries. Rezijana advises on all aspects of immigration law and frequently assists individuals with partner and family based applications, as well as students and graduates.",
     email: "rezijana.saiti@empasslaw.com",
     linkedin: "#",
-    expertise: ["Immigrationn laws", "Visa processes"],
+    expertise: ["Immigration laws", "Visa processes"],
   },
   {
     id: "michelle-bird",
@@ -183,27 +183,24 @@ export default function OurPeoplePage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="relative bg-white py-12 sm:py-16 lg:py-20 overflow-hidden border-b border-gray-100">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
-            <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
-              Our Team
+      <section className="relative bg-white py-12 sm:py-16 lg:pt-20 lg:pb-5 border-b border-[#4ECDC4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-start">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 uppercase tracking-tight px-4">
+              OUR TEAM
             </span>
           </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 tracking-tight px-4">
-            Meet our people
-          </h1>
-
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-            Our experienced team delivers exceptional results for our clients.
-          </p>
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
+          Our team is made up of dedicated, highly skilled legal professionals who bring a wealth of experience across multiple areas of law. United by a commitment to excellence and client care, we work collaboratively to deliver thoughtful, strategic advice tailored to each client's circumstances. With a balance of technical expertise and a personable approach, our lawyers focus on building strong relationships, clear communication and practical solutions that achieve the best possible outcomes.
+        </p>
+      </div>
+
       {/* Search and Filters */}
-      <section className="z-40 bg-white">
+      <section className="bg-white sticky top-20 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 items-stretch lg:items-center justify-between">
             {/* Search */}
@@ -225,9 +222,9 @@ export default function OurPeoplePage() {
                 <button
                   key={dept}
                   onClick={() => setSelectedDepartment(dept)}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-[13px] font-medium whitespace-nowrap transition-colors ${selectedDepartment === dept
-                      ? "bg-[#2c5697] text-white"
-                      : "bg-gray-100 text-[#445566] hover:bg-gray-200"
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-colors ${selectedDepartment === dept
+                    ? "bg-[#2c5697] text-white"
+                    : "bg-gray-100 text-[#445566] hover:bg-gray-200"
                     }`}
                 >
                   {dept}
@@ -254,15 +251,14 @@ export default function OurPeoplePage() {
               </p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {filteredMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="relative w-full max-w-[360px] mx-auto"
+                  className="relative w-full max-w-[400px] mx-auto"
                 >
-                  <div className="relative h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <div className="relative h-[400px] sm:h-[450px] lg:h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <div className="relative w-full h-full bg-gradient-to-br from-[#2C4A6B] to-[#1a2d42]">
-
                       {/* Profile Image */}
                       <div className="relative w-full h-full overflow-hidden">
                         <Image
@@ -283,31 +279,30 @@ export default function OurPeoplePage() {
                       </div>
 
                       {/* Member Info */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h3 className="text-2xl font-bold mb-2 tracking-tight">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                        <h3 className="text-xl sm:text-2xl font-bold mb-2 tracking-tight">
                           {member.name}
                         </h3>
-                        <p className="text-sm font-medium text-[#00a3a3] mb-4">
+                        <p className="text-sm font-medium text-[#00a3a3] mb-3 sm:mb-4">
                           {member.role}
                         </p>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2 sm:gap-3">
                           <button
                             onClick={() => setSelectedMember(member.id)}
-                            className="flex-1 bg-white/10 backdrop-blur-md hover:bg-[#4988C4] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-all duration-300 border border-white/20 hover:border-[#ffffff]"
+                            className="flex-1 bg-white/10 backdrop-blur-md hover:bg-[#4988C4] text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg transition-all duration-300 border border-white/20 hover:border-[#ffffff]"
                           >
                             View Profile
                           </button>
 
                           <a
                             href={`mailto:${member.email}`}
-                            className="p-2.5 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-lg transition-all duration-300 border border-white/20"
+                            className="p-2 sm:p-2.5 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-lg transition-all duration-300 border border-white/20"
                           >
-                            <Mail className="w-5 h-5 text-white" />
+                            <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                           </a>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -336,9 +331,9 @@ export default function OurPeoplePage() {
             </button>
 
             {/* Modal Content */}
-            <div className="overflow-y-auto max-h-[90vh]">
+            <div className="overflow-y-auto max-h-[90vh] custom-scrollbar">
               {/* Header Section with Image */}
-              <div className="relative h-64 bg-gradient-to-br from-[#2C4A6B] to-[#1a2d42]">
+              <div className="relative h-48 sm:h-64 bg-gradient-to-br from-[#2C4A6B] to-[#1a2d42]">
                 <Image
                   src={activeMember.image}
                   alt={activeMember.name}
@@ -349,43 +344,43 @@ export default function OurPeoplePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
                 {/* Member Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
                   <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold tracking-wider rounded-md mb-3">
                     {activeMember.department}
                   </span>
-                  <h2 className="text-3xl font-bold mb-2">
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                     {activeMember.name}
                   </h2>
-                  <p className="text-lg font-medium text-[#00a3a3]">
+                  <p className="text-base sm:text-lg font-medium text-[#00a3a3]">
                     {activeMember.role}
                   </p>
                 </div>
               </div>
 
               {/* Content Section */}
-              <div className="p-6 sm:p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 {/* Bio */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
-                    <div className="w-1 h-6 bg-[#00a3a3] rounded-full" />
+                  <h3 className="text-base sm:text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
+                    <div className="w-1 h-5 sm:h-6 bg-[#00a3a3] rounded-full" />
                     About
                   </h3>
-                  <p className="text-sm text-[#445566] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#445566] leading-relaxed">
                     {activeMember.bio}
                   </p>
                 </div>
 
                 {/* Expertise */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
-                    <div className="w-1 h-6 bg-[#00a3a3] rounded-full" />
+                  <h3 className="text-base sm:text-lg font-bold text-[#2c5697] mb-3 flex items-center gap-2">
+                    <div className="w-1 h-5 sm:h-6 bg-[#00a3a3] rounded-full" />
                     Areas of Expertise
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {activeMember.expertise.map((exp, index) => (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-[#445566] text-sm font-medium rounded-full border border-gray-200"
+                        className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-[#445566] text-xs sm:text-sm font-medium rounded-full border border-gray-200"
                       >
                         {exp}
                       </span>
@@ -395,13 +390,13 @@ export default function OurPeoplePage() {
 
                 {/* Contact Section */}
                 <div className="pt-6 border-t border-gray-200">
-                  <h3 className="text-sm font-bold text-[#2c5697] uppercase tracking-wider mb-4">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#2c5697] uppercase tracking-wider mb-4">
                     Get in Touch
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href={`mailto:${activeMember.email}`}
-                      className="flex-1 flex items-center justify-center gap-2 bg-[#2c5697] hover:bg-[#234578] text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 bg-[#2c5697] hover:bg-[#234578] text-white text-sm font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       <span>Send Email</span>
@@ -411,7 +406,7 @@ export default function OurPeoplePage() {
                         href={activeMember.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 border-2 border-[#2c5697] hover:bg-[#2c5697] text-[#2c5697] hover:text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors"
+                        className="flex items-center justify-center gap-2 border-2 border-[#2c5697] hover:bg-[#2c5697] text-[#2c5697] hover:text-white text-sm font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors"
                       >
                         <Linkedin className="w-4 h-4" />
                         <span>LinkedIn</span>
@@ -428,7 +423,7 @@ export default function OurPeoplePage() {
       {/* CTA Section */}
       <section className="bg-[#f0f4f8] py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-3 sm:mb-4 px-4">
+          <h2 className="text-xl lg:text-2xl font-bold uppercase text-[#2c5697] mb-3 sm:mb-4 px-4">
             Can't find what you're looking for?
           </h2>
           <p className="text-sm sm:text-base lg:text-[17px] text-[#445566] mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
@@ -437,7 +432,7 @@ export default function OurPeoplePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#2c5697] hover:bg-[#234578] text-white font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-sm sm:text-base"
+            className="inline-flex uppercase items-center gap-2 bg-[#4ECDC4] hover:scale-105 text-white font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-300 text-sm sm:text-base"
           >
             <span>Contact Us</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -462,7 +457,7 @@ export default function OurPeoplePage() {
         }
 
         .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
+          width: 6px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {

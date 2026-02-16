@@ -38,32 +38,21 @@ export default function OurWorkPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-25 lg:py-20">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Section - White Background */}
-      <div className="relative overflow-hidden bg-white border-b border-gray-100">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Eyebrow */}
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
-                Our Work
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#2c5697] mb-4 sm:mb-6 tracking-tight">
+      <section className="relative bg-white py-12 sm:py-16 lg:pt-20 lg:pb-5 border-b border-[#4ECDC4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-start">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 uppercase tracking-tight px-4">
               Case Studies & Success Stories
-            </h1>
-
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
-              Explore our portfolio of exceptional work that delivers results.
-            </p>
-          </motion.div>
+            </span>
+          </div>
         </div>
+      </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
+          Explore our portfolio of exceptional work that delivers results.
+        </p>
       </div>
 
       {/* Main Content */}
@@ -153,15 +142,15 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
       >
         <div
           className={`
-          grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 py-12 sm:py-16 lg:py-24
+          grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 py-8 sm:py-12 lg:py-16 xl:py-24
           ${isEven ? "" : "lg:grid-flow-dense"}
         `}
         >
           {/* Content Side */}
           <div
             className={`
-            flex flex-col justify-center
-            ${isEven ? "" : "lg:col-start-2"}
+            flex flex-col justify-center order-2 lg:order-1
+            ${isEven ? "" : "lg:col-start-2 lg:order-2"}
           `}
           >
             <motion.div
@@ -185,10 +174,11 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
                     style={{ color: work.accentColor || "#2c5697" }}
                     className="font-bold"
                   >
+                    {" "}
                     {work.titleHighlight}
                   </span>
                 )}
-                {work.titleEnd && <span>{work.titleEnd}</span>}
+                {work.titleEnd && <span> {work.titleEnd}</span>}
               </h2>
 
               {/* Description */}
@@ -210,8 +200,8 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
           {/* Image Side */}
           <div
             className={`
-            relative
-            ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}
+            relative order-1 lg:order-2
+            ${isEven ? "" : "lg:col-start-1 lg:row-start-1 lg:order-1"}
           `}
           >
             <motion.div
@@ -223,11 +213,11 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
               className="relative aspect-[4/3] overflow-hidden bg-slate-100 rounded-lg shadow-lg group-hover:shadow-2xl transition-all duration-300"
             >
               {/* Image */}
-              <motion.img
+              <img
                 src={work.images[0]}
                 alt={work.title}
                 className={`
-                  w-full h-full object-cover object-left transition-all duration-700
+                  w-full h-full object-cover object-center transition-all duration-700
                   ${imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}
                   group-hover:scale-105
                 `}
@@ -260,11 +250,11 @@ function LoadingSkeleton() {
       {[1, 2, 3, 4].map((i) => (
         <div
           key={i}
-          className="border-b border-slate-200 py-12 sm:py-16 lg:py-24"
+          className="border-b border-slate-200 py-8 sm:py-12 lg:py-16 xl:py-24"
         >
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
             {/* Content skeleton */}
-            <div className="flex flex-col justify-center space-y-4 sm:space-y-6">
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 order-2 lg:order-1">
               <div className="h-3 sm:h-4 w-24 sm:w-32 bg-slate-200 rounded animate-pulse" />
               <div className="space-y-3 sm:space-y-4">
                 <div className="h-8 sm:h-10 lg:h-12 w-full bg-slate-200 rounded animate-pulse" />
@@ -279,7 +269,7 @@ function LoadingSkeleton() {
             </div>
 
             {/* Image skeleton */}
-            <div className="aspect-[4/3] bg-slate-200 rounded-lg animate-pulse" />
+            <div className="aspect-[4/3] bg-slate-200 rounded-lg animate-pulse order-1 lg:order-2" />
           </div>
         </div>
       ))}

@@ -4,6 +4,6 @@ export const lawFirm = {
   contactEmail: "info@empasslaw.com",
   contactNumber: "0203 916 5054",
   linkedInLink:
-    "https://www.linkedin.com/company/empass-law/?originalSubdomain=uk",
+    "https://www.linkedin.com/company/empass-law/",
   instagramLink: "https://www.instagram.com/",
 };

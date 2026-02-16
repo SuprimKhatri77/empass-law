@@ -63,9 +63,8 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] flex items-center mx-auto px-6 sm:px-8 lg:px-12 w-full">
         <div
-          className={`w-full max-w-[1150px] transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`w-full max-w-[1150px] transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {/* Content card with glassmorphism effect and animated border */}
           <div className="relative p-8 sm:p-10 rounded-2xl">
@@ -80,27 +79,29 @@ export default function Hero() {
             <div className="relative z-10 mt-100 ">
               {/* Main heading - responsive wrapping */}
               <h1
-                className={`text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
+                className={`text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+                  }`}
               >
                 <span className="block text-[100px] font-extrabold raleway">
-                  EMPASS LAW
+                  EMPASS
+                  <br />
+                  <span className="text-[60px]">A Law Firm,</span>
                 </span>
                 <span className="block font-mono bg-gradient-to-r font-bold   text-[#4ECDC4] bg-clip-text  text-[60px]">
-                  DRIVEN BY PURPOSE. MEASURED BY RESULTS.
+                  DRIVEN BY PURPOSE.
+                  <br />
+                  MEASURED BY RESULTS.
                 </span>
               </h1>
 
               {/* Subtitle with fade-in */}
               <p
-                className={`text-white text-[16px] sm:text-[17px] lg:text-[24px] leading-[1.7] mb-12 max-w-7xl  transition-all duration-1000 delay-500 font-bold ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
+                className={`text-white text-[16px] sm:text-[17px] lg:text-[24px] leading-[1.7] mb-12 max-w-7xl  transition-all duration-1000 delay-500 font-bold ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+                  }`}
               >
                 {/* <span className="font-semibold text-white">Empass Law</span> */}
                 {/* <br /> */}

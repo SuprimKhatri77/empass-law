@@ -4,127 +4,25 @@ import { Mail, ArrowRight, Briefcase, Users, Award } from "lucide-react";
 
 export default function CareerPage() {
   return (
-    <div className="min-h-screen bg-white py-15 lg:py-10">
+    <div className="min-h-screen bg-white pt-15 lg:pt-20">
       {/* Hero Section - White Background */}
-      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
-            <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
-              Careers
+      <section className="relative bg-white py-12 sm:py-16 lg:pt-20 lg:pb-5 border-b border-[#4ECDC4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-start">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 uppercase tracking-tight px-4">
+              Join our teams
             </span>
           </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 tracking-tight">
-            Join Our Team
-          </h1>
-
-          <p className="text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
-            We're looking for like-minded individuals who value a human approach
-            to law.
-          </p>
         </div>
       </section>
 
-      {/* Culture Section */}
-      <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-20 lg:mb-24">
-            {/* Image */}
-            <div className="relative overflow-hidden rounded-lg">
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                alt="Team collaboration"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-              />
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
+          We're looking for like-minded individuals who value a human approach
+          to law.
+        </p>
+      </div>
 
-            {/* Culture values */}
-            <div>
-              <div className="w-8 sm:w-12 h-0.5 bg-[#2c5697]/20 mb-4 sm:mb-6 lg:mb-8" />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-6 sm:mb-8">
-                Our Culture
-              </h2>
-
-              <div className="space-y-6 sm:space-y-8">
-                <div className="flex gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#2c5697]/10 flex items-center justify-center rounded-lg">
-                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#2c5697]" />
-                  </div>
-                  <div>
-                    <h3 className="text-[#2c5697] font-semibold text-base sm:text-lg mb-1 sm:mb-2">
-                      Human-Centered Approach
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-[15px]">
-                      We bring empathy and understanding to every client
-                      interaction.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#2c5697]/10 flex items-center justify-center rounded-lg">
-                    <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#2c5697]" />
-                  </div>
-                  <div>
-                    <h3 className="text-[#2c5697] font-semibold text-base sm:text-lg mb-1 sm:mb-2">
-                      Excellence & Growth
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-[15px]">
-                      Committed to continuous learning and professional
-                      development.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#2c5697]/10 flex items-center justify-center rounded-lg">
-                    <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-[#2c5697]" />
-                  </div>
-                  <div>
-                    <h3 className="text-[#2c5697] font-semibold text-base sm:text-lg mb-1 sm:mb-2">
-                      Collaborative Environment
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-[15px]">
-                      Work alongside energetic, caring professionals.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Application Section */}
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="w-8 sm:w-12 h-0.5 bg-[#2c5697]/20 mb-4 sm:mb-6 lg:mb-8" />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-4 sm:mb-6">
-                Ready to Apply?
-              </h2>
-              <p className="text-gray-600 text-sm sm:text-base lg:text-[17px] leading-relaxed mb-6 sm:mb-8">
-                If you'd like to work for us, please email your CV to{" "}
-                <a
-                  href="mailto:info@empasslaw.com"
-                  className="text-[#2c5697] font-semibold hover:underline transition-all"
-                >
-                  info@empasslaw.com
-                </a>
-              </p>
-              <p className="text-gray-500 text-xs sm:text-sm lg:text-[15px] leading-relaxed">
-                We will contact you if we have any suitable vacancies.
-              </p>
-            </div>
-
-            <div className="relative order-1 lg:order-2 overflow-hidden rounded-lg">
-              <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-                alt="Professional workspace"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Current Openings */}
       <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">

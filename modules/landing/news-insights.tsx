@@ -14,13 +14,9 @@ export default function NewsSection() {
         {/* Section Header */}
         <div className="mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
-            <div className="w-8 sm:w-12 h-[2px] bg-[#00a3a3]" />
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[#00a3a3]">
-              Recent Work
-            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697]">
-            Latest Case Studies
+          <h2 className="text-2xl sm:text-3xl uppercase lg:text-4xl font-bold text-[#2c5697]">
+            Our Work
           </h2>
         </div>
 
@@ -46,11 +42,11 @@ export default function NewsSection() {
               {/* Content */}
               <div className="flex-1 flex flex-col p-6 sm:p-8">
                 {/* Title with highlight support */}
-                <h3 className="text-lg sm:text-xl lg:text-[22px] leading-[1.3] font-bold text-[#2c5697] mb-4 group-hover:text-[#234578] transition-colors">
+                <h3 className="text-lg sm:text-xl lg:text-[22px] leading-[1.3] font-bold text-[#000000] mb-4 group-hover:text-[#234578] transition-colors">
                   {post.title}
                   {post.titleHighlight && (
                     <span
-                      style={{ color: post.accentColor || "#00a3a3" }}
+                      style={{ color: "#000000" }}
                       className="font-bold"
                     >
                       {post.titleHighlight}

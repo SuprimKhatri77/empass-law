@@ -12,9 +12,9 @@ export default function Landing() {
     <main className="min-h-screen">
       <Hero />
       <NewsSection />
-      <Welcome />
+      {/* <Welcome /> */}
       {/* <FeaturedCaseStudy /> */}
-      <FeaturedInsights />
+      {/* <FeaturedInsights /> */}
       <QuickLinks />
 
       {/* <Footer /> */}
