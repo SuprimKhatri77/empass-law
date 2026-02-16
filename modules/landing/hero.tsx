@@ -16,10 +16,10 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-zinc-950/50 backdrop-get-brightness-50" />
+        {/* <div className="absolute inset-0 bg-zinc-950/30 backdrop-get-brightness-50" /> */}
         {/* Gradient overlay for better text readability */}
         {/* <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332]/95 via-[#2c4a6e]/85 to-[#3d5a7e]/90" /> */}
         {/* Subtle pattern overlay */}
@@ -50,19 +50,19 @@ export default function Hero() {
       </div> */}
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-22">
-        <div className="max-w-4xl">
+      <div className="relative z-10 max-w-[1400px] flex items-center mt-30 mx-auto px-6 sm:px-8 lg:px-12 w-full py-22">
+        <div className="max-w-3xl p-10 rounded-xl bg-black/50 ">
           {/* Decorative line */}
           {/* <div className="mb-10">
             <div className="w-20 h-1 bg-gradient-to-r from-white/60 to-white/20" />
           </div> */}
 
           {/* Main heading - H1: 48-60px desktop, 32-40px mobile, weight 300-400, line-height 1.2-1.3 */}
-          <h1 className="text-[32px] montserrat sm:text-[42px] lg:text-[52px] xl:text-[60px] leading-[1.2] font-light text-white mb-8 tracking-[2px] lg:tracking-[8px] uppercase">
-            Clear Guidance
+          <h1 className="text-[22px] font-bold montserrat sm:text-[42px] lg:text-[52px] xl:text-[20px] leading-[1.2] text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase">
+            Purpose in Every Advice.
             <br />
-            <span className="font-normal bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Confident Decisions
+            <span className="bg-gradient-to-r font-bold from-white to-white bg-clip-text text-white">
+              Precision in Every Result.
             </span>
             {/* <br />
             <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -71,8 +71,8 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle - Body Large: 18px, weight 400, line-height 1.6-1.8 */}
-          <p className="text-white/75 montserrat text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal">
-            Expert legal insight delivered with clarity, care and precision.
+          <p className="text-white/75 text-[16px] sm:text-[17px] lg:text-[18px] leading-[1.7] mb-12 max-w-2xl font-normal">
+            <span className="">Empass Law</span><br />stands at the intersection of precision, integrity, and impact
           </p>
 
           {/* CTA Buttons - CTA Links: 16-18px, weight 500-600 */}
