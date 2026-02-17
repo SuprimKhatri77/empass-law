@@ -73,8 +73,8 @@ export default function Hero() {
         </video>
 
         {/* Multi-layer overlay for depth and better readability */}
-        <div className="absolute inset-0 bg-[#09265F]/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-[#09265F]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
       </div>
 
       {/* Ambient light effects */}
@@ -111,9 +111,9 @@ export default function Hero() {
 
                 {/* Core Value Statement */}
                 <span className="block font-semibold text-[#4ECDC4] text-xl sm:text-2xl md:text-3xl lg:text-5xl leading-[1.15] tracking-wide">
-                  Counsel with Clarity.
+                  Precision in Advice.
                   <br />
-                  Results with Confidence.
+                  Power in Results.
                 </span>
               </h1>
 
