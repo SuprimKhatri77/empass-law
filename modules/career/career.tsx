@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Mail, ArrowRight, Briefcase, Users, Award } from "lucide-react";
+import { Mail, ArrowRight, Briefcase, Users, Award, Shield } from "lucide-react";
 
 export default function CareerPage() {
   return (
@@ -10,25 +10,66 @@ export default function CareerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-start">
             <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 uppercase tracking-tight px-4">
-              Join our teams
+              Join our team
             </span>
           </div>
         </div>
       </section>
 
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
-          We're looking for like-minded individuals who value a human approach
-          to law.
-        </p>
-      </div> */}
-
+      {/* New Culture Section */}
+      <section className="py-16 sm:py-20 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 shadow-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Our Team Workspace" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative element to match your brand feel */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#4ECDC4]/10 -z-10 rounded-full" />
+            </div>
+            
+            <div className="space-y-6">
+              <h2 className="text-2xl uppercase sm:text-3xl lg:text-4xl font-normal text-[#2c5697]">
+                Why Empass Law?
+              </h2>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                We believe that the best legal work comes from a collaborative, 
+                supportive environment. Our firm is built on the foundation of 
+                integrity, technical excellence, and a modern approach to the legal profession.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-6 pt-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#2c5697]/10 flex items-center justify-center rounded">
+                    <Users className="w-5 h-5 text-[#2c5697]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#2c5697] text-sm uppercase">Collaborative</h4>
+                    <p className="text-xs text-gray-500 mt-1">Working together to solve complex legal hurdles.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-[#2c5697]/10 flex items-center justify-center rounded">
+                    <Shield className="w-5 h-5 text-[#2c5697]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#2c5697] text-sm uppercase">Integrity</h4>
+                    <p className="text-xs text-gray-500 mt-1">Maintaining the highest standards of professional ethics.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Current Openings */}
       <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            {/* <div className="w-12 sm:w-16 h-1 bg-[#2c5697]/20 mb-4 sm:mb-6 lg:mb-8" /> */}
             <h2 className="text-2xl uppercase sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-3 sm:mb-4">
               Current Openings
             </h2>

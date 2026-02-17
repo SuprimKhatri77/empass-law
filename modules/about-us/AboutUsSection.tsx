@@ -22,7 +22,7 @@ export default function AboutUsSection() {
       <section className="bg-white py-12 sm:py-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Image and Text Content */}
-          <div className="relative mb-12 sm:mb-16 lg:mb-20 flex flex-col lg:flex-row gap-8 lg:gap-20 text-gray-600 text-justify justify-center">
+          <div className="relative mb-12 sm:mb-16 lg:mb-20 flex flex-col-reverse md:flex-col lg:flex-row gap-8 lg:gap-20 text-gray-600 text-justify justify-center">
             {/* Text Content */}
             <div className="w-full lg:w-1/2">
               <div className="max-w-7xl mx-auto px-4">

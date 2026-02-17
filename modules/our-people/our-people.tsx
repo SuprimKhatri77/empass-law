@@ -268,7 +268,7 @@ export default function OurPeoplePage() {
                           height={1000}
                           className="object-cover object-[center_top] w-full h-full"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2C4A6B] via-[#2C4A6B]/40 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#2C4A6B]/40 via-[#2C4A6B]/10 to-transparent" />
                       </div>
 
                       {/* Department Badge */}
@@ -283,21 +283,21 @@ export default function OurPeoplePage() {
                         <h3 className="text-xl sm:text-2xl font-bold mb-2 tracking-tight">
                           {member.name}
                         </h3>
-                        <p className="text-sm font-medium text-[#00a3a3] mb-3 sm:mb-4">
+                        <p className="text-sm font-medium text-white mb-3 sm:mb-4">
                           {member.role}
                         </p>
 
                         <div className="flex items-center gap-2 sm:gap-3">
                           <button
                             onClick={() => setSelectedMember(member.id)}
-                            className="flex-1 bg-white/10 backdrop-blur-md hover:bg-[#4988C4] text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg transition-all duration-300 border border-white/20 hover:border-[#ffffff]"
+                            className="flex-1 bg-[#2C4A6B] backdrop-blur-md hover:bg-[#4988C4] text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg transition-all duration-300 border border-white/20 hover:border-[#ffffff]"
                           >
                             View Profile
                           </button>
 
                           <a
                             href={`mailto:${member.email}`}
-                            className="p-2 sm:p-2.5 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-lg transition-all duration-300 border border-white/20"
+                            className="p-2 sm:p-2.5 bg-[#2C4A6B] backdrop-blur-md hover:bg-[#4988C4] hover:border-[#ffffff] rounded-lg transition-all duration-300 border border-white/20"
                           >
                             <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                           </a>

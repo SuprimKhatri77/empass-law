@@ -14,7 +14,7 @@ const mockTeamMembers = [
       "/Rohit-Fogla.jpeg",
     quote:
       "Being client-centred is not a slogan for us, it is the foundation of everything we do. We measure our success not only by outcomes, but by the relationships we build, the clarity we provide, and the confidence our clients feel knowing they have a team that truly stands beside them.",
-    accentColor: "#2c5697",
+    accentColor: "#4ECDC4",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function FeaturedTeamMember() {
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 700px"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" /> */}
 
             <div className="absolute bottom-4 left-4">
               <span
@@ -75,7 +75,7 @@ export default function FeaturedTeamMember() {
               &ldquo;
             </div>
 
-            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] leading-[1.45] font-normal text-[#1a2535] md:mb-2">
+            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] leading-[1.45] font-normal text-[#1a2535] mb-2">
               {current.quote}
             </blockquote>
 

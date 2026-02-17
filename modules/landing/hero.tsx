@@ -101,19 +101,18 @@ export default function Hero() {
             <div className="relative z-10 mt-30 md:mt-100">
               {/* Main heading */}
               <h1
-                className={`hero-heading font-bold montserrat text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
+                className={`hero-heading font-bold montserrat text-white mb-2 md:mb-5 lg:mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
                   }`}
               >
                 {/* EMPASS big, "A Law Firm," big but smaller — fluid via clamp() */}
-                <span className="flex flex-col gap-3 font-extrabold raleway text-3xl lg:text-4xl">
+                <span className="flex flex-col md:gap-3 font-extrabold raleway text-3xl lg:text-4xl">
                   EMPASS:
-                  <br />
-                  <span className="law-firm-title">A Law Firm,</span>
+                  <span className=" text-3xl md:text-6xl lg:text-7xl">A Law Firm,</span>
                 </span>
 
-                <span className="block font-mono font-bold text-[#4ECDC4] driven-title">
+                <span className="block font-mono font-bold text-[#4ECDC4] text-3xl md:text-4xl lg:text-5xl">
                   DRIVEN BY PURPOSE.
                   <br />
                   MEASURED BY RESULTS.
