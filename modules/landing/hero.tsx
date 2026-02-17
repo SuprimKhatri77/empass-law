@@ -68,7 +68,7 @@ export default function Hero() {
           className="w-full h-full aspect-video object-cover"
           aria-hidden="true"
         >
-          <source src="/hero-video2.mp4" type="video/mp4" />
+          <source src="/hero-video3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
