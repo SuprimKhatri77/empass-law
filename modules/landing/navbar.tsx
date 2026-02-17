@@ -52,13 +52,12 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-sm ${
-          isHomepage
-            ? scrolled
-              ? "shadow-md"
-              : "shadow-sm"
-            : "border-b border-gray-200"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-sm ${isHomepage
+          ? scrolled
+            ? "shadow-md"
+            : "shadow-sm"
+          : "border-b border-gray-200"
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="flex justify-between h-27 py-5 items-center">
@@ -84,11 +83,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setActiveLink(link.href)}
-                  className={`px-4 py-2 text-[13px] font-bold tracking-wide transition-all duration-300 rounded-xs  ${
-                    activeLink === link.href
-                      ? "text-[#0B2D72] bg-[#4ECDC4]"
-                      : "text-[#0B2D72] hover:text-black hover:bg-[#4ECDC4]/30"
-                  }`}
+                  className={`px-4 py-2 text-[13px] font-bold tracking-wide transition-all duration-300 rounded-xs  ${activeLink === link.href
+                    ? "text-[#0B2D72] bg-[#4ECDC4]"
+                    : "text-[#0B2D72] hover:text-black hover:bg-[#4ECDC4]/30"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -106,27 +104,24 @@ export default function Navbar() {
                 <div className="w-6 h-5 relative flex items-center justify-center">
                   {/* Top line */}
                   <span
-                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
-                      mobileMenuOpen
-                        ? "bg-gray-800 rotate-45"
-                        : "bg-gray-800 -translate-y-2"
-                    }`}
+                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen
+                      ? "bg-gray-800 rotate-45"
+                      : "bg-gray-800 -translate-y-2"
+                      }`}
                   />
                   {/* Middle line */}
                   <span
-                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
-                      mobileMenuOpen
-                        ? "bg-gray-800 opacity-0 scale-0"
-                        : "bg-gray-800 opacity-100 scale-100"
-                    }`}
+                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen
+                      ? "bg-gray-800 opacity-0 scale-0"
+                      : "bg-gray-800 opacity-100 scale-100"
+                      }`}
                   />
                   {/* Bottom line */}
                   <span
-                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${
-                      mobileMenuOpen
-                        ? "bg-gray-800 -rotate-45"
-                        : "bg-gray-800 translate-y-2"
-                    }`}
+                    className={`absolute w-full h-0.5 rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen
+                      ? "bg-gray-800 -rotate-45"
+                      : "bg-gray-800 translate-y-2"
+                      }`}
                   />
                 </div>
               </button>
@@ -137,30 +132,28 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay with smooth fade */}
       <div
-        className={`fixed inset-0 bg-black z-30 lg:hidden transition-opacity duration-500 ${
-          mobileMenuOpen
-            ? "opacity-50 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black z-30 lg:hidden transition-opacity duration-500 ${mobileMenuOpen
+          ? "opacity-50 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
       />
 
       {/* Enhanced Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-white z-40 lg:hidden transform transition-all duration-500 ease-out overflow-y-auto ${
-          mobileMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0"
-        }`}
+        className={`fixed inset-0 bg-white z-41 lg:hidden transform transition-all duration-500 ease-out overflow-y-auto ${mobileMenuOpen
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0"
+          }`}
       >
         <div className="pt-32 pb-8 px-6 min-h-screen">
           {/* Decorative header */}
-          <div className="mb-8 pb-4 border-b border-gray-100">
+          {/* <div className="mb-8 pb-4 border-b border-gray-100">
             <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">
               Navigation
             </p>
-          </div>
+          </div> */}
 
           {/* Navigation Links with staggered animation */}
           <div className="space-y-2">
@@ -172,15 +165,13 @@ export default function Navbar() {
                   setActiveLink(link.href);
                   setMobileMenuOpen(false);
                 }}
-                className={`block px-6 py-4 text-[15px] font-bold tracking-wide rounded-xl transition-all duration-300 transform active:scale-[0.98] ${
-                  mobileMenuOpen
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-8 opacity-0"
-                } ${
-                  activeLink === link.href
-                    ? "bg-gradient-to-r from-[#2c5697] to-[#3d6cb0] text-white shadow-lg shadow-blue-500/20"
-                    : "text-[#445566] hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 active:bg-gray-200"
-                }`}
+                className={`block px-6 py-4 text-[15px] font-bold tracking-wide rounded-xl transition-all duration-300 transform active:scale-[0.98] ${mobileMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-8 opacity-0"
+                  } ${activeLink === link.href
+                    ? "bg-[#4ECDC4] text-white shadow-lg shadow-blue-500/20"
+                    : "text-[#0B2D72] hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 active:bg-gray-200"
+                  }`}
                 style={{
                   transitionDelay: mobileMenuOpen ? `${index * 50}ms` : "0ms",
                 }}
@@ -209,11 +200,10 @@ export default function Navbar() {
 
           {/* Contact info at bottom */}
           <div
-            className={`mt-12 pt-8 border-t border-gray-100 transition-all duration-700 delay-500 ${
-              mobileMenuOpen
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
+            className={`mt-12 pt-8 border-t border-gray-100 transition-all duration-700 delay-500 ${mobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+              }`}
           >
             <p className="text-sm text-gray-500 mb-4">Get in touch</p>
             <Link

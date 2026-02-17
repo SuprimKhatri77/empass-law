@@ -98,7 +98,7 @@ export default function Hero() {
           {/* Content card */}
           <div className="relative p-5 sm:p-10 rounded-2xl">
             {/* Content wrapper — mt-100 preserved from original */}
-            <div className="relative z-10 mt-30 md:mt-100">
+            <div className="relative mt-130 z-10  md:mt-100">
               {/* Main heading */}
               <h1
                 className={`hero-heading font-bold montserrat text-white mb-2 md:mb-5 lg:mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
@@ -107,7 +107,7 @@ export default function Hero() {
                   }`}
               >
                 {/* EMPASS big, "A Law Firm," big but smaller — fluid via clamp() */}
-                <span className="flex flex-col md:gap-3 font-extrabold raleway text-3xl lg:text-4xl">
+                <span className="flex flex-col md:gap-3 font-extrabold raleway md:text-2xl lg:text-4xl">
                   EMPASS:
                   <span className=" text-2xl md:text-6xl lg:text-7xl">A Law Firm,</span>
                 </span>
@@ -121,7 +121,7 @@ export default function Hero() {
 
               {/* Subtitle */}
               <p
-                className={`text-white hero-subtitle leading-[1.7] mb-12 max-w-7xl font-bold transition-all duration-1000 delay-500 ${isVisible
+                className={`text-white hero-subtitle leading-[1.7] mb-12 max-w-7xl transition-all duration-1000 delay-500 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
                   }`}

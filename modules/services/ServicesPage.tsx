@@ -97,7 +97,7 @@ const CORE_SERVICES: Service[] = [
       "Partnership Structures",
       "Terms & Conditions",
     ],
-    image: "/commercial-law.jpg",
+    image: "/Commercial-law.jpg",
   },
   {
     id: "banking",
@@ -112,7 +112,7 @@ const CORE_SERVICES: Service[] = [
       "Finance Documentation",
       "Regulatory Compliance",
     ],
-    image: "/bank-law.jpg",
+    image: "/Bank-law.jpg",
   },
   {
     id: "employment",
