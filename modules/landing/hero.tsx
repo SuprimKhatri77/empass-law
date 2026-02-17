@@ -68,13 +68,13 @@ export default function Hero() {
           className="w-full h-full aspect-video object-cover"
           aria-hidden="true"
         >
-          <source src="/hero-video3.mp4" type="video/mp4" />
+          <source src="/hero-video4.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         {/* Multi-layer overlay for depth and better readability */}
-        <div className="absolute inset-0 bg-[#09265F]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[#09265F]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
       </div>
 
       {/* Ambient light effects */}
@@ -101,36 +101,29 @@ export default function Hero() {
             <div className="relative mt-130 z-10  md:mt-100">
               {/* Main heading */}
               <h1
-                className={`hero-heading font-bold montserrat text-white mb-2 md:mb-5 lg:mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
+                className={`hero-heading font-bold montserrat text-white mb-4 md:mb-6 lg:mb-8 tracking-[1.5px] md:tracking-[3px] uppercase transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
               >
-                {/* EMPASS big, "A Law Firm," big but smaller — fluid via clamp() */}
-                <span className="flex flex-col md:gap-3 font-extrabold raleway md:text-2xl lg:text-4xl">
-                  EMPASS:
-                  <span className=" text-2xl md:text-6xl lg:text-7xl">A Law Firm,</span>
+                {/* Firm Description */}
+                <span className="flex flex-col font-extrabold raleway mb-3 text-[clamp(1.1rem,2vw,1.5rem)] leading-tight">
+                  Legal Advice with impact
                 </span>
 
-                <span className="block font-mono font-bold text-[#4ECDC4] text-2xl md:text-4xl lg:text-5xl">
-                  DRIVEN BY PURPOSE.
+                {/* Core Value Statement */}
+                <span className="block font-semibold text-[#4ECDC4] text-xl sm:text-2xl md:text-3xl lg:text-5xl leading-[1.15] tracking-wide">
+                  Counsel with Clarity.
                   <br />
-                  MEASURED BY RESULTS.
+                  Results with Confidence.
                 </span>
               </h1>
 
               {/* Subtitle */}
               <p
-                className={`text-white hero-subtitle leading-[1.7] mb-12 max-w-7xl transition-all duration-1000 delay-500 ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
+                className={`text-white hero-subtitle text-[clamp(1rem,1.4vw,1.2rem)] leading-[1.75] max-w-3xl mb-10 md:mb-12 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
               >
-                We stand at the intersection of precision, integrity, and
-                impact-cutting through complexity with clarity, confidence, and
-                unwavering commitment to our clients&apos; success.
+                Combining deep legal expertise with a pragmatic, client-focused approach, we deliver clear guidance, strong advocacy, and solutions designed to protect your interests and move you forward.
               </p>
-
               {/* CTA Buttons — kept commented as in original */}
               {/* <div
                 className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-700 ${
