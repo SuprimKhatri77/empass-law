@@ -65,7 +65,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full aspect-video object-cover"
           aria-hidden="true"
         >
           <source src="/hero-video2.mp4" type="video/mp4" />
@@ -90,27 +90,25 @@ export default function Hero() {
       </div>
 
       {/* Content — section already has flex items-center justify-center for vertical centering */}
-      <div className="relative z-10 max-w-[1400px] flex items-center mx-auto px-6 sm:px-8 lg:px-12 w-full">
+      <div className="relative z-10 max-w-[1400px] flex items-center mx-auto px-2 sm:px-8 lg:px-12 w-full">
         <div
-          className={`w-full max-w-[1150px] transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`w-full max-w-[1150px] transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {/* Content card */}
-          <div className="relative p-8 sm:p-10 rounded-2xl">
+          <div className="relative p-5 sm:p-10 rounded-2xl">
             {/* Content wrapper — mt-100 preserved from original */}
             <div className="relative z-10 mt-30 md:mt-100">
               {/* Main heading */}
               <h1
-                className={`hero-heading font-bold montserrat text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
+                className={`hero-heading font-bold montserrat text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+                  }`}
               >
                 {/* EMPASS big, "A Law Firm," big but smaller — fluid via clamp() */}
-                <span className="block font-extrabold raleway empass-title">
-                  EMPASS
+                <span className="flex flex-col gap-3 font-extrabold raleway text-3xl lg:text-4xl">
+                  EMPASS:
                   <br />
                   <span className="law-firm-title">A Law Firm,</span>
                 </span>
@@ -124,11 +122,10 @@ export default function Hero() {
 
               {/* Subtitle */}
               <p
-                className={`text-white hero-subtitle leading-[1.7] mb-12 max-w-7xl font-bold transition-all duration-1000 delay-500 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
+                className={`text-white hero-subtitle leading-[1.7] mb-12 max-w-7xl font-bold transition-all duration-1000 delay-500 ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+                  }`}
               >
                 We stand at the intersection of precision, integrity, and
                 impact-cutting through complexity with clarity, confidence, and
@@ -189,7 +186,7 @@ export default function Hero() {
       </div>
 
       {/* Animated scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-8 hidden sm:block left-1/2 -translate-x-1/2 z-10">
         <div className="flex flex-col items-center gap-2 animate-bounce">
           <span className="text-white/60 text-xs uppercase tracking-widest font-medium">
             Scroll

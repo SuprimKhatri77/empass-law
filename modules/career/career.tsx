@@ -16,20 +16,20 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
           We're looking for like-minded individuals who value a human approach
           to law.
         </p>
-      </div>
+      </div> */}
 
 
       {/* Current Openings */}
-      <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            <div className="w-12 sm:w-16 h-1 bg-[#2c5697]/20 mb-4 sm:mb-6 lg:mb-8" />
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-3 sm:mb-4">
+            {/* <div className="w-12 sm:w-16 h-1 bg-[#2c5697]/20 mb-4 sm:mb-6 lg:mb-8" /> */}
+            <h2 className="text-2xl uppercase sm:text-3xl lg:text-4xl font-normal text-[#2c5697] mb-3 sm:mb-4">
               Current Openings
             </h2>
           </div>

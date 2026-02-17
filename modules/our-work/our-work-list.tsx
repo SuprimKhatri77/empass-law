@@ -44,16 +44,16 @@ export default function OurWorkPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-start">
             <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-bold text-[#2c5697] mb-4 sm:mb-6 uppercase tracking-tight px-4">
-              Case Studies & Success Stories
+              Case Studies
             </span>
           </div>
         </div>
       </section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
           Explore our portfolio of exceptional work that delivers results.
         </p>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -171,7 +171,7 @@ function WorkCard({ work, index }: { work: WorkPost; index: number }) {
                 {work.title}
                 {work.titleHighlight && (
                   <span
-                    style={{ color: work.accentColor || "#2c5697" }}
+                    // style={{ color: work.accentColor || "#2c5697" }}
                     className="font-bold"
                   >
                     {" "}

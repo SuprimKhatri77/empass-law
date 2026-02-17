@@ -2,6 +2,7 @@
 
 import FeaturedCaseStudy from "./featured-case-story";
 import { FeaturedInsights } from "./featured-insights";
+import FeaturedTeamMember from "./featured-team-member";
 import Hero from "./hero";
 import NewsSection from "./news-insights";
 import { QuickLinks } from "./quick-link";
@@ -11,9 +12,10 @@ export default function Landing() {
   return (
     <main className="min-h-screen">
       <Hero />
+      {/* <FeaturedCaseStudy /> */}
+      <FeaturedTeamMember />
       <NewsSection />
       {/* <Welcome /> */}
-      {/* <FeaturedCaseStudy /> */}
       {/* <FeaturedInsights /> */}
       <QuickLinks />
 

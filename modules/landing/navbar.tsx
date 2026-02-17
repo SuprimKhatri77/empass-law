@@ -68,7 +68,7 @@ export default function Navbar() {
               className="flex-shrink-0 relative z-50 transition-transform duration-300 hover:scale-105"
             >
               <Image
-                src="/Empass-blue.png"
+                src="/Empass-navbar.png"
                 alt="Empass Law"
                 width={200}
                 height={65}

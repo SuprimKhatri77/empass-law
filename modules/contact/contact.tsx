@@ -136,11 +136,11 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-base sm:text-lg lg:text-xl pt-8 sm:pt-12 lg:pt-16 text-gray-600 leading-relaxed">
           Schedule a consultation with our expert legal team.
         </p>
-      </div>
+      </div> */}
       {/* Contact Info Cards */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,7 +189,7 @@ export default function ContactPage() {
             {/* Form - Takes 3 columns */}
             <div className="lg:col-span-3">
               <div className="mb-8 sm:mb-12">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
+                <h2 className="text-2xl uppercase sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
                   Send Us a Message
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600">

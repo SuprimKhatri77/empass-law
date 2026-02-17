@@ -33,7 +33,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Managing Partner",
     department: "Corporate",
     location: "London",
-    image: "/Rohit-Folgia.jpg",
+    image: "/Rohit-Folgia.jpeg",
     bio: "Rohit Fogla is a practising dual qualified Lawyer (UK and India) having qualified as an Indian Lawyer, after completing LL.B from the University of Mumbai. He then undertook the Graduate Diploma in Law (CPE) at the Kingston University, London, and both the Legal Practice Course and LL.M in Corporate Law at the London campus of the University of Law of England and Wales. Rohit completed his English Law training contract with Gunnercooke LLP specialising in corporate, commercial, and banking law. He further worked with Akin Gump LLP, Hill Dickinson LLP and Harrison Clark Rickerbys Limited in their London office. Rohit focuses his practice on domestic as well as international corporate, commercial, banking and litigation matters including corporate finance, mergers and acquisitions, private equity, commercial contracts, financing and commercial dispute matters.",
     email: "rohit.fogla@empasslaw.com",
     linkedin: "#",
@@ -62,7 +62,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Consultant Property",
     department: "Property",
     location: "London",
-    image: "/Litigation.webp",
+    image: "/Adershir.jpeg",
     bio: "Ardeshir works under the supervision of Mr Fogla and deals with variety of property matters. Ardeshir specialises in real estate development and investment transactions. With his vast experience in commercial property matters, Ardeshir provides strategic legal guidance to developers, investors, and businesses navigating complex real estate transactions. His practice encompasses all aspects of real estate law, from initial development planning through to completion of major commercial lettings. Ardeshir works closely with clients to deliver practical solutions that support their commercial objectives whilst managing legal risks effectively.",
     email: "ardeshir.matini@empasslaw.com",
     expertise: [
@@ -78,7 +78,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Consultant Property",
     department: "Property",
     location: "London",
-    image: "/Litigation.webp",
+    image: "/Matthew.jpeg",
     bio: "Matthew is an experienced property Lawyer and was admitted as a Fellow of the Chartered Institute of Legal Executives. Matthew has also completed his MBA from Boston University. Matthew has dealt with a broad range of property transactions including both freehold and leasehold commercial and residential unit sales and assisted with the acquisition and funding of key development sites throughout the UK.",
     email: "matthew.bosworth@empasslaw.com",
     expertise: [
@@ -94,7 +94,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Consultant Property",
     department: "Property",
     location: "London",
-    image: "/Gaynor-Bannon.png",
+    image: "/Gaynor-Bannon.jpeg",
     bio: "Gaynor is an experienced solicitor with over 19 years' practice in commercial real estate work. She is experienced in sales and purchases, commercial landlord and tenant, corporate support, property finance/secured lending, investment management and insolvency support. Gaynor is a commercial and practical lawyer who works with her clients to always meet deadlines and to understand her client's needs and requirements. She is dedicated to providing clients with commercial and practical solutions in a straightforward, cost-effective and timely manner. She advises private investors, commercial lenders, SME, limited companies, OMB and financial institutions.",
     email: "gaynor.bannon@empasslaw.com",
     expertise: [

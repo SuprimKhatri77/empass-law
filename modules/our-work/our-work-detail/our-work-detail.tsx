@@ -262,7 +262,7 @@ export default function WorkDetailPage() {
             </div>
 
             {/* Featured Badge */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -270,14 +270,14 @@ export default function WorkDetailPage() {
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               Featured Case Study
-            </motion.div>
+            </motion.div> */}
 
             {/* Title */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#2c5697] mb-4 sm:mb-6 leading-tight">
               {work.title}
               {work.titleHighlight && (
                 <span
-                  style={{ color: work.accentColor || "#2c5697" }}
+                  // style={{ color: work.accentColor || "#2c5697" }}
                   className="font-bold"
                 >
                   {work.titleHighlight}

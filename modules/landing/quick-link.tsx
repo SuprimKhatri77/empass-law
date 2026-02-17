@@ -38,7 +38,7 @@ const quickLinks: QuickLink[] = [
 
 export function QuickLinks() {
   return (
-    <section className="relative bg-[linear-gradient(90deg,#edefef_0%,#fff_50%,#f0f0f0_100%)] py-16 lg:py-24">
+    <section className="relative bg-white py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Side - Header */}
@@ -46,7 +46,7 @@ export function QuickLinks() {
             <h2 className="text-2xl sm:text-3xl uppercase lg:text-4xl  font-bold text-[#2c5697] mb-6">
               Practice Areas
             </h2>
-            <p className="text-base md:text-2xl text-[#2c5697] leading-relaxed max-w-xl">
+            <p className="text-base md:text-2xl text-black leading-relaxed max-w-xl">
               Empass Law is a modern London-based law firm providing practical, client-focused legal support to both individuals and businesses. The firm advises across key areas including corporate and commercial law, employment, property, family matters, and dispute resolution, delivering clear guidance and cost-effective solutions tailored to each client’s needs.
             </p>
             <Link href={"/services"} className="text-[#0B2D72] flex items-center mt-5 gap-3 justify-center bg-[#4ECDC4] text-center font-bold uppercase shadow-2xl hover:scale-105 transition-all duration-300 px-4 py-3" >

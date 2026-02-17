@@ -9,7 +9,7 @@ export default function NewsSection() {
   const featuredPosts = mockWorkPosts.slice(0, 3);
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20 border-t border-gray-100">
+    <section className="bg-gray-100 py-12 sm:py-16 lg:py-20 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 sm:mb-12 lg:mb-16">
