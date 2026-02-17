@@ -73,7 +73,7 @@ export default function Hero() {
         </video>
 
         {/* Multi-layer overlay for depth and better readability */}
-        <div className="absolute inset-0 bg-[#09265F]/10" />
+        <div className="absolute inset-0 bg-[#09265F]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
       </div>
 
@@ -106,7 +106,7 @@ export default function Hero() {
               >
                 {/* Firm Description */}
                 <span className="flex flex-col font-extrabold raleway mb-3 text-[clamp(1.1rem,2vw,1.5rem)] leading-tight">
-                  Legal Advice with impact
+                  Law Practice with impact
                 </span>
 
                 {/* Core Value Statement */}
