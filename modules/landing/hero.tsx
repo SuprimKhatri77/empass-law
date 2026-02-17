@@ -99,7 +99,7 @@ export default function Hero() {
           {/* Content card */}
           <div className="relative p-8 sm:p-10 rounded-2xl">
             {/* Content wrapper — mt-100 preserved from original */}
-            <div className="relative z-10 mt-100">
+            <div className="relative z-10 mt-30 md:mt-100">
               {/* Main heading */}
               <h1
                 className={`hero-heading font-bold montserrat text-white mb-8 tracking-[2px] lg:tracking-[6px] uppercase transition-all duration-1000 delay-300 ${
