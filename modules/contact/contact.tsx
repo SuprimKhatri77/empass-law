@@ -141,8 +141,98 @@ export default function ContactPage() {
           Schedule a consultation with our expert legal team.
         </p>
       </div> */}
-      {/* Contact Info Cards */}
+
+
+      {/* Map Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
+              Visit Our Office
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600">
+              Located in London's financial district
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Map Container - FIXED ZOOM */}
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9234567890123!2d-0.1435423386339631!3d51.51632903444329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzU4LjgiTiAwwrAwOCczNi44Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location Map"
+              />
+
+              {/* Corner Accents */}
+              <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 border-t-4 border-l-4 border-[#2c5697] pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 border-b-4 border-r-4 border-[#2c5697] pointer-events-none" />
+            </div>
+
+            {/* Map Info Card Overlay */}
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-auto sm:w-80 lg:w-96 p-4 sm:p-6 bg-white rounded-xl shadow-2xl border border-gray-200">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2c5697]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#2c5697]" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-base font-bold text-[#2c5697] mb-1">
+                    Empass Law
+                  </h4>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
+                    41 Lothbury, London EC2R 7AE
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=51.51632903444329,-0.1435423386339631"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#2c5697] font-semibold hover:gap-3 transition-all"
+                  >
+                    Get Directions
+                    <Navigation className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Directions Info */}
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
+              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
+                Underground
+              </h4>
+              <p className="text-gray-600 text-xs sm:text-sm">
+                Bank Station - 2 min walk
+              </p>
+            </div>
+            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
+              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
+                Bus
+              </h4>
+              <p className="text-gray-600 text-xs sm:text-sm">
+                Routes 8, 25, 242 - Bank stop
+              </p>
+            </div>
+            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
+              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
+                Parking
+              </h4>
+              <p className="text-gray-600 text-xs sm:text-sm">
+                London Wall Car Park
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {contactInfo.map((item, index) => (
@@ -189,7 +279,7 @@ export default function ContactPage() {
             {/* Form - Takes 3 columns */}
             <div className="lg:col-span-3">
               <div className="mb-8 sm:mb-12">
-                <h2 className="text-2xl uppercase sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
+                <h2 className="text-xl uppercase sm:text-2xl lg:text-3xl font-bold text-[#2c5697] mb-3 sm:mb-4">
                   Send Us a Message
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600">
@@ -429,93 +519,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
-              Visit Our Office
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600">
-              Located in London's financial district
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Map Container - FIXED ZOOM */}
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9234567890123!2d-0.1435423386339631!3d51.51632903444329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzU4LjgiTiAwwrAwOCczNi44Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location Map"
-              />
-
-              {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 border-t-4 border-l-4 border-[#2c5697] pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 border-b-4 border-r-4 border-[#2c5697] pointer-events-none" />
-            </div>
-
-            {/* Map Info Card Overlay */}
-            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-auto sm:w-80 lg:w-96 p-4 sm:p-6 bg-white rounded-xl shadow-2xl border border-gray-200">
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2c5697]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#2c5697]" />
-                </div>
-                <div>
-                  <h4 className="text-sm sm:text-base font-bold text-[#2c5697] mb-1">
-                    Empass Law
-                  </h4>
-                  <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
-                    41 Lothbury, London EC2R 7AE
-                  </p>
-                  <a
-                    href="https://maps.google.com/?q=51.51632903444329,-0.1435423386339631"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#2c5697] font-semibold hover:gap-3 transition-all"
-                  >
-                    Get Directions
-                    <Navigation className="w-3 h-3 sm:w-4 sm:h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Directions Info */}
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
-            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
-              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
-                Underground
-              </h4>
-              <p className="text-gray-600 text-xs sm:text-sm">
-                Bank Station - 2 min walk
-              </p>
-            </div>
-            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
-              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
-                Bus
-              </h4>
-              <p className="text-gray-600 text-xs sm:text-sm">
-                Routes 8, 25, 242 - Bank stop
-              </p>
-            </div>
-            <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
-              <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
-                Parking
-              </h4>
-              <p className="text-gray-600 text-xs sm:text-sm">
-                London Wall Car Park
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">

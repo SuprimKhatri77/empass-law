@@ -109,10 +109,10 @@ export default function Hero() {
                 {/* EMPASS big, "A Law Firm," big but smaller — fluid via clamp() */}
                 <span className="flex flex-col md:gap-3 font-extrabold raleway text-3xl lg:text-4xl">
                   EMPASS:
-                  <span className=" text-3xl md:text-6xl lg:text-7xl">A Law Firm,</span>
+                  <span className=" text-2xl md:text-6xl lg:text-7xl">A Law Firm,</span>
                 </span>
 
-                <span className="block font-mono font-bold text-[#4ECDC4] text-3xl md:text-4xl lg:text-5xl">
+                <span className="block font-mono font-bold text-[#4ECDC4] text-2xl md:text-4xl lg:text-5xl">
                   DRIVEN BY PURPOSE.
                   <br />
                   MEASURED BY RESULTS.

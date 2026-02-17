@@ -68,34 +68,36 @@ export default function FeaturedTeamMember() {
             </div> */}
 
             <div
-              className="text-[72px] md:text-[96px] leading-none font-black select-none mb-[-2px] md:mb-[-20px]"
+              className="text-[72px] md:text-[96px] leading-none font-black select-none mb-[-15px] md:mb-[-20px]"
               style={{ color: current.accentColor, lineHeight: 1 }}
               aria-hidden="true"
             >
               &ldquo;
             </div>
 
-            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] leading-[1.45] font-normal text-[#1a2535] mb-2">
+            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] leading-[1.45] font-normal text-[#1a2535] mb-5">
               {current.quote}
             </blockquote>
 
             <div
-              className="text-[72px] md:text-[96px] leading-none font-black select-none mt-[-12px] md:mt-[-16px] text-right"
+              className="text-[72px] md:text-[96px] leading-none font-black select-none md:mt-[-16px] text-right"
               style={{ color: current.accentColor, lineHeight: 1 }}
               aria-hidden="true"
             >
               &rdquo;
             </div>
 
-            <p
-              className="text-[20px] md:text-[30px] uppercase font-semibold md:mt-2 mb-1"
-              style={{ color: current.accentColor }}
-            >
-              {current.name}
-            </p>
-            <p className="text-[14px] md:text-[25px] text-[#445566] mb-6 md:mb-8">
-              {current.role}
-            </p>
+            <div className="mt-[-20px] sm:mt-0">
+              <p
+                className="text-[20px] md:text-[30px] uppercase font-semibold md:mt-2 mb-1"
+                style={{ color: current.accentColor }}
+              >
+                {current.name}
+              </p>
+              <p className="text-[14px] md:text-[25px] text-[#445566] mb-6 md:mb-8">
+                {current.role}
+              </p>
+            </div>
             {/* <Link
               href={`/team/${current.slug}`}
               className="inline-flex items-center gap-2 text-[14px] md:text-[15px] font-medium border-b-2 pb-0.5 hover:opacity-60 transition-opacity mb-8 md:mb-12"
