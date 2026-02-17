@@ -73,8 +73,8 @@ export default function Hero() {
         </video>
 
         {/* Multi-layer overlay for depth and better readability */}
-        <div className="absolute inset-0 bg-[#09265F]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[#09265F]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
 
       {/* Ambient light effects */}
