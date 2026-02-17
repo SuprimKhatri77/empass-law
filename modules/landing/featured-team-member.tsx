@@ -68,7 +68,7 @@ export default function FeaturedTeamMember() {
             </div> */}
 
             <div
-              className="text-[72px] md:text-[96px] leading-none font-black select-none mb-[-24px] md:mb-[-20px]"
+              className="text-[72px] md:text-[96px] leading-none font-black select-none mb-[-2px] md:mb-[-20px]"
               style={{ color: current.accentColor, lineHeight: 1 }}
               aria-hidden="true"
             >
