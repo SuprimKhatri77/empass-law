@@ -44,7 +44,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "Head of Litigation",
     department: "Litigation",
     location: "London",
-    image: "/Litigation.webp",
+    image: "/Team-member.jpg",
     bio: "Edward has substantial commercial litigation experience, having solely practised in this area for the span of his career, including serving as a Deputy District Judge in the County Court. He specialises in commercial and civil litigation and regularly appears in the County and High Courts. Ed's expertise includes contracts, trusts and estates, companies, property and construction, and insurance. He delivers thoughtful, balanced and solution-driven advice and his ability to see the big picture enables him to give strategic and tactical recommendations to our clients as a trusted advisor.",
     email: "edward.colquhoun@empasslaw.com",
     linkedin: "#",
