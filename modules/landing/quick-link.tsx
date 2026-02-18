@@ -49,7 +49,7 @@ export function QuickLinks() {
             <p className="text-base md:text-2xl text-black leading-relaxed max-w-xl">
               Empass Law is a modern London-based law firm providing practical, client-focused legal support to both individuals and businesses. The firm advises across key areas including corporate and commercial law, employment, property, family matters, and dispute resolution, delivering clear guidance and cost-effective solutions tailored to each client&apos;s needs.
             </p>
-            <Link href={"/services"} className="text-[#0B2D72] flex items-center mt-5 gap-3 justify-center bg-[#4ECDC4] text-center font-bold uppercase shadow-2xl hover:scale-105 transition-all duration-300 px-4 py-3" >
+            <Link href={"/services"} className="text-sm text-[#0B2D72] flex items-center mt-5 gap-3 justify-center bg-[#4ECDC4] text-center font-bold uppercase shadow-2xl hover:scale-105 transition-all duration-300 px-4 py-3" >
               Explore Our Services
               <ArrowRight className="size-4" />
             </Link>
