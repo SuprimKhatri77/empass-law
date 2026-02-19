@@ -110,7 +110,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "michelle-bird",
     name: "Michelle Bird",
-    role: "Family Partner",
+    role: "Consultant Family",
     department: "Family",
     location: "London",
     image: "/Michelle.png",
