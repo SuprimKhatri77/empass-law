@@ -37,7 +37,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+44 20 7123 4567",
+    value: "02039165054",
     href: "tel:+442071234567",
     subtext: "Mon-Fri, 9AM-6PM",
   },
@@ -51,7 +51,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Office",
-    value: "41 Lothbury, London EC2R 7AE",
+    value: "13 Hanover Square, Mayfair, London W1S 1HN",
     href: "https://maps.google.com/?q=51.51632903444329,-0.1435423386339631",
     subtext: "View on Google Maps",
   },
@@ -185,7 +185,7 @@ export default function ContactPage() {
                     Empass Law
                   </h4>
                   <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
-                    41 Lothbury, London EC2R 7AE
+                    13 Hanover Square, Mayfair, London W1S 1HN
                   </p>
                   <a
                     href="https://maps.google.com/?q=51.51632903444329,-0.1435423386339631"
