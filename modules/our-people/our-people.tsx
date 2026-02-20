@@ -189,8 +189,8 @@ export default function OurPeoplePage() {
                   key={dept}
                   onClick={() => setSelectedDepartment(dept)}
                   className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-colors ${selectedDepartment === dept
-                      ? "bg-[#2c5697] text-white"
-                      : "bg-gray-100 text-[#445566] hover:bg-gray-200"
+                    ? "bg-[#2c5697] text-white"
+                    : "bg-gray-100 text-[#445566] hover:bg-gray-200"
                     }`}
                 >
                   {dept}
@@ -246,6 +246,23 @@ export default function OurPeoplePage() {
                         <Mail className="w-4 h-4 text-white" />
                       </a>
                     </div>
+                    {/* ── Mobile/Tablet only: always-visible action buttons below name ── */}
+                    <div className="flex absolute bottom-0 left-0 right-0 gap-2 p-3 lg:hidden transition-transform duration-300 ease-out bg-gradient-to-t from-black/55 via-black/20 to-transparent">
+                      <button
+                        onClick={() => setSelectedMember(member.id)}
+                        className="flex-1 bg-white/20 backdrop-blur-sm hover:bg-white/35 text-white text-xs font-semibold px-3 py-2 rounded-lg border border-white/35 transition-colors"
+                      >
+                        View Profile
+                      </button>
+                      <a
+                        href={`mailto:${member.email}`}
+                        title={`Email ${member.name}`}
+                        className="p-2 bg-white/20 backdrop-blur-sm hover:bg-white/35 rounded-lg border border-white/35 transition-colors"
+                      >
+                        <Mail className="w-4 h-4 text-white" />
+                      </a>
+                    </div>
+
                   </div>
 
                   {/* ── Name & Role ── */}
@@ -256,23 +273,6 @@ export default function OurPeoplePage() {
                     <p className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold text-[#2c4a7a] uppercase tracking-wider leading-snug">
                       {member.role}
                     </p>
-                  </div>
-
-                  {/* ── Mobile/Tablet only: always-visible action buttons below name ── */}
-                  <div className="flex lg:hidden items-center gap-2 mt-3 w-full">
-                    <button
-                      onClick={() => setSelectedMember(member.id)}
-                      className="flex-1 bg-[#2c5697] hover:bg-[#234578] text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
-                    >
-                      View Profile
-                    </button>
-                    <a
-                      href={`mailto:${member.email}`}
-                      title={`Email ${member.name}`}
-                      className="p-2 bg-[#f0f4f8] hover:bg-[#dde3ed] text-[#2c5697] rounded-lg border border-[#d0d8e8] transition-colors"
-                    >
-                      <Mail className="w-4 h-4" />
-                    </a>
                   </div>
 
                 </div>

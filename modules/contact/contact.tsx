@@ -37,8 +37,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "02039165054",
-    href: "tel:+442071234567",
+    value: "+44 20 3916 5054",
+    href: "tel:+442039165054",
     subtext: "Mon-Fri, 9AM-6PM",
   },
   {
@@ -146,12 +146,12 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
+          <div className="mb-8 sm:mb-12">
+            {/* <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-3 sm:mb-4">
               Visit Our Office
-            </h2>
+            </h2> */}
             <p className="text-base sm:text-lg text-gray-600">
-              Located in London's financial district
+              Located in Mayfair London.
             </p>
           </div>
 
@@ -202,7 +202,7 @@ export default function ContactPage() {
           </div>
 
           {/* Directions Info */}
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+          {/* <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
             <div className="p-4 sm:p-6 bg-white rounded-xl border border-gray-200">
               <h4 className="text-xs sm:text-sm font-semibold uppercase text-[#2c5697] mb-2">
                 Underground
@@ -227,7 +227,7 @@ export default function ContactPage() {
                 London Wall Car Park
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -523,18 +523,18 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2c5697] mb-4 sm:mb-6">
+          <h2 className="text-xl uppercase sm:text-2xl lg:text-3xl font-bold text-[#2c5697] mb-4 sm:mb-6">
             Prefer to Speak Directly?
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
             Our team is available to discuss your legal needs.
           </p>
           <Link
-            href="tel:+442071234567"
+            href="tel:+442039165054"
             className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base bg-[#2c5697] text-white font-semibold rounded-lg hover:bg-[#234578] transition-all shadow-lg"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-            +44 20 7123 4567
+            +44 20 3916 5054
           </Link>
         </div>
       </section>
