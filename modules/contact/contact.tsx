@@ -499,7 +499,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Info */}
-              <div className="p-6 sm:p-8 bg-[#2c5697]/5 rounded-xl border border-[#2c5697]/20">
+              {/* <div className="p-6 sm:p-8 bg-[#2c5697]/5 rounded-xl border border-[#2c5697]/20">
                 <h3 className="text-lg sm:text-xl font-bold text-[#2c5697] mb-2 sm:mb-3">
                   Need Immediate Assistance?
                 </h3>
@@ -513,7 +513,7 @@ export default function ContactPage() {
                   Call Emergency Line
                   <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
