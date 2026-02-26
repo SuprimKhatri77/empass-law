@@ -1,5 +1,6 @@
 "use client";
 
+import ComplaintPolicy from "./ComplaintPolicy";
 import FeaturedCaseStudy from "./featured-case-story";
 import { FeaturedInsights } from "./featured-insights";
 import FeaturedTeamMember from "./featured-team-member";
@@ -18,6 +19,7 @@ export default function Landing() {
       {/* <Welcome /> */}
       {/* <FeaturedInsights /> */}
       <QuickLinks />
+      <ComplaintPolicy />
 
       {/* <Footer /> */}
     </main>
