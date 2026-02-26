@@ -52,7 +52,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Office",
     value: "13 Hanover Square, Mayfair, London W1S 1HN",
-    href: "https://maps.google.com/?q=51.51632903444329,-0.1435423386339631",
+    href: "https://maps.google.com/?q=51.16484541870605,11.27835924790641",
     subtext: "View on Google Maps",
   },
 ];
