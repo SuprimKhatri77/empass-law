@@ -142,7 +142,6 @@ export default function ContactPage() {
         </p>
       </div> */}
 
-
       {/* Map Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,7 +158,7 @@ export default function ContactPage() {
             {/* Map Container - FIXED ZOOM */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9234567890123!2d-0.1435423386339631!3d51.51632903444329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzU4LjgiTiAwwrAwOCczNi44Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d43961738.001564644!2d12.508828!3d47.73855!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b3a07908cca1e23%3A0x1cc5528e49b1bf78!2sEmpass%20Law!5e0!3m2!1sen!2sin!4v1772162325224!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -304,8 +303,9 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${errors.name ? "border-red-500" : "border-gray-300"
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
+                      className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                       placeholder="John Doe"
                     />
                   </div>
@@ -334,8 +334,9 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${errors.email ? "border-red-500" : "border-gray-300"
-                          } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
+                        className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${
+                          errors.email ? "border-red-500" : "border-gray-300"
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                         placeholder="john@example.com"
                       />
                     </div>
@@ -362,8 +363,9 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${errors.phone ? "border-red-500" : "border-gray-300"
-                          } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
+                        className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${
+                          errors.phone ? "border-red-500" : "border-gray-300"
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all`}
                         placeholder="+44 20 1234 5678"
                       />
                     </div>
@@ -413,8 +415,9 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${errors.message ? "border-red-500" : "border-gray-300"
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all resize-none`}
+                      className={`w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border ${
+                        errors.message ? "border-red-500" : "border-gray-300"
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2c5697] focus:border-transparent transition-all resize-none`}
                       placeholder="Tell us about your legal needs..."
                     />
                   </div>
@@ -431,12 +434,13 @@ export default function ContactPage() {
                   disabled={isSubmitting || isSuccess}
                   whileHover={{ scale: isSubmitting || isSuccess ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting || isSuccess ? 1 : 0.98 }}
-                  className={`w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all ${isSuccess
-                    ? "bg-green-500 text-white cursor-default"
-                    : isSubmitting
-                      ? "bg-gray-300 text-gray-500 cursor-wait"
-                      : "bg-[#2c5697] text-white hover:bg-[#234578]"
-                    }`}
+                  className={`w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all ${
+                    isSuccess
+                      ? "bg-green-500 text-white cursor-default"
+                      : isSubmitting
+                        ? "bg-gray-300 text-gray-500 cursor-wait"
+                        : "bg-[#2c5697] text-white hover:bg-[#234578]"
+                  }`}
                 >
                   <span className="flex items-center justify-center gap-2">
                     {isSuccess ? (
@@ -518,7 +522,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
