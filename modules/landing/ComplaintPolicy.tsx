@@ -443,14 +443,14 @@ export default function ComplaintPolicy() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* ── Section Header ───────────────────────────────────────────── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginBottom: 64, alignItems: "end" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginBottom: 64, alignItems: "center" }}>
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+            {/* <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: 40 }}
@@ -461,8 +461,8 @@ export default function ComplaintPolicy() {
               <span style={{ fontSize: 11, letterSpacing: "0.22em", color: "#4ECDC4", textTransform: "uppercase", fontWeight: 600 }}>
                 Transparency &amp; Trust
               </span>
-            </div>
-            <h2 style={{
+            </div> */}
+            <h2 className="uppercase" style={{
               fontFamily: "'Georgia', 'Times New Roman', serif",
               fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 400,
               color: "#05173a", lineHeight: 1.1, margin: 0,
@@ -479,7 +479,7 @@ export default function ComplaintPolicy() {
             custom={0.15}
             variants={fadeUp}
           >
-            <p style={{ fontSize: "clamp(15px, 1.4vw, 17px)", lineHeight: 1.8, color: "#445566", margin: "0 0 20px" }}>
+            <p className="text-base md:text-2xl text-black leading-relaxed">
               We are committed to providing an excellent standard of service. We value your feedback greatly
               as it helps us to continually improve. If we have fallen short of the high standards we set for
               ourselves, we want the opportunity to put things right. Making a complaint will not affect how
@@ -489,6 +489,7 @@ export default function ComplaintPolicy() {
               href="mailto:r.fogla@empasslaw.com"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}
+              className="mt-0 sm:mt-4"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 fontSize: 12, fontWeight: 700, letterSpacing: "0.12em",
