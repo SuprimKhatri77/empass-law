@@ -38,9 +38,9 @@ const quickLinks: QuickLink[] = [
 
 export function QuickLinks() {
   return (
-    <section className="relative bg-white py-16 lg:py-24">
+    <section className="relative bg-white py-10 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-20">
           {/* Left Side - Header */}
           <div className="flex flex-col gap-3">
             <h2 className="text-2xl sm:text-3xl uppercase lg:text-4xl  font-bold text-[#2c5697] mb-6">

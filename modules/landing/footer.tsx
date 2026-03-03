@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-[#0B2D72] text-white relative overflow-hidden">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16 items-center">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="w-32 h-32 sm:w-40 sm:h-40 relative mb-6">

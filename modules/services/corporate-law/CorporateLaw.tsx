@@ -141,11 +141,14 @@ export default function CorporateLaw() {
             {corporateServices.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="group h-full p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-all"
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.08,
+                }}
+                className="group h-full p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-[box-shadow,border-color] duration-300 ease-out"
               >
                 <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 group-hover:bg-[#2C4A6B]/10 transition-colors">
                   <service.icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />

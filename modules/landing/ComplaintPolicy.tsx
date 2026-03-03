@@ -438,12 +438,19 @@ export default function ComplaintPolicy() {
   return (
     <section
       id="complaint-policy"
-      style={{ background: "#ffffff", padding: "clamp(60px, 8vw, 120px) clamp(24px, 6vw, 80px)" }}
-    >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-
+      style={{ background: "#ffffff"}}
+      >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16 lg:pb-24">
         {/* ── Section Header ───────────────────────────────────────────── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginBottom: 64, alignItems: "center" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: 32,
+            marginBottom: 64,
+            alignItems: "center",
+          }}
+        >
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -464,7 +471,7 @@ export default function ComplaintPolicy() {
             </div> */}
             <h2 className="text-2xl sm:text-3xl uppercase lg:text-4xl font-bold" style={{
               fontFamily: "'Georgia', 'Times New Roman', serif",
-              color: "#05173a", lineHeight: 1.1, margin: 0,
+              color: "#2c5697", lineHeight: 1.1, margin: 0,
             }}>
               Client Feedback &amp;{" "}
               <span style={{ fontStyle: "italic", color: "#4ECDC4" }}>Complaints</span>
@@ -505,7 +512,14 @@ export default function ComplaintPolicy() {
         </div>
 
         {/* ── Key Stats ────────────────────────────────────────────────── */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2, marginBottom: 56 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 16,
+            marginBottom: 56,
+          }}
+        >
           {[
             { figure: "7 days", label: "Acknowledgement" },
             { figure: "8 weeks", label: "Maximum Resolution Time" },
@@ -519,20 +533,35 @@ export default function ComplaintPolicy() {
               transition={{ delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               style={{
-                padding: "28px 24px",
+                padding: "24px 20px",
                 background: i === 1 ? "#05173a" : "#f8f9fb",
-                textAlign: "center", cursor: "default",
+                textAlign: "center",
+                cursor: "default",
               }}
             >
-              <div style={{
-                fontFamily: "'Georgia', serif",
-                fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 400,
-                color: "#4ECDC4", lineHeight: 1, marginBottom: 8,
-              }}>{stat.figure}</div>
-              <div style={{
-                fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase",
-                color: i === 1 ? "rgba(255,255,255,0.6)" : "#778899", fontWeight: 600,
-              }}>{stat.label}</div>
+              <div
+                style={{
+                  fontFamily: "'Georgia', serif",
+                  fontSize: "clamp(22px, 6vw, 34px)", // 👈 larger scaling for mobile
+                  fontWeight: 400,
+                  color: "#4ECDC4",
+                  lineHeight: 1,
+                  marginBottom: 8,
+                }}
+              >
+                {stat.figure}
+              </div>
+              <div
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: i === 1 ? "rgba(255,255,255,0.6)" : "#778899",
+                  fontWeight: 600,
+                }}
+              >
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </div>

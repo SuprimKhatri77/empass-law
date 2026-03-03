@@ -29,7 +29,7 @@ export default function FeaturedTeamMember() {
   const next = () => setCurrentIndex((i) => (i + 1) % members.length);
 
   return (
-    <section className="bg-white py-12 md:py-20 lg:py-32">
+    <section className="bg-white py-10 md:py-20 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* <div className="mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
@@ -75,7 +75,7 @@ export default function FeaturedTeamMember() {
               &ldquo;
             </div>
 
-            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] leading-[1.45] font-normal text-[#1a2535] mb-5">
+            <blockquote className="text-[18px] sm:text-[22px] lg:text-[36px] text-justify leading-[1.45] font-normal text-[#1a2535] mb-5">
               {current.quote}
             </blockquote>
 

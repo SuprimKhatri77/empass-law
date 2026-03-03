@@ -118,10 +118,11 @@ export default function Hero() {
               </h1>
 
               {/* Subtitle */}
-              <p
-                className={`text-white hero-subtitle text-[clamp(1rem,1.4vw,1.2rem)] leading-[1.75] max-w-3xl mb-10 md:mb-12 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
-              >
+             <p
+  className={`text-white hero-subtitle text-[clamp(1rem,1.4vw,1.2rem)] leading-[1.75] max-w-3xl mb-10 md:mb-12
+  transition-[opacity,transform] duration-900 ease-[cubic-bezier(0.25,0.8,0.25,1)]
+  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+>
                 Combining deep legal expertise with a pragmatic, client-focused approach, we deliver clear guidance, strong advocacy, and solutions designed to protect your interests and move you forward.
               </p>
               {/* CTA Buttons — kept commented as in original */}
