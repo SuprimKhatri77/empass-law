@@ -143,35 +143,47 @@ const EmploymentLaw: React.FC<EmploymentLawProps> = ({ className = "" }) => {
 
       {/* DESCRIPTION */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
-            Comprehensive Employment Law Support
-          </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+            <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
+              Comprehensive Employment Law Support
+            </h2>
 
-          <p className="text-gray-600 leading-relaxed mb-4">
-            We advise domestic and international organisations on
-            employment-related matters, including litigation,
-            consultancy, and regulatory compliance.
-          </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              We advise domestic and international organisations on
+              employment-related matters, including litigation,
+              consultancy, and regulatory compliance.
+            </p>
 
-          <p className="text-gray-600 leading-relaxed">
-            Our team delivers commercially focused and legally robust
-            solutions aligned with your operational objectives.
-          </p>
-        </div>
+            <p className="text-gray-600 leading-relaxed">
+              Our team delivers commercially focused and legally robust
+              solutions aligned with your operational objectives.
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       {/* SERVICES */}
       <section className="py-20 sm:py-28 bg-gray-50">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
-              Our Employment Law Services
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Advisory and litigation expertise across employment matters.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
+                Our Employment Law Services
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Advisory and litigation expertise across employment matters.
+              </p>
+            </div>
+          </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICE_OFFERINGS.map((service, i) => {
@@ -219,11 +231,15 @@ const EmploymentLaw: React.FC<EmploymentLawProps> = ({ className = "" }) => {
             {CLIENT_TYPES.map((client, i) => (
               <motion.div
                 key={client.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-md transition-all"
+                transition={{
+                  duration: 0.8,
+                  delay: i * 0.08,
+                  ease: [0.25, 0.8, 0.25, 1],
+                }}
+                className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-md transition-[box-shadow,border-color] duration-300 ease-out"
               >
                 <CheckCircle2 className="w-6 h-6 text-[#2C4A6B] mb-4" />
                 <h3 className="font-semibold text-[#2c5697] mb-2">

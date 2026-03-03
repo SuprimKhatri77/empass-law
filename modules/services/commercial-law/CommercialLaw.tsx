@@ -132,7 +132,7 @@ export default function CommercialLaw() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-px w-8 bg-[#00a3a3]"></div>
@@ -156,35 +156,48 @@ export default function CommercialLaw() {
 
       {/* DESCRIPTION */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
-            Comprehensive Commercial Legal Support
-          </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
 
-          <p className="text-gray-600 leading-relaxed mb-4">
-            Our commercial law team advises businesses at every stage —
-            from start-up structuring and contract drafting to complex
-            negotiations and dispute resolution.
-          </p>
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+            <h2 className="text-3xl font-bold text-[#2c5697] mb-6">
+              Comprehensive Commercial Legal Support
+            </h2>
 
-          <p className="text-gray-600 leading-relaxed">
-            We deliver commercially focused solutions aligned with your
-            operational and strategic objectives.
-          </p>
-        </div>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Our commercial law team advises businesses at every stage —
+              from start-up structuring and contract drafting to complex
+              negotiations and dispute resolution.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              We deliver commercially focused solutions aligned with your
+              operational and strategic objectives.
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       {/* SERVICES */}
       <section className="py-20 sm:py-28 bg-gray-50">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
-              Our Commercial Law Services
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Advisory and transactional expertise across commercial operations.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
+                Our Commercial Law Services
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Advisory and transactional expertise across commercial operations.
+              </p>
+            </div>
+          </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICE_OFFERINGS.map((service, i) => {
@@ -192,11 +205,15 @@ export default function CommercialLaw() {
               return (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="group p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-all"
+                  transition={{
+                    duration: 0.8,
+                    delay: i * 0.08,
+                    ease: [0.25, 0.8, 0.25, 1],
+                  }}
+                  className="group p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-[box-shadow,border-color] duration-300 ease-out"
                 >
                   <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 group-hover:bg-[#2C4A6B]/10 transition-colors">
                     <Icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />

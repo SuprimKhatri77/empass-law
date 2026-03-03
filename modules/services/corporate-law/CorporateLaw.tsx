@@ -127,6 +127,7 @@ export default function CorporateLaw() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
@@ -145,8 +146,9 @@ export default function CorporateLaw() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.8,
                   delay: i * 0.08,
+                  ease: [0.25, 0.8, 0.25, 1],
                 }}
                 className="group h-full p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-[box-shadow,border-color] duration-300 ease-out"
               >

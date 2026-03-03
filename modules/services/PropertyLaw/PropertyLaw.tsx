@@ -102,7 +102,7 @@ const CLIENT_TYPES: ClientType[] = [
 export default function PropertyLaw() {
   return (
     <div className="min-h-screen bg-white">
-      
+
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-br from-[#2C4A6B] via-[#34547A] to-[#3D5F8A] text-white py-24 sm:py-32">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -141,6 +141,7 @@ export default function PropertyLaw() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2c5697] mb-4">
@@ -157,11 +158,15 @@ export default function PropertyLaw() {
               return (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="group p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-all"
+                  transition={{
+                    duration: 0.8,
+                    delay: i * 0.08,
+                    ease: [0.25, 0.8, 0.25, 1],
+                  }}
+                  className="group p-6 sm:p-8 bg-white border border-gray-200 rounded-lg hover:border-[#2C4A6B] hover:shadow-lg transition-[box-shadow,border-color] duration-300 ease-out"
                 >
                   <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 group-hover:bg-[#2C4A6B]/10 transition-colors">
                     <Icon className="w-6 h-6 text-gray-600 group-hover:text-[#2C4A6B]" />
