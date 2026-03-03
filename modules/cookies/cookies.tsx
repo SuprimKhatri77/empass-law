@@ -185,11 +185,15 @@ export default function CookiePolicyPage() {
             {cookieTypes.map((cookie, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group bg-white border border-gray-200 rounded-lg p-6 sm:p-8 hover:border-[#2C4A6B] hover:shadow-lg transition-all"
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.08,
+                  ease: [0.25, 0.8, 0.25, 1],
+                }}
+                className="group bg-white border border-gray-200 rounded-lg p-6 sm:p-8 hover:border-[#2C4A6B] hover:shadow-lg transition-[box-shadow,border-color] duration-300 ease-out"
               >
                 {/* Header */}
                 <div className="flex items-start gap-6 mb-6">
@@ -237,6 +241,11 @@ export default function CookiePolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: 0.08,
+              ease: [0.25, 0.8, 0.25, 1],
+            }}
             className="max-w-4xl"
           >
             <div className="flex items-start gap-4 mb-6">
@@ -273,6 +282,11 @@ export default function CookiePolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: 0.08,
+              ease: [0.25, 0.8, 0.25, 1],
+            }}
             className="max-w-4xl"
           >
             <div className="flex items-start gap-4 mb-6">
