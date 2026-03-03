@@ -462,9 +462,8 @@ export default function ComplaintPolicy() {
                 Transparency &amp; Trust
               </span>
             </div> */}
-            <h2 className="uppercase" style={{
+            <h2 className="text-2xl sm:text-3xl uppercase lg:text-4xl font-bold" style={{
               fontFamily: "'Georgia', 'Times New Roman', serif",
-              fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 400,
               color: "#05173a", lineHeight: 1.1, margin: 0,
             }}>
               Client Feedback &amp;{" "}
